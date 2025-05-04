@@ -48,7 +48,8 @@ def update_data():
 @bot.event
 async def on_ready():
     print(f'✅ Bot je online ako {bot.user}')
-    update_data()  # okamžitá aktualizácia po spustení
+    # update_data()  # dočasne vypnuté, kým nevieme scrapovať
+    print("Bot je online a pripravený.")
 
 
 @bot.command()
