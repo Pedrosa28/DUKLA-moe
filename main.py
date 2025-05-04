@@ -13,8 +13,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 DATA_FILE = "data.json"
 
-
-# Automatická aktualizácia údajov z webu
+# Automatická aktualizácia údajov z webu (dočasne zakázaná)
 def update_data():
     print("Aktualizujem údaje z wotconsole.info...")
     url = "https://wotconsole.info/marks/"
@@ -22,8 +21,11 @@ def update_data():
     soup = BeautifulSoup(response.text, 'html.parser')
     table = soup.find('table', {'id': 'tankTable'})
 
-    rows = table.find_all('tr')
+    if not table:
+        print("❌ Tabuľka sa nenašla.")
+        return
 
+    rows = table.find_all('tr')
     all_data = []
 
     for row in rows[1:]:
@@ -44,13 +46,11 @@ def update_data():
         json.dump(all_data, f, ensure_ascii=False, indent=2)
     print("Údaje boli aktualizované.")
 
-
 @bot.event
 async def on_ready():
     print(f'✅ Bot je online ako {bot.user}')
-    # update_data()  # dočasne vypnuté, kým nevieme scrapovať
+    # update_data()  # dočasne vypnuté
     print("Bot je online a pripravený.")
-
 
 @bot.command()
 async def moe(ctx, *, search: str):
@@ -58,16 +58,20 @@ async def moe(ctx, *, search: str):
         with open(DATA_FILE, "r", encoding="utf-8") as f:
             tanks = json.load(f)
 
-        matches = [t for t in tanks if search.lower() in t["name"].lower()]
+        def normalize(text):
+            return text.lower().replace(" ", "").replace("-", "")
+
+        matches = [t for t in tanks if normalize(search) in normalize(t["name"])]
 
         if not matches:
             await ctx.send("❌ Nenašli sa žiadne tanky.")
             return
 
-        for tank in matches[:5]:  # obmedzenie na max 5 výsledkov naraz
+        for tank in matches[:5]:
             embed = discord.Embed(
                 title=f"Marks of Excellence – {tank['name']}",
-                color=discord.Color.blue())
+                color=discord.Color.blue()
+            )
             embed.add_field(name="1. mark", value=tank["mark1"], inline=False)
             embed.add_field(name="2. mark", value=tank["mark2"], inline=False)
             embed.add_field(name="3. mark", value=tank["mark3"], inline=False)
@@ -76,11 +80,10 @@ async def moe(ctx, *, search: str):
     except Exception as e:
         await ctx.send(f"⚠️ Nastala chyba: {e}")
 
-
-# Spusti keep_alive server (potrebný pre UptimeRobot)
+# Spusti keep_alive server (potrebný pre hosting)
 keep_alive()
 
-# Automatické aktualizovanie raz denne
+# Automatické aktualizovanie raz denne (dočasne aktívne, ale nebude fungovať bez tabuľky)
 scheduler = BackgroundScheduler()
 scheduler.add_job(update_data, "interval", hours=24)
 scheduler.start()
