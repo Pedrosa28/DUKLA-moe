@@ -4,6 +4,7 @@ import threading
 from flask import Flask
 from apscheduler.schedulers.background import BackgroundScheduler
 from discord.ext import commands
+from discord import Intents  # ← Toto patrí sem hore
 from dotenv import load_dotenv
 
 # Načítanie tokenu z .env
@@ -11,7 +12,7 @@ load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # Inicializácia Discord bota
-intents = commands.Intents.default()
+intents = Intents.default()  # ← Tu je čisté priradenie
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Flask server na udržanie aktivity (pre Render)
