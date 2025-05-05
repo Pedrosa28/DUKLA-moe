@@ -4,7 +4,7 @@ from discord.ext import commands
 import json
 import re
 
-class MoE(commands.Cog):
+class MoECog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         with open("data.json", "r", encoding="utf-8") as f:
