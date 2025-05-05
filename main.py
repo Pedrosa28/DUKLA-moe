@@ -1,40 +1,36 @@
-import discord
-from discord.ext import commands
 import os
 from dotenv import load_dotenv
+import discord
+from discord.ext import commands
+from moe import MoECog
 from flask import Flask
-from threading import Thread
+import threading
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
+intents.message_content = True
+
 bot = commands.Bot(command_prefix="!", intents=intents)
+bot.remove_command("help")
 
 @bot.event
 async def on_ready():
-    print(f"✅ {bot.user} je prihlásený.")
-    try:
-        synced = await bot.tree.sync()
-        print(f"✅ Slash príkazy synchronizované: {len(synced)}")
-    except Exception as e:
-        print(f"❌ Chyba pri synchronizácii slash príkazov: {e}")
+    print(f"✅ Prihlásený ako {bot.user}")
 
-# Načítaj cog moe
-@bot.event
-async def setup_hook():
-    await bot.load_extension("moe")
+bot.add_cog(MoECog(bot))
 
-# Flask keep-alive
-app = Flask("")
+# Web server pre udržanie aktivity na Renderi
+app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Bot beží."
+    return "Bot je aktívny."
 
-def run():
+def run_flask():
     app.run(host="0.0.0.0", port=8080)
 
 if __name__ == "__main__":
-    Thread(target=run).start()
+    threading.Thread(target=run_flask).start()
     bot.run(TOKEN)
