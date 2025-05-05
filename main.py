@@ -45,6 +45,8 @@ async def on_ready():
 async def setup_hook():
     await bot.load_extension("cogs.admin")
     await bot.load_extension("cogs.stats")
+    await bot.load_extension("cogs.moe")
+    await bot.load_extension("cogs.help")
 
 # Spustenie Flask servera
 threading.Thread(target=keep_alive).start()
