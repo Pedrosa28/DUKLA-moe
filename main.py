@@ -32,6 +32,12 @@ flask_thread.start()
 # Spusti bota asynchrónne
 async def main():
     await bot.add_cog(MoECog(bot))
+    await bot.wait_until_ready()
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synchronized {len(synced)} commands.")
+    except Exception as e:
+        print(f"Error syncing commands: {e}")
     await bot.start(TOKEN)
 
 if __name__ == "__main__":
