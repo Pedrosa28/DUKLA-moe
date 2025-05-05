@@ -7,7 +7,6 @@ from flask import Flask
 import threading
 import asyncio
 
-# Načítaj .env premenné
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -16,7 +15,7 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Spusti Flask server pre Render
+# Flask server pre Render
 app = Flask(__name__)
 
 @app.route('/')
@@ -26,18 +25,22 @@ def home():
 def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
+# Spustenie Flasku v samostatnom vlákne
 flask_thread = threading.Thread(target=run_flask)
 flask_thread.start()
 
-# Spusti bota asynchrónne
+# Synchronizácia príkazov pri štarte bota
+@bot.event
+async def on_ready():
+    try:
+        await bot.tree.sync()
+        print(f"✅ Slash commands synchronized. Logged in as {bot.user}")
+    except Exception as e:
+        print(f"❌ Error syncing slash commands: {e}")
+
+# Spustenie bota asynchrónne
 async def main():
     await bot.add_cog(MoECog(bot))
-    await bot.wait_until_ready()
-    try:
-        synced = await bot.tree.sync()
-        print(f"Synchronized {len(synced)} commands.")
-    except Exception as e:
-        print(f"Error syncing commands: {e}")
     await bot.start(TOKEN)
 
 if __name__ == "__main__":
