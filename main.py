@@ -5,7 +5,9 @@ from discord.ext import commands
 from cogs.moe import MoECog
 from flask import Flask
 import threading
+import asyncio
 
+# Načítaj .env premenné
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -13,24 +15,24 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
-bot.remove_command("help")
 
-@bot.event
-async def on_ready():
-    print(f"✅ Prihlásený ako {bot.user}")
-
-bot.add_cog(MoECog(bot))
-
-# Web server pre udržanie aktivity na Renderi
+# Spusti Flask server pre Render
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return "Bot je aktívny."
+    return "Bot is running!"
 
 def run_flask():
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host='0.0.0.0', port=8080)
+
+flask_thread = threading.Thread(target=run_flask)
+flask_thread.start()
+
+# Spusti bota asynchrónne
+async def main():
+    await bot.add_cog(MoECog(bot))
+    await bot.start(TOKEN)
 
 if __name__ == "__main__":
-    threading.Thread(target=run_flask).start()
-    bot.run(TOKEN)
+    asyncio.run(main())
