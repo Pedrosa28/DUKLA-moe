@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands
-from moe import MoECog
+from cogs.moe import MoECog
 from flask import Flask
 import threading
 
