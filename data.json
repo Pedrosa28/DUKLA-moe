@@ -1,20 +1,9686 @@
 [
   {
-    "name": "Tiger I",
-    "mark1": "1450",
-    "mark2": "2100",
-    "mark3": "2650"
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M1A2 Abrams",
+    "Battles": "38,220",
+    "": "9150"
   },
   {
-    "name": "IS-7",
-    "mark1": "2000",
-    "mark2": "3000",
-    "mark3": "4000"
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-72BU",
+    "Battles": "18,292",
+    "": "8162"
   },
   {
-    "name": "T-34",
-    "mark1": "1000",
-    "mark2": "1800",
-    "mark3": "2400"
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Magach 7C",
+    "Battles": "12,542",
+    "": "7807"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Magach 6B Gal Batash",
+    "Battles": "9,537",
+    "": "6061"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Merkava Mk. 3",
+    "Battles": "11,548",
+    "": "8468"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Merkava Mk. 2B",
+    "Battles": "9,102",
+    "": "7244"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Merkava Mk. 1",
+    "Battles": "11,677",
+    "": "6239"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 477A &quot;Molot&quot;",
+    "Battles": "21,143",
+    "": "9570"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 40",
+    "Battles": "43,508",
+    "": "8088"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Challenger 1",
+    "Battles": "11,018",
+    "": "7401"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 2A4",
+    "Battles": "13,582",
+    "": "7888"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M1A1 Abrams",
+    "Battles": "15,295",
+    "": "7779"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M3A2 Bradley",
+    "Battles": "21,530",
+    "": "7870"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 32",
+    "Battles": "26,372",
+    "": "6722"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chieftain Mk. 11",
+    "Battles": "12,852",
+    "": "5669"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leclerc Series 1",
+    "Battles": "24,889",
+    "": "8900"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VFM 5",
+    "Battles": "6,476",
+    "": "6314"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 2",
+    "Battles": "14,152",
+    "": "6573"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Challenger 2",
+    "Battles": "21,534",
+    "": "8562"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 85-IIM",
+    "Battles": "5,376",
+    "": "6180"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 85-I",
+    "Battles": "4,075",
+    "": "6753"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 85-III",
+    "Battles": "3,697",
+    "": "6833"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BMP-3",
+    "Battles": "44,059",
+    "": "6647"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Jaguar 1 (Raketenjagdpanzer-3)",
+    "Battles": "34,154",
+    "": "10852"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 2A5",
+    "Battles": "25,676",
+    "": "8495"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 88A",
+    "Battles": "4,555",
+    "": "5760"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 89",
+    "Battles": "2,735",
+    "": "6446"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-72B obr. 1989g",
+    "Battles": "14,087",
+    "": "7266"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Marder 1A3",
+    "Battles": "57,750",
+    "": "8059"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Stingray 2",
+    "Battles": "8,595",
+    "": "5436"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 90-II",
+    "Battles": "4,951",
+    "": "7969"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M8 AGS",
+    "Battles": "6,440",
+    "": "6556"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 59D",
+    "Battles": "5,995",
+    "": "5953"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "MBT70",
+    "Battles": "19,201",
+    "": "7492"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "&quot;Peace Sells&quot; Leclerc Ares Prototype",
+    "Battles": "2,738",
+    "": "8556"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Alvis Stormer 30",
+    "Battles": "9,013",
+    "": "9494"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "MBT-80",
+    "Battles": "8,958",
+    "": "7721"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Wiesel 1A1 TOW",
+    "Battles": "38,022",
+    "": "10238"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TCM AGS",
+    "Battles": "2,846",
+    "": "6374"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M60AX",
+    "Battles": "4,491",
+    "": "6721"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "CATTB &quot;Thumper&quot;",
+    "Battles": "39,281",
+    "": "8452"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 292",
+    "Battles": "38,692",
+    "": "8364"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-72B",
+    "Battles": "13,335",
+    "": "6212"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M1 Abrams",
+    "Battles": "16,508",
+    "": "6690"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M60A3",
+    "Battles": "13,887",
+    "": "5586"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-72AV",
+    "Battles": "22,466",
+    "": "6613"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M60A1 RISE",
+    "Battles": "3,550",
+    "": "6463"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-62M-1",
+    "Battles": "3,830",
+    "": "5883"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "G.I. JOE MOBAT",
+    "Battles": "8,475",
+    "": "6188"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cobra C.A.T.",
+    "Battles": "1,210",
+    "": "6088"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "G.I. JOE Mauler",
+    "Battles": "395",
+    "": "6028"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cobra H.I.S.S.",
+    "Battles": "553",
+    "": "4778"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Magach 6B Gal",
+    "Battles": "20,030",
+    "": "5656"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiran 6",
+    "Battles": "20,617",
+    "": "4480"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Magach 3",
+    "Battles": "25,475",
+    "": "4396"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TR-580",
+    "Battles": "23,849",
+    "": "4559"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TR-85",
+    "Battles": "16,045",
+    "": "4968"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TR-125",
+    "Battles": "14,782",
+    "": "5801"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ignis Purgatio",
+    "Battles": "48,789",
+    "": "6619"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMOLAD (A Matter Of Life And Death)",
+    "Battles": "958",
+    "": "5728"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rock Crawler",
+    "Battles": "5,876",
+    "": "7005"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Warden",
+    "Battles": "5,757",
+    "": "6131"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bandit",
+    "Battles": "21,695",
+    "": "5560"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-55 Enigma",
+    "Battles": "20,042",
+    "": "6011"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Magach 5",
+    "Battles": "14,286",
+    "": "5860"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M103A2",
+    "Battles": "18,635",
+    "": "4758"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30B2",
+    "Battles": "37,488",
+    "": "5169"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BMP-1",
+    "Battles": "34,037",
+    "": "4266"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Begleitpanzer 57",
+    "Battles": "91,032",
+    "": "7494"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30B2 Brenus",
+    "Battles": "45,999",
+    "": "6183"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-72A",
+    "Battles": "19,442",
+    "": "5364"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Scorpion 90",
+    "Battles": "12,799",
+    "": "5498"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 1A5",
+    "Battles": "24,273",
+    "": "5669"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M113",
+    "Battles": "7,062",
+    "": "4194"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 79",
+    "Battles": "10,248",
+    "": "4266"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BMP-2",
+    "Battles": "48,311",
+    "": "5600"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 1A3",
+    "Battles": "21,607",
+    "": "5047"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M60A1",
+    "Battles": "23,521",
+    "": "4835"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Conqueror",
+    "Battles": "20,995",
+    "": "5254"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 80",
+    "Battles": "9,908",
+    "": "4757"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M60A2",
+    "Battles": "29,235",
+    "": "6198"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "RaketenJagdPanzer 2",
+    "Battles": "33,650",
+    "": "5433"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Marder 1A1",
+    "Battles": "56,715",
+    "": "6574"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Stingray",
+    "Battles": "12,526",
+    "": "5422"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 80-II",
+    "Battles": "10,338",
+    "": "5076"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 63HG",
+    "Battles": "2,456",
+    "": "4545"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M551 Sheridan",
+    "Battles": "19,592",
+    "": "5708"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Object 120",
+    "Battles": "10,508",
+    "": "4744"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion 9",
+    "Battles": "33,444",
+    "": "3953"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pharaoh’s Fury Ramses II",
+    "Battles": "9,491",
+    "": "6587"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30B ’66",
+    "Battles": "43,656",
+    "": "4288"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chieftain Mk. 5",
+    "Battles": "16,990",
+    "": "5568"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-132-3",
+    "Battles": "4,146",
+    "": "4267"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 1 ’66",
+    "Battles": "24,660",
+    "": "4338"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T92 ‘58",
+    "Battles": "9,702",
+    "": "4252"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Leopard 1A1",
+    "Battles": "14,812",
+    "": "5232"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Conqueror Mk 2",
+    "Battles": "1,911",
+    "": "5567"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-122",
+    "Battles": "10,406",
+    "": "6159"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX 13 SS-11 TCA",
+    "Battles": "7,540",
+    "": "6414"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-72M1",
+    "Battles": "5,257",
+    "": "6654"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Leopard 2AV",
+    "Battles": "10,031",
+    "": "6721"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX 30B2 FORAD",
+    "Battles": "28,941",
+    "": "6348"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV4211",
+    "Battles": "44,001",
+    "": "6985"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Leopard VT-2",
+    "Battles": "26,438",
+    "": "5916"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Super M48",
+    "Battles": "1,882",
+    "": "6034"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chieftain Concept Test Rig",
+    "Battles": "4,266",
+    "": "7530"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 63HG ’90",
+    "Battles": "1,307",
+    "": "4790"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Marder VTS1",
+    "Battles": "7,738",
+    "": "6118"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-1224",
+    "Battles": "22,358",
+    "": "6045"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "G.I. JOE Strv S1 Wolverine",
+    "Battles": "644",
+    "": "5556"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "G.I. JOE Armadillo",
+    "Battles": "3,144",
+    "": "5363"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M50 Ontos",
+    "Battles": "3,431",
+    "": "5784"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 934",
+    "Battles": "7,068",
+    "": "5027"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "RDF/LT",
+    "Battles": "13,808",
+    "": "6972"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M3A1 Bradley",
+    "Battles": "12,078",
+    "": "6770"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chieftain Hybrid 120",
+    "Battles": "16,355",
+    "": "7172"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Jaguar Black Edition",
+    "Battles": "2,130",
+    "": "6575"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cobra Arctic H.I.S.S.",
+    "Battles": "909",
+    "": "6635"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-62",
+    "Battles": "21,179",
+    "": "4231"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M60 '61",
+    "Battles": "17,262",
+    "": "4371"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-72 Ural",
+    "Battles": "7,018",
+    "": "4523"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M48A5PI Patton",
+    "Battles": "23,864",
+    "": "4759"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Object 165",
+    "Battles": "20,649",
+    "": "4453"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-55A",
+    "Battles": "3,736",
+    "": "4804"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T95E3",
+    "Battles": "117,749",
+    "": "5061"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiran 4",
+    "Battles": "15,450",
+    "": "3487"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M50 Sherman",
+    "Battles": "13,893",
+    "": "2757"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiran 5 Sharir",
+    "Battles": "29,075",
+    "": "4643"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TVP VTU 88mm",
+    "Battles": "7,031",
+    "": "2820"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Škoda T 50 ’49",
+    "Battles": "11,470",
+    "": "3415"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TVP T 50/51 ’51",
+    "Battles": "30,831",
+    "": "5082"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-100",
+    "Battles": "4,227",
+    "": "4994"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "NM-116",
+    "Battles": "13,304",
+    "": "5133"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M-636 Kondor",
+    "Battles": "4,207",
+    "": "4566"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion 5/1",
+    "Battles": "24,894",
+    "": "4795"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "PT-76",
+    "Battles": "10,286",
+    "": "2637"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV101",
+    "Battles": "27,388",
+    "": "4339"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV107",
+    "Battles": "109,816",
+    "": "5404"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 62",
+    "Battles": "3,332",
+    "": "3650"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 69-II",
+    "Battles": "9,506",
+    "": "4477"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M47 Patton",
+    "Battles": "15,598",
+    "": "3794"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard Prototype 773",
+    "Battles": "29,080",
+    "": "4943"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 63-I",
+    "Battles": "5,062",
+    "": "2788"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Batignolles-Châtillon Char 25 t",
+    "Battles": "33,872",
+    "": "3963"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lorraine Char de bataille de 40 tonnes",
+    "Battles": "52,887",
+    "": "4511"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion II",
+    "Battles": "19,852",
+    "": "3012"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 62-I",
+    "Battles": "4,451",
+    "": "4422"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30A",
+    "Battles": "38,678",
+    "": "4722"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Charioteer (A)",
+    "Battles": "11,202",
+    "": "4090"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Conway",
+    "Battles": "15,068",
+    "": "4201"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV4005",
+    "Battles": "152,816",
+    "": "5840"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 59",
+    "Battles": "5,451",
+    "": "3689"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "RU 251",
+    "Battles": "24,025",
+    "": "4064"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Kanonenjagdpanzer 4-5",
+    "Battles": "18,014",
+    "": "4043"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T34",
+    "Battles": "32,541",
+    "": "4346"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M24 Chaffee '53",
+    "Battles": "8,688",
+    "": "3775"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-54 obr. 1949",
+    "Battles": "12,550",
+    "": "3469"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M103A1",
+    "Battles": "58,049",
+    "": "5681"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-122-54 ‘56",
+    "Battles": "7,289",
+    "": "3629"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Object 268 ‘56",
+    "Battles": "14,542",
+    "": "5321"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M41A1 Walker Bulldog",
+    "Battles": "22,707",
+    "": "4752"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV4201/T95E1",
+    "Battles": "1,139",
+    "": "5062"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Centennial Chieftain/T95 '59",
+    "Battles": "2,221",
+    "": "5239"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-111",
+    "Battles": "8,937",
+    "": "4233"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T95E2",
+    "Battles": "9,615",
+    "": "3998"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-44A",
+    "Battles": "22,445",
+    "": "3197"
+  },
+  {
+    "Tier": "",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M46A1 Patton",
+    "Battles": "17,949",
+    "": "3056"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TVP T 50/51",
+    "Battles": "11,161",
+    "": "5505"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Kranvagn",
+    "Battles": "10,211",
+    "": "5400"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Progetto 65",
+    "Battles": "25,634",
+    "": "5267"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Vz. 55",
+    "Battles": "11,808",
+    "": "6033"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Rinoceronte",
+    "Battles": "6,403",
+    "": "5187"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "60TP",
+    "Battles": "14,315",
+    "": "5080"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B-C 25 t",
+    "Battles": "27,947",
+    "": "5562"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "STB-1",
+    "Battles": "5,237",
+    "": "5800"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 5 Heavy",
+    "Battles": "24,371",
+    "": "5355"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "121",
+    "Battles": "3,453",
+    "": "5831"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv 103B",
+    "Battles": "5,858",
+    "": "5415"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "CS-63",
+    "Battles": "6,556",
+    "": "6234"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Controcarro 3 Minotauro",
+    "Battles": "3,199",
+    "": "5249"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "113",
+    "Battles": "3,352",
+    "": "5969"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UDES 15/16",
+    "Battles": "6,630",
+    "": "5410"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-132-1",
+    "Battles": "1,356",
+    "": "6029"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-4",
+    "Battles": "13,524",
+    "": "5375"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-111 5A",
+    "Battles": "3,300",
+    "": "5596"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 50 B",
+    "Battles": "11,991",
+    "": "5710"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV215b",
+    "Battles": "10,687",
+    "": "5337"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Maus",
+    "Battles": "14,993",
+    "": "5188"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-7",
+    "Battles": "34,339",
+    "": "5513"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion AX",
+    "Battles": "10,818",
+    "": "5516"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T92 HMC",
+    "Battles": "25,378",
+    "": "4440"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-113G FT",
+    "Battles": "1,501",
+    "": "5440"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 261",
+    "Battles": "8,767",
+    "": "4057"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G.W. E 100",
+    "Battles": "10,962",
+    "": "4267"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV215b 183",
+    "Battles": "31,051",
+    "": "5203"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "E 100",
+    "Battles": "34,439",
+    "": "4962"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tusk",
+    "Battles": "5,465",
+    "": "4973"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T110E5",
+    "Battles": "39,428",
+    "": "5659"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B-C 155 58",
+    "Battles": "10,762",
+    "": "3551"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Jg.Pz. E 100",
+    "Battles": "18,022",
+    "": "5049"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "E 50 M",
+    "Battles": "13,149",
+    "": "5165"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ConquerorGC",
+    "Battles": "5,665",
+    "": "4386"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "The Machine",
+    "Battles": "24,033",
+    "": "5284"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T110E4",
+    "Battles": "34,543",
+    "": "5877"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 268",
+    "Battles": "10,218",
+    "": "6059"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-62A",
+    "Battles": "14,441",
+    "": "5460"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T110E3",
+    "Battles": "7,510",
+    "": "5495"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Foch 155",
+    "Battles": "5,892",
+    "": "6062"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV4005",
+    "Battles": "42,142",
+    "": "5478"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M48 Patton",
+    "Battles": "19,178",
+    "": "5368"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chisel",
+    "Battles": "13,260",
+    "": "5477"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 263",
+    "Battles": "2,765",
+    "": "5797"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard 1",
+    "Battles": "36,206",
+    "": "6036"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T57 Heavy",
+    "Battles": "25,094",
+    "": "5435"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV4202",
+    "Battles": "7,528",
+    "": "5772"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chieftain",
+    "Battles": "28,877",
+    "": "5777"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30 B",
+    "Battles": "6,127",
+    "": "5558"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 907",
+    "Battles": "2,046",
+    "": "5337"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "S. Conqueror",
+    "Battles": "16,662",
+    "": "5385"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M60",
+    "Battles": "9,314",
+    "": "5793"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Badger",
+    "Battles": "4,782",
+    "": "5258"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 140",
+    "Battles": "10,474",
+    "": "5268"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WT auf E 100",
+    "Battles": "32,328",
+    "": "5627"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX M4 54",
+    "Battles": "6,020",
+    "": "5547"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Nemesis",
+    "Battles": "1,413",
+    "": "5104"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 430",
+    "Battles": "4,841",
+    "": "5862"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 13 105",
+    "Battles": "6,371",
+    "": "5213"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Leman Russ",
+    "Battles": "3,068",
+    "": "6061"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ruthless",
+    "Battles": "20,554",
+    "": "5320"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "EBR 105",
+    "Battles": "3,175",
+    "": "5567"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-100 LT",
+    "Battles": "12,770",
+    "": "5447"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Grille 15",
+    "Battles": "40,140",
+    "": "6126"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz.Kpfw. VII",
+    "Battles": "8,354",
+    "": "5256"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sheridan",
+    "Battles": "7,353",
+    "": "5020"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 430U",
+    "Battles": "8,495",
+    "": "5245"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Rhm. Pzw.",
+    "Battles": "7,194",
+    "": "5335"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 268 4",
+    "Battles": "2,045",
+    "": "4931"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 705A",
+    "Battles": "21,787",
+    "": "5114"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "K-91",
+    "Battles": "4,248",
+    "": "5380"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 277",
+    "Battles": "22,795",
+    "": "5424"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ST-II",
+    "Battles": "6,523",
+    "": "5539"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Valour",
+    "Battles": "7,187",
+    "": "5415"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV4003 Centurion Mk. 5 AVRE",
+    "Battles": "50,850",
+    "": "5634"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 780",
+    "Battles": "19,614",
+    "": "5437"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Andre the Giant",
+    "Battles": "4,205",
+    "": "4900"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 279 (e)",
+    "Battles": "12,521",
+    "": "5248"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 268 V",
+    "Battles": "14,607",
+    "": "5617"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Centauro CC 45 t",
+    "Battles": "26,672",
+    "": "5269"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Taran",
+    "Battles": "34,765",
+    "": "6603"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T95E6",
+    "Battles": "27,281",
+    "": "5625"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M48A2 120mm",
+    "Battles": "11,097",
+    "": "5307"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T95/FV4201",
+    "Battles": "7,680",
+    "": "5372"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 260",
+    "Battles": "2,854",
+    "": "5785"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "VK 72.01 (K)",
+    "Battles": "6,160",
+    "": "5300"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Manticore",
+    "Battles": "4,026",
+    "": "5805"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "114 SP2",
+    "Battles": "7,884",
+    "": "5251"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-22 medium",
+    "Battles": "664",
+    "": "4566"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-111 QL",
+    "Battles": "6,448",
+    "": "5849"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "121B",
+    "Battles": "1,477",
+    "": "5396"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Projet Murat",
+    "Battles": "26,548",
+    "": "6004"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Highlander 116-F3",
+    "Battles": "10,664",
+    "": "5072"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sturmtiger",
+    "Battles": "14,338",
+    "": "5087"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M47 Iron Arnie",
+    "Battles": "2,668",
+    "": "6062"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T58 Heavy",
+    "Battles": "19,163",
+    "": "5428"
+  },
+  {
+    "Tier": "X",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "MBT-B",
+    "Battles": "25,332",
+    "": "5059"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-120",
+    "Battles": "5,556",
+    "": "3807"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-111 1-4",
+    "Battles": "5,724",
+    "": "4016"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Škoda T 50",
+    "Battles": "7,523",
+    "": "3995"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Emil II",
+    "Battles": "8,075",
+    "": "3893"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Standard B",
+    "Battles": "9,483",
+    "": "3887"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T30",
+    "Battles": "17,625",
+    "": "3960"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TNH T Vz. 51",
+    "Battles": "10,322",
+    "": "3989"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "50TP",
+    "Battles": "9,257",
+    "": "3787"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 61",
+    "Battles": "5,086",
+    "": "3806"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Progetto C50 mod. 66",
+    "Battles": "10,377",
+    "": "3539"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 50 120",
+    "Battles": "5,782",
+    "": "4005"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 4 Heavy",
+    "Battles": "12,727",
+    "": "3824"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Conqueror",
+    "Battles": "21,595",
+    "": "3998"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv 103-0",
+    "Battles": "9,135",
+    "": "4112"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 13 90",
+    "Battles": "7,298",
+    "": "3820"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UDES 16",
+    "Battles": "7,001",
+    "": "4126"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Controcarro 1 Mk. 2",
+    "Battles": "11,385",
+    "": "3967"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-132A",
+    "Battles": "3,061",
+    "": "4099"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lorr. 40 t",
+    "Battles": "2,610",
+    "": "3793"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion 7/1",
+    "Battles": "8,381",
+    "": "3802"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 45.02 B",
+    "Battles": "9,191",
+    "": "3517"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-54",
+    "Battles": "13,356",
+    "": "3992"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Jagdtiger",
+    "Battles": "12,739",
+    "": "4150"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "CS-59",
+    "Battles": "6,236",
+    "": "4174"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 704",
+    "Battles": "10,073",
+    "": "4310"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-111G FT",
+    "Battles": "3,341",
+    "": "4381"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "212A",
+    "Battles": "7,870",
+    "": "3256"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G.W. Tiger",
+    "Battles": "11,126",
+    "": "3537"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T95",
+    "Battles": "11,407",
+    "": "4149"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M46 Patton",
+    "Battles": "10,706",
+    "": "3910"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M103",
+    "Battles": "16,820",
+    "": "3945"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "E 75",
+    "Battles": "28,142",
+    "": "3667"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "E 50",
+    "Battles": "10,845",
+    "": "3935"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ST-I",
+    "Battles": "10,089",
+    "": "3612"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Foch",
+    "Battles": "5,552",
+    "": "4661"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-10",
+    "Battles": "4,178",
+    "": "3849"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV3805",
+    "Battles": "6,027",
+    "": "3305"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-122-54",
+    "Battles": "6,890",
+    "": "4296"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Hardcase",
+    "Battles": "912",
+    "": "3798"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Conway",
+    "Battles": "14,080",
+    "": "3945"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sharpshooter",
+    "Battles": "1,574",
+    "": "4608"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B-C 155 55",
+    "Battles": "11,100",
+    "": "3611"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard PT A",
+    "Battles": "17,457",
+    "": "4449"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T54E1",
+    "Battles": "9,442",
+    "": "4071"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 30",
+    "Battles": "5,897",
+    "": "4072"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M53/M55",
+    "Battles": "27,730",
+    "": "3641"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WT auf Pz. IV",
+    "Battles": "30,990",
+    "": "4288"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX M4 51",
+    "Battles": "6,689",
+    "": "3938"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 430 II",
+    "Battles": "10,270",
+    "": "4022"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Teefbreaka",
+    "Battles": "7,720",
+    "": "4580"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-54 ltwt.",
+    "Battles": "6,867",
+    "": "3984"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T49",
+    "Battles": "9,398",
+    "": "3802"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ru 251",
+    "Battles": "7,528",
+    "": "4040"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Mäuschen",
+    "Battles": "13,008",
+    "": "3662"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "EBR 90",
+    "Battles": "6,836",
+    "": "3662"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 257",
+    "Battles": "18,330",
+    "": "3651"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 705",
+    "Battles": "12,396",
+    "": "3633"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-3-II",
+    "Battles": "17,117",
+    "": "4225"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 752",
+    "Battles": "2,078",
+    "": "4083"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fraternité Char Mle. 75",
+    "Battles": "629",
+    "": "4149"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Spirit of War Strv K",
+    "Battles": "253",
+    "": "4226"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Lorraine/AMX M4",
+    "Battles": "1,020",
+    "": "4309"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 777 II",
+    "Battles": "1,337",
+    "": "3866"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kunze Panzer",
+    "Battles": "2,392",
+    "": "4947"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kpz 50 t",
+    "Battles": "6,582",
+    "": "4280"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Resilient",
+    "Battles": "138",
+    "": "3080"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV4201 Chieftain Proto",
+    "Battles": "648",
+    "": "3756"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tortoise",
+    "Battles": "12,326",
+    "": "4230"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AAT60",
+    "Battles": "3,095",
+    "": "5311"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Strv K",
+    "Battles": "1,906",
+    "": "4349"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "GSOR",
+    "Battles": "5,402",
+    "": "4412"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Char Futur 4",
+    "Battles": "1,281",
+    "": "4890"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cobra",
+    "Battles": "6,262",
+    "": "4086"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Old Reliable",
+    "Battles": "73",
+    "": "2604"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T 55A",
+    "Battles": "2,430",
+    "": "3896"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AE Phase I",
+    "Battles": "1,060",
+    "": "3816"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B-C 25 t AP",
+    "Battles": "5,224",
+    "": "3898"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Concept 1B",
+    "Battles": "2,599",
+    "": "3854"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fangula™",
+    "Battles": "93",
+    "": "3451"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TL-7 Black",
+    "Battles": "1,619",
+    "": "4903"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bär",
+    "Battles": "12,141",
+    "": "3671"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cobra T54",
+    "Battles": "254",
+    "": "4753"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Double Tap TS-54",
+    "Battles": "955",
+    "": "4173"
+  },
+  {
+    "Tier": "IX",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Arachnid",
+    "Battles": "756",
+    "": "4362"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 59",
+    "Battles": "10,226",
+    "": "3166"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-111",
+    "Battles": "294",
+    "": "2980"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "50TP pr.",
+    "Battles": "2,594",
+    "": "3330"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34-2",
+    "Battles": "4,088",
+    "": "3328"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TVP VTU",
+    "Battles": "7,649",
+    "": "2960"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Emil I",
+    "Battles": "8,532",
+    "": "3350"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "P.44 Pantera",
+    "Battles": "8,603",
+    "": "2942"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "STA-1",
+    "Battles": "5,796",
+    "": "3388"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T34",
+    "Battles": "3,098",
+    "": "3774"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "110",
+    "Battles": "3,890",
+    "": "3274"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "53TP",
+    "Battles": "8,743",
+    "": "3222"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 50 100",
+    "Battles": "9,780",
+    "": "3239"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "TNH 105/1000",
+    "Battles": "8,690",
+    "": "3247"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cruncher",
+    "Battles": "1,333",
+    "": "3296"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Progetto CC55 mod. 54",
+    "Battles": "9,013",
+    "": "3244"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-132",
+    "Battles": "3,796",
+    "": "3526"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Caernarvon",
+    "Battles": "10,841",
+    "": "3053"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-14-2",
+    "Battles": "10,286",
+    "": "2730"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UDES 03",
+    "Battles": "12,463",
+    "": "3433"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-44",
+    "Battles": "10,607",
+    "": "2936"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T32",
+    "Battles": "16,612",
+    "": "3370"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "CS-53",
+    "Battles": "6,400",
+    "": "3096"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SMV CC-67",
+    "Battles": "11,397",
+    "": "3329"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "O-Ho",
+    "Battles": "9,190",
+    "": "3157"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UDES 14 Alt 5",
+    "Battles": "8,773",
+    "": "3352"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiger II",
+    "Battles": "35,342",
+    "": "3232"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-3",
+    "Battles": "18,501",
+    "": "3285"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pershing",
+    "Battles": "9,285",
+    "": "3118"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centurion I",
+    "Battles": "7,445",
+    "": "3153"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ISU-152",
+    "Battles": "15,271",
+    "": "3544"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M40/M43",
+    "Battles": "15,859",
+    "": "2852"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lorr. 155 51",
+    "Battles": "9,698",
+    "": "2572"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ferdinand",
+    "Battles": "7,876",
+    "": "3421"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-111-1G FT",
+    "Battles": "4,239",
+    "": "3445"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T28",
+    "Battles": "9,743",
+    "": "3480"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Panther II",
+    "Battles": "11,237",
+    "": "2997"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AT 15",
+    "Battles": "7,153",
+    "": "3285"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-6",
+    "Battles": "3,568",
+    "": "3511"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Turtle",
+    "Battles": "2,277",
+    "": "3929"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-101",
+    "Battles": "7,046",
+    "": "3640"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 45.02 A",
+    "Battles": "11,916",
+    "": "3405"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-4",
+    "Battles": "12,237",
+    "": "3063"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T28 Prot.",
+    "Battles": "13,857",
+    "": "3350"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "JPanther II",
+    "Battles": "11,917",
+    "": "3322"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Brick",
+    "Battles": "236",
+    "": "3224"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX AC 48",
+    "Battles": "6,522",
+    "": "3451"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV207",
+    "Battles": "6,316",
+    "": "2434"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Obj. 416",
+    "Battles": "7,586",
+    "": "3452"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T26E4",
+    "Battles": "2,356",
+    "": "3499"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Trinity Mk II",
+    "Battles": "2,184",
+    "": "3331"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Indien-Pz.",
+    "Battles": "12,848",
+    "": "3663"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T69",
+    "Battles": "10,366",
+    "": "3391"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Charioteer",
+    "Battles": "14,838",
+    "": "3762"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G.W. Tiger (P)",
+    "Battles": "14,398",
+    "": "2775"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chieftain/T95",
+    "Battles": "496",
+    "": "3229"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 65 t",
+    "Battles": "10,257",
+    "": "3292"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T.A.N.K.",
+    "Battles": "2,681",
+    "": "3518"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Rhm.-B. WT",
+    "Battles": "24,742",
+    "": "3520"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Beach Party",
+    "Battles": "532",
+    "": "3218"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Reaper’s Scythe",
+    "Battles": "1,504",
+    "": "3808"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B-C 12 t",
+    "Battles": "13,715",
+    "": "3268"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M41 Bulldog",
+    "Battles": "10,222",
+    "": "3314"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LTTB",
+    "Battles": "9,138",
+    "": "3378"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lynx 6x6",
+    "Battles": "8,213",
+    "": "3407"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rhino",
+    "Battles": "8,140",
+    "": "3947"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Mantis",
+    "Battles": "26,357",
+    "": "4525"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 100.01 P",
+    "Battles": "17,227",
+    "": "3382"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "HWK 12",
+    "Battles": "9,711",
+    "": "3648"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-M",
+    "Battles": "14,272",
+    "": "3244"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-2-II",
+    "Battles": "26,609",
+    "": "3282"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Liberté",
+    "Battles": "1,611",
+    "": "3790"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "CDC Black",
+    "Battles": "1,933",
+    "": "3959"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH M51",
+    "Battles": "2,774",
+    "": "3268"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH AMX M4 49",
+    "Battles": "1,500",
+    "": "3507"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Nomad",
+    "Battles": "1,024",
+    "": "3871"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Audace",
+    "Battles": "1,351",
+    "": "3703"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH 58",
+    "Battles": "2,522",
+    "": "3536"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Vanguard",
+    "Battles": "13,582",
+    "": "4161"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Object 703 Version II Black Edition",
+    "Battles": "4,561",
+    "": "4572"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Stark Strv S1",
+    "Battles": "1,617",
+    "": "3531"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-34-3 Black",
+    "Battles": "2,262",
+    "": "3617"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ISU-130",
+    "Battles": "644",
+    "": "3825"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Legion",
+    "Battles": "555",
+    "": "3085"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "STA-2 Black",
+    "Battles": "1,615",
+    "": "3837"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Barracuda",
+    "Battles": "853",
+    "": "3512"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Motherland",
+    "Battles": "4,294",
+    "": "3338"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AltProto AMX 30",
+    "Battles": "2,883",
+    "": "4131"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Senshi",
+    "Battles": "4,516",
+    "": "3696"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Draugen",
+    "Battles": "21,334",
+    "": "4096"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Gorynych",
+    "Battles": "4,035",
+    "": "3813"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Earthshaker",
+    "Battles": "20,795",
+    "": "3450"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-6 Black",
+    "Battles": "991",
+    "": "3962"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Löwe Black",
+    "Battles": "3,425",
+    "": "3695"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Yazi",
+    "Battles": "2,115",
+    "": "3847"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Centennial",
+    "Battles": "626",
+    "": "3193"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bofors Tornvagn Black",
+    "Battles": "678",
+    "": "3664"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "King Dragon",
+    "Battles": "4,427",
+    "": "3493"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 59-II",
+    "Battles": "8,391",
+    "": "3391"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Orochi O-Ni",
+    "Battles": "4,580",
+    "": "3137"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fatherland",
+    "Battles": "1,610",
+    "": "3150"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH ISU-130",
+    "Battles": "5,062",
+    "": "3347"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH FV305",
+    "Battles": "1,308",
+    "": "2386"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Glory IS-5",
+    "Battles": "452",
+    "": "2930"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Huntsman",
+    "Battles": "8,373",
+    "": "2743"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "King Tiger",
+    "Battles": "6,554",
+    "": "3623"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T34 Black",
+    "Battles": "1,307",
+    "": "3911"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Höllenhund",
+    "Battles": "2,814",
+    "": "3560"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Vindicator",
+    "Battles": "453",
+    "": "3018"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Volk T-44-100",
+    "Battles": "392",
+    "": "3361"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Vengeance",
+    "Battles": "3,012",
+    "": "3604"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Verzila",
+    "Battles": "578",
+    "": "2955"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ASTRON Rex 105 mm",
+    "Battles": "6,228",
+    "": "4393"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fortress",
+    "Battles": "429",
+    "": "3451"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Atomic",
+    "Battles": "2,124",
+    "": "3525"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Scourge",
+    "Battles": "1,777",
+    "": "3463"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Wraith",
+    "Battles": "902",
+    "": "3655"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bizon T-103",
+    "Battles": "592",
+    "": "3528"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Iron Rain",
+    "Battles": "16,628",
+    "": "3989"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Panzerknacker",
+    "Battles": "3,766",
+    "": "3544"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Águila",
+    "Battles": "4,380",
+    "": "3363"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Shashka",
+    "Battles": "4,725",
+    "": "3903"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Paladin",
+    "Battles": "3,973",
+    "": "3552"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Inferno",
+    "Battles": "1,931",
+    "": "3916"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Capt. King Tiger",
+    "Battles": "2,635",
+    "": "3119"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bellerophon",
+    "Battles": "4,245",
+    "": "3346"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH Chrysler K",
+    "Battles": "5,582",
+    "": "3519"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Eradicator",
+    "Battles": "4,344",
+    "": "3778"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Deathstalker",
+    "Battles": "718",
+    "": "3278"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Terrapin",
+    "Battles": "1,505",
+    "": "3501"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bog Horror",
+    "Battles": "1,936",
+    "": "3341"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Diamondback",
+    "Battles": "3,324",
+    "": "3636"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T32-A Proto",
+    "Battles": "2,624",
+    "": "3853"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Minotaur",
+    "Battles": "3,229",
+    "": "3822"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Falcon T92",
+    "Battles": "4,962",
+    "": "3570"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Hydra",
+    "Battles": "6,407",
+    "": "3940"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Stockade",
+    "Battles": "3,501",
+    "": "3419"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "K-91-2",
+    "Battles": "1,519",
+    "": "3516"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Orthrus KV-4 KTTS",
+    "Battles": "976",
+    "": "3466"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "EBR 75 Mle 1954",
+    "Battles": "1,124",
+    "": "3109"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SU-130PM",
+    "Battles": "26,878",
+    "": "3710"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "LT-432",
+    "Battles": "1,806",
+    "": "3560"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kampfpanzer 07 RH",
+    "Battles": "2,641",
+    "": "3581"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M48 RPz",
+    "Battles": "25,218",
+    "": "2987"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "E 75 TS",
+    "Battles": "829",
+    "": "3367"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Guardian STG",
+    "Battles": "3,871",
+    "": "3440"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HWK 30",
+    "Battles": "1,484",
+    "": "3305"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "STG",
+    "Battles": "2,746",
+    "": "3269"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Mauerbrecher",
+    "Battles": "4,221",
+    "": "3322"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-103",
+    "Battles": "256",
+    "": "2583"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KanJPz 105",
+    "Battles": "5,270",
+    "": "3948"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Defender",
+    "Battles": "3,368",
+    "": "3573"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "VK 168.01 P",
+    "Battles": "1,798",
+    "": "3272"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 252U",
+    "Battles": "646",
+    "": "3494"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Skorpion G",
+    "Battles": "6,774",
+    "": "3732"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SMV CC-64 Vipera",
+    "Battles": "1,030",
+    "": "3317"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T42",
+    "Battles": "2,336",
+    "": "3246"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Škoda T 56",
+    "Battles": "7,451",
+    "": "4059"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "CS-52 LIS",
+    "Battles": "4,085",
+    "": "3741"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bisonte C45",
+    "Battles": "2,360",
+    "": "3533"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T77",
+    "Battles": "10,147",
+    "": "3454"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Progetto 46",
+    "Battles": "1,465",
+    "": "3696"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Caliban",
+    "Battles": "3,366",
+    "": "3537"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Charlemagne",
+    "Battles": "6,552",
+    "": "3674"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "STA-2",
+    "Battles": "1,643",
+    "": "3532"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Strv S1",
+    "Battles": "1,399",
+    "": "3679"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "GSOR 1008",
+    "Battles": "21,260",
+    "": "3666"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Strv 81",
+    "Battles": "369",
+    "": "3009"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M6A2E1",
+    "Battles": "1,474",
+    "": "3358"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "The Nameless",
+    "Battles": "392",
+    "": "3111"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "P:Victoria",
+    "Battles": "3,469",
+    "": "3287"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Edelweiss",
+    "Battles": "345",
+    "": "2850"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "EMIL 1951",
+    "Battles": "5,608",
+    "": "3502"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Lansen C",
+    "Battles": "4,840",
+    "": "3372"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KV-5",
+    "Battles": "1,935",
+    "": "3402"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T95E2",
+    "Battles": "671",
+    "": "3107"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Löwe",
+    "Battles": "2,066",
+    "": "3299"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "JgTig.8,8 cm",
+    "Battles": "2,761",
+    "": "3715"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV4202 (P)",
+    "Battles": "2,688",
+    "": "3198"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "VK 75.01 K",
+    "Battles": "4,216",
+    "": "3073"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Icebreaker",
+    "Battles": "2,910",
+    "": "3391"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Caernarvon AX",
+    "Battles": "2,679",
+    "": "3361"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Dread Dozer",
+    "Battles": "63",
+    "": "2307"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Centurion 5/1",
+    "Battles": "2,612",
+    "": "3030"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M46 KR",
+    "Battles": "18,303",
+    "": "3090"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T25 Pilot 1",
+    "Battles": "991",
+    "": "3075"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chimera",
+    "Battles": "15,975",
+    "": "3036"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T92",
+    "Battles": "5,896",
+    "": "3428"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Senlac",
+    "Battles": "1,090",
+    "": "3304"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chrysler K",
+    "Battles": "1,447",
+    "": "3645"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-5",
+    "Battles": "277",
+    "": "2810"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T26E5",
+    "Battles": "1,175",
+    "": "3319"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Patriot",
+    "Battles": "3,182",
+    "": "3384"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LHMTV",
+    "Battles": "5,835",
+    "": "3661"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-54 mod. 1",
+    "Battles": "1,455",
+    "": "3276"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Becky Lynch",
+    "Battles": "1,010",
+    "": "3242"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Panther 8,8",
+    "Battles": "7,356",
+    "": "3548"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bourrasque",
+    "Battles": "28,485",
+    "": "4663"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-3 auto",
+    "Battles": "1,966",
+    "": "3156"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TS-5",
+    "Battles": "2,954",
+    "": "3662"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ShPTK-TVP 100",
+    "Battles": "3,835",
+    "": "3498"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ELC EVEN 90",
+    "Battles": "5,536",
+    "": "4014"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX Cda 105",
+    "Battles": "1,077",
+    "": "3503"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-44-100",
+    "Battles": "1,219",
+    "": "3039"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KanJPz",
+    "Battles": "658",
+    "": "3447"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T54E2",
+    "Battles": "5,982",
+    "": "4229"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M41D",
+    "Battles": "2,752",
+    "": "3281"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Égalité",
+    "Battles": "1,058",
+    "": "3369"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ragnarok",
+    "Battles": "11,229",
+    "": "4338"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KV-4 KTTS",
+    "Battles": "5,676",
+    "": "3069"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TL-1 LPC",
+    "Battles": "4,884",
+    "": "3593"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Somua SM",
+    "Battles": "2,111",
+    "": "3841"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Skorpion",
+    "Battles": "3,701",
+    "": "3733"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "General",
+    "Battles": "2,394",
+    "": "3686"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kirovets-1",
+    "Battles": "2,934",
+    "": "3439"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX M4 49",
+    "Battles": "180",
+    "": "2871"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M4A1 Rev.",
+    "Battles": "757",
+    "": "3097"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KV-4 Kresl.",
+    "Battles": "164",
+    "": "2587"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "WZ-120-1G FT",
+    "Battles": "828",
+    "": "3849"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX CDC",
+    "Battles": "1,327",
+    "": "3343"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "59-Patton",
+    "Battles": "863",
+    "": "2835"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M 41 90 mm",
+    "Battles": "1,843",
+    "": "3451"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-34-3",
+    "Battles": "7,372",
+    "": "3420"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FCM 50 t",
+    "Battles": "357",
+    "": "3750"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ariete P. 46",
+    "Battles": "3,074",
+    "": "3910"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. 58 Mutz",
+    "Battles": "6,173",
+    "": "3444"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Striker",
+    "Battles": "1,227",
+    "": "4087"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "112",
+    "Battles": "27,964",
+    "": "2899"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Freedom",
+    "Battles": "3,144",
+    "": "3361"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Alpine Tiger",
+    "Battles": "973",
+    "": "3435"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M41B Brazil",
+    "Battles": "1,061",
+    "": "3501"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "The Equalizer",
+    "Battles": "11,840",
+    "": "3281"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tiger Shark",
+    "Battles": "4,172",
+    "": "3702"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Demolisher",
+    "Battles": "6,513",
+    "": "3785"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Trail Blazer",
+    "Battles": "1,601",
+    "": "4128"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sgt. Slaughter",
+    "Battles": "296",
+    "": "4277"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fast Track",
+    "Battles": "42",
+    "": "3786"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Stone Cold",
+    "Battles": "3,229",
+    "": "4067"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rip Rod™",
+    "Battles": "37",
+    "": "3662"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M48A2 Patton",
+    "Battles": "2,298",
+    "": "3135"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rodger Dodger™",
+    "Battles": "1,044",
+    "": "3465"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Undertaker",
+    "Battles": "205",
+    "": "2912"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sturmtiger (P)",
+    "Battles": "19,745",
+    "": "2996"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bone Shaker™",
+    "Battles": "223",
+    "": "2865"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMBT",
+    "Battles": "4,904",
+    "": "4099"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "NM 116 Panserjager",
+    "Battles": "28,438",
+    "": "4351"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T41E1",
+    "Battles": "4,481",
+    "": "4047"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Soldier On M67",
+    "Battles": "786",
+    "": "3058"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Roswell XM66F",
+    "Battles": "2,639",
+    "": "3811"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ISU-152K",
+    "Battles": "7,179",
+    "": "3824"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Senjutsu TO-55",
+    "Battles": "2,115",
+    "": "4257"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Asterion",
+    "Battles": "1,163",
+    "": "3771"
+  },
+  {
+    "Tier": "VIII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Death Chariot",
+    "Battles": "1,416",
+    "": "3463"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 62",
+    "Battles": "3,457",
+    "": "2496"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS",
+    "Battles": "20,169",
+    "": "2507"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiger I",
+    "Battles": "34,939",
+    "": "2720"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34-1",
+    "Battles": "5,135",
+    "": "2706"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-Ri",
+    "Battles": "4,929",
+    "": "2286"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Panther",
+    "Battles": "11,470",
+    "": "2477"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T20",
+    "Battles": "9,508",
+    "": "2542"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34/100",
+    "Battles": "5,614",
+    "": "2427"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leo",
+    "Battles": "10,080",
+    "": "2506"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "S-51",
+    "Battles": "7,261",
+    "": "2242"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "P.43 ter",
+    "Battles": "7,057",
+    "": "2600"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-152",
+    "Battles": "10,435",
+    "": "2561"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T23E3",
+    "Battles": "1,609",
+    "": "2815"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "45TP",
+    "Battles": "7,854",
+    "": "2689"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Black Prince",
+    "Battles": "9,817",
+    "": "2435"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Carro d'assalto P.88",
+    "Battles": "6,528",
+    "": "2921"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-131",
+    "Battles": "2,334",
+    "": "2756"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "IS-2",
+    "Battles": "5,303",
+    "": "2818"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Vz. 44-1",
+    "Battles": "7,661",
+    "": "2701"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "JPanther",
+    "Battles": "13,372",
+    "": "2760"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T29",
+    "Battles": "22,494",
+    "": "2870"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ikv 90 B",
+    "Battles": "8,539",
+    "": "2623"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 30.02 D",
+    "Battles": "8,518",
+    "": "2558"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "CS-44",
+    "Battles": "6,279",
+    "": "2699"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SMV CC-56",
+    "Battles": "9,552",
+    "": "2514"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 13 75",
+    "Battles": "9,305",
+    "": "2613"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "O-Ni",
+    "Battles": "9,034",
+    "": "2661"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Slapjack",
+    "Battles": "4,690",
+    "": "3249"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Comet",
+    "Battles": "7,356",
+    "": "2389"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-3",
+    "Battles": "19,843",
+    "": "2676"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-43",
+    "Battles": "9,110",
+    "": "2411"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX M4 45",
+    "Battles": "10,178",
+    "": "2734"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lorr. 155 50",
+    "Battles": "8,779",
+    "": "2167"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34-2G FT",
+    "Battles": "3,425",
+    "": "2781"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M12",
+    "Battles": "15,253",
+    "": "2459"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-13",
+    "Battles": "1,917",
+    "": "2358"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G.W. Panther",
+    "Battles": "14,322",
+    "": "2258"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T25 AT",
+    "Battles": "4,337",
+    "": "2522"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AT 7",
+    "Battles": "6,708",
+    "": "2323"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-100M1",
+    "Battles": "5,219",
+    "": "2754"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Tiger (P)",
+    "Battles": "24,444",
+    "": "2821"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX AC 46",
+    "Battles": "5,659",
+    "": "2462"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "St. Emil",
+    "Battles": "13,668",
+    "": "2504"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T25/2",
+    "Battles": "14,026",
+    "": "2829"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Crusader SP",
+    "Battles": "4,508",
+    "": "2041"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Boulder",
+    "Battles": "299",
+    "": "2741"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "A-44",
+    "Battles": "6,594",
+    "": "2502"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bigtop",
+    "Battles": "643",
+    "": "2517"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Challenger",
+    "Battles": "9,480",
+    "": "2771"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Aufkl.Panther",
+    "Battles": "1,399",
+    "": "2784"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Skullcap",
+    "Battles": "407",
+    "": "2061"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "RamRod",
+    "Battles": "437",
+    "": "2594"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Jammer",
+    "Battles": "371",
+    "": "2293"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T71 DA",
+    "Battles": "6,930",
+    "": "2766"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-14-1",
+    "Battles": "7,871",
+    "": "2257"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Banana Buster",
+    "Battles": "779",
+    "": "2725"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "EBR Hotch.",
+    "Battles": "9,406",
+    "": "2524"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sp.Pz. I C",
+    "Battles": "8,576",
+    "": "2823"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LTG",
+    "Battles": "7,244",
+    "": "2868"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T71 CMCD",
+    "Battles": "2,760",
+    "": "2504"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX 13 57",
+    "Battles": "2,113",
+    "": "3063"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH AMX 13 57",
+    "Battles": "2,181",
+    "": "3237"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Hammer",
+    "Battles": "7,197",
+    "": "3053"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kraft's Panther",
+    "Battles": "3,339",
+    "": "2369"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Dragon",
+    "Battles": "921",
+    "": "2713"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV201 Black",
+    "Battles": "456",
+    "": "2825"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "The Warlord",
+    "Battles": "649",
+    "": "2364"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tiger 131",
+    "Battles": "11,849",
+    "": "2772"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Champion",
+    "Battles": "540",
+    "": "2454"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Lycan",
+    "Battles": "4,025",
+    "": "2929"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Adler VK 45.03",
+    "Battles": "803",
+    "": "2880"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Banshee",
+    "Battles": "523",
+    "": "2831"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Slayer",
+    "Battles": "1,103",
+    "": "3174"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Jackal",
+    "Battles": "1,188",
+    "": "2528"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bear",
+    "Battles": "981",
+    "": "2738"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Javelin",
+    "Battles": "6,172",
+    "": "3047"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-VI-100",
+    "Battles": "533",
+    "": "3071"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Dreadnought",
+    "Battles": "26,322",
+    "": "3383"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Minuteman",
+    "Battles": "2,730",
+    "": "3122"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Talon",
+    "Battles": "3,159",
+    "": "2907"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-2M",
+    "Battles": "1,621",
+    "": "2805"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KV-122",
+    "Battles": "605",
+    "": "2508"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Lioness Škoda T 45",
+    "Battles": "3,755",
+    "": "2930"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tiger I A18",
+    "Battles": "1,547",
+    "": "2770"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AT 15A",
+    "Battles": "535",
+    "": "2589"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV201 (A45)",
+    "Battles": "918",
+    "": "2425"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SU-122-44",
+    "Battles": "691",
+    "": "3438"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "E 25",
+    "Battles": "4,518",
+    "": "3480"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Scorpion",
+    "Battles": "4,361",
+    "": "3129"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T28 HTC",
+    "Battles": "1,693",
+    "": "2762"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. V/M10",
+    "Battles": "499",
+    "": "2167"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "IS-2",
+    "Battles": "1,827",
+    "": "2947"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ISU-122S",
+    "Battles": "472",
+    "": "2827"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Setter",
+    "Battles": "6,073",
+    "": "2820"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Eagle 7",
+    "Battles": "1,098",
+    "": "2786"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FV3903 Churchill VII AVRE",
+    "Battles": "5,239",
+    "": "2910"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Steyr WT",
+    "Battles": "1,143",
+    "": "3127"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Super Hellcat",
+    "Battles": "7,625",
+    "": "3565"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "VK 45.03",
+    "Battles": "1,299",
+    "": "3224"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AMX Chaffee",
+    "Battles": "3,203",
+    "": "2882"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "The Creature",
+    "Battles": "1,071",
+    "": "2789"
+  },
+  {
+    "Tier": "VII",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sturmpanzer",
+    "Battles": "16,044",
+    "": "2598"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pudel",
+    "Battles": "730",
+    "": "2289"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Hummel",
+    "Battles": "10,101",
+    "": "1690"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M6",
+    "Battles": "10,739",
+    "": "2484"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cromwell",
+    "Battles": "10,480",
+    "": "2206"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M4A3E8",
+    "Battles": "6,770",
+    "": "1831"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Škoda T 25",
+    "Battles": "8,056",
+    "": "2121"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv 74",
+    "Battles": "5,578",
+    "": "1960"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Jg.Pz. IV",
+    "Battles": "9,604",
+    "": "2125"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "P.43 bis",
+    "Battles": "8,898",
+    "": "2005"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-To",
+    "Battles": "3,766",
+    "": "1961"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 36.01 H",
+    "Battles": "18,678",
+    "": "2210"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "40TP",
+    "Battles": "5,776",
+    "": "1952"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34-85",
+    "Battles": "14,098",
+    "": "1922"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ARL 44",
+    "Battles": "10,324",
+    "": "2333"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-85",
+    "Battles": "18,412",
+    "": "2071"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-100",
+    "Battles": "10,513",
+    "": "2140"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Firefly",
+    "Battles": "3,923",
+    "": "1864"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ikv 65 II",
+    "Battles": "6,150",
+    "": "2181"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B.U.G.I.",
+    "Battles": "4,734",
+    "": "2218"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Semovente M43 Bassotto",
+    "Battles": "8,691",
+    "": "2131"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 13 F3",
+    "Battles": "7,551",
+    "": "1735"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Churchill VII",
+    "Battles": "8,161",
+    "": "1817"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "59-16",
+    "Battles": "2,234",
+    "": "2543"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Reach",
+    "Battles": "2,898",
+    "": "2492"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 58",
+    "Battles": "13,096",
+    "": "2177"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "O-I",
+    "Battles": "9,340",
+    "": "2075"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-8",
+    "Battles": "4,900",
+    "": "1482"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 12 t",
+    "Battles": "7,449",
+    "": "2252"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 30.01 P",
+    "Battles": "16,382",
+    "": "2014"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Jackson",
+    "Battles": "5,899",
+    "": "2186"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "WZ-131G FT",
+    "Battles": "3,192",
+    "": "2171"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AT 8",
+    "Battles": "4,375",
+    "": "2007"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-50-2",
+    "Battles": "2,629",
+    "": "3149"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Churchill GC",
+    "Battles": "2,599",
+    "": "2030"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 28.01",
+    "Battles": "7,411",
+    "": "2320"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M4A3E2",
+    "Battles": "7,316",
+    "": "2114"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-2",
+    "Battles": "16,680",
+    "": "2363"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-150",
+    "Battles": "11,491",
+    "": "1995"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Absolution",
+    "Battles": "12,963",
+    "": "2728"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Hellcat",
+    "Battles": "18,036",
+    "": "2642"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ARL V39",
+    "Battles": "4,832",
+    "": "2080"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Nashorn",
+    "Battles": "10,008",
+    "": "2280"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FV304",
+    "Battles": "6,128",
+    "": "1472"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "A-43",
+    "Battles": "4,748",
+    "": "2126"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Plaguebringer",
+    "Battles": "2,434",
+    "": "2890"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Stinger",
+    "Battles": "1,231",
+    "": "2906"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 30.01 D",
+    "Battles": "8,889",
+    "": "2050"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Achilles",
+    "Battles": "5,380",
+    "": "2215"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T21",
+    "Battles": "6,121",
+    "": "2359"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SpyGlass",
+    "Battles": "1,056",
+    "": "2454"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 30.02 M",
+    "Battles": "9,935",
+    "": "2068"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M44",
+    "Battles": "17,293",
+    "": "1865"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "MT-25",
+    "Battles": "6,721",
+    "": "2288"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T37",
+    "Battles": "6,860",
+    "": "2209"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMD 178B",
+    "Battles": "8,950",
+    "": "2158"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Knight",
+    "Battles": "1,515",
+    "": "2574"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kaiju",
+    "Battles": "1,018",
+    "": "2275"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Snakebite",
+    "Battles": "3,863",
+    "": "2662"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Boilermaker",
+    "Battles": "1,627",
+    "": "2420"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "British Bulldog",
+    "Battles": "3,548",
+    "": "2573"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sentinel AC IV",
+    "Battles": "1,408",
+    "": "2262"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HMH T-34-85",
+    "Battles": "1,908",
+    "": "2875"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Citadel",
+    "Battles": "2,732",
+    "": "2346"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sturm VK 36.01",
+    "Battles": "5,520",
+    "": "2287"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rover-237",
+    "Battles": "13,380",
+    "": "2965"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Hellcat 105",
+    "Battles": "8,772",
+    "": "2884"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Loza's M4-A2",
+    "Battles": "1,632",
+    "": "2072"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Super Chaffee",
+    "Battles": "3,647",
+    "": "2774"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Wojtek Pz.V",
+    "Battles": "729",
+    "": "2184"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Škoda T 40",
+    "Battles": "1,212",
+    "": "2076"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Strv m/42-57",
+    "Battles": "1,319",
+    "": "2490"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "HT No. VI",
+    "Battles": "2,891",
+    "": "2352"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tiger 217",
+    "Battles": "4,415",
+    "": "2171"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TOG II*",
+    "Battles": "1,395",
+    "": "2446"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SU-100Y",
+    "Battles": "1,046",
+    "": "2347"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Cromwell B",
+    "Battles": "2,202",
+    "": "2881"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "AC 4 Exp.",
+    "Battles": "1,267",
+    "": "2373"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "D. Max",
+    "Battles": "1,321",
+    "": "2434"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Firefly VC",
+    "Battles": "867",
+    "": "2178"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. IV S.",
+    "Battles": "650",
+    "": "2114"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Excalibur",
+    "Battles": "898",
+    "": "2408"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-34-85M",
+    "Battles": "5,438",
+    "": "2398"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-34-88",
+    "Battles": "12,824",
+    "": "2482"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "A43 BP",
+    "Battles": "3,874",
+    "": "2226"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Rudy",
+    "Battles": "1,123",
+    "": "2335"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Thunderbolt",
+    "Battles": "4,453",
+    "": "2348"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Obj. 244",
+    "Battles": "2,222",
+    "": "2132"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bretagne",
+    "Battles": "1,642",
+    "": "2377"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M4A1 FL 10",
+    "Battles": "1,869",
+    "": "2289"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T78",
+    "Battles": "2,910",
+    "": "2874"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Žižka",
+    "Battles": "519",
+    "": "2208"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "ELC AMX 90",
+    "Battles": "1,897",
+    "": "3410"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fury",
+    "Battles": "3,723",
+    "": "2230"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Type 64",
+    "Battles": "2,302",
+    "": "2624"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Brummbär",
+    "Battles": "12,123",
+    "": "1945"
+  },
+  {
+    "Tier": "VI",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T34 Calliope",
+    "Battles": "10,287",
+    "": "2236"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-34",
+    "Battles": "13,757",
+    "": "1600"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T14",
+    "Battles": "2,942",
+    "": "1903"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-85",
+    "Battles": "7,606",
+    "": "1586"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "StuG III G",
+    "Battles": "9,688",
+    "": "1708"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M4",
+    "Battles": "11,795",
+    "": "1779"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Škoda T 24",
+    "Battles": "3,737",
+    "": "1477"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv m/42",
+    "Battles": "3,624",
+    "": "1495"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-Nu",
+    "Battles": "3,224",
+    "": "1614"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "P.43",
+    "Battles": "4,983",
+    "": "1559"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "leFH18B2",
+    "Battles": "3,371",
+    "": "1722"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Crusader",
+    "Battles": "4,882",
+    "": "1563"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "25TP",
+    "Battles": "3,880",
+    "": "1734"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 30.01 H",
+    "Battles": "16,362",
+    "": "1723"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Churchill I",
+    "Battles": "7,814",
+    "": "1670"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SmoothMan",
+    "Battles": "1,346",
+    "": "1546"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T1 Heavy",
+    "Battles": "10,108",
+    "": "1840"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ikv 103",
+    "Battles": "5,510",
+    "": "1442"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "DS PZInz",
+    "Battles": "3,617",
+    "": "1754"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M41 HMC",
+    "Battles": "10,474",
+    "": "1446"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 13 AM",
+    "Battles": "4,397",
+    "": "1224"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G1 R",
+    "Battles": "1,771",
+    "": "1605"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type T-34",
+    "Battles": "6,979",
+    "": "1723"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Leopard",
+    "Battles": "10,748",
+    "": "2001"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M7",
+    "Battles": "4,976",
+    "": "1744"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Grille",
+    "Battles": "8,522",
+    "": "1373"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "O-I Exp.",
+    "Battles": "7,851",
+    "": "1770"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Semovente M41",
+    "Battles": "7,104",
+    "": "1567"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. III/IV",
+    "Battles": "6,444",
+    "": "1641"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BDR G1 B",
+    "Battles": "4,468",
+    "": "1773"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Wolverine",
+    "Battles": "6,688",
+    "": "1838"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "60G FT",
+    "Battles": "2,576",
+    "": "1678"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AT 2",
+    "Battles": "3,428",
+    "": "1556"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Stubbs",
+    "Battles": "757",
+    "": "2155"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-50",
+    "Battles": "4,363",
+    "": "1953"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chaffee",
+    "Battles": "7,610",
+    "": "2027"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "S35 CA",
+    "Battles": "3,793",
+    "": "1904"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T67",
+    "Battles": "13,189",
+    "": "2134"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bishop",
+    "Battles": "3,448",
+    "": "1044"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bulwark",
+    "Battles": "1,746",
+    "": "1828"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-1",
+    "Battles": "15,102",
+    "": "1704"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M4 Improved",
+    "Battles": "2,428",
+    "": "1736"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sherman III",
+    "Battles": "2,687",
+    "": "1719"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Archer",
+    "Battles": "3,649",
+    "": "1528"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Deadbolt",
+    "Battles": "885",
+    "": "1853"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX ELC bis",
+    "Battles": "10,539",
+    "": "2108"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LongBomb",
+    "Battles": "996",
+    "": "1649"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Centrifuge",
+    "Battles": "592",
+    "": "2031"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz.Sfl. IVc",
+    "Battles": "10,506",
+    "": "1839"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-122A",
+    "Battles": "4,567",
+    "": "1221"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. IV H",
+    "Battles": "12,397",
+    "": "1632"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "KV-1S",
+    "Battles": "11,580",
+    "": "1771"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "GuP",
+    "Battles": "6,646",
+    "": "1984"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Captured KV-1",
+    "Battles": "13,436",
+    "": "2189"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Bogatyr",
+    "Battles": "5,523",
+    "": "1967"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "The Hidden",
+    "Battles": "1,338",
+    "": "2020"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FG T-34",
+    "Battles": "1,231",
+    "": "2043"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Defiance",
+    "Battles": "2,256",
+    "": "1710"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Grizzly I",
+    "Battles": "546",
+    "": "1656"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Frostbite",
+    "Battles": "2,068",
+    "": "1813"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Champion M4",
+    "Battles": "183",
+    "": "1675"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kraft’s Pz. IV",
+    "Battles": "581",
+    "": "1699"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Churchill Oke",
+    "Battles": "2,545",
+    "": "2118"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-34S",
+    "Battles": "1,677",
+    "": "1834"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Matilda IV",
+    "Battles": "859",
+    "": "1797"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. V/IV",
+    "Battles": "14,279",
+    "": "2419"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Chi-Nu Kai",
+    "Battles": "1,047",
+    "": "1949"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Churchill III",
+    "Battles": "5,404",
+    "": "1920"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ram II",
+    "Battles": "2,248",
+    "": "1766"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M4A2E4",
+    "Battles": "753",
+    "": "1777"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Matilda BP",
+    "Battles": "817",
+    "": "1695"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SU-85I",
+    "Battles": "871",
+    "": "1938"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "KV-220-2",
+    "Battles": "4,323",
+    "": "1852"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Excelsior",
+    "Battles": "1,696",
+    "": "1916"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. T 25",
+    "Battles": "1,506",
+    "": "1824"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. IV Hyd.",
+    "Battles": "10,811",
+    "": "1895"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "VK 65.01 (H)",
+    "Battles": "972",
+    "": "1813"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Valiant",
+    "Battles": "1,063",
+    "": "1973"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "StuG IV",
+    "Battles": "858",
+    "": "1717"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M10 RBFM",
+    "Battles": "108",
+    "": "2020"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. III K",
+    "Battles": "2,004",
+    "": "1852"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Turán III PT",
+    "Battles": "1,578",
+    "": "1554"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ripper",
+    "Battles": "1,524",
+    "": "1755"
+  },
+  {
+    "Tier": "V",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "StuIG 33 B",
+    "Battles": "8,940",
+    "": "1350"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bucket",
+    "Battles": "4,445",
+    "": "2140"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Matilda",
+    "Battles": "35,002",
+    "": "1937"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "ST vz. 39",
+    "Battles": "2,693",
+    "": "1530"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lago",
+    "Battles": "3,320",
+    "": "1625"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "B1",
+    "Battles": "3,857",
+    "": "1550"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "P26/40",
+    "Battles": "5,316",
+    "": "1801"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-28",
+    "Battles": "12,907",
+    "": "1790"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Grant",
+    "Battles": "61",
+    "": "1369"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-He",
+    "Battles": "2,892",
+    "": "1710"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Hetzer",
+    "Battles": "21,231",
+    "": "1956"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "14TP",
+    "Battles": "3,210",
+    "": "1269"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "A-20",
+    "Battles": "13,549",
+    "": "1392"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 40",
+    "Battles": "4,740",
+    "": "1376"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ke-Ho",
+    "Battles": "1,713",
+    "": "1786"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M3 Lee",
+    "Battles": "4,366",
+    "": "1569"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M5A1 Stuart",
+    "Battles": "4,772",
+    "": "1525"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sav m/43",
+    "Battles": "5,735",
+    "": "1622"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. III J",
+    "Battles": "26,282",
+    "": "2042"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 95",
+    "Battles": "9,088",
+    "": "1889"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "St.Pz. II",
+    "Battles": "561",
+    "": "1454"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M37",
+    "Battles": "6,706",
+    "": "1278"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-5",
+    "Battles": "4,178",
+    "": "1210"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Valentine",
+    "Battles": "5,637",
+    "": "1403"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M5 Stuart",
+    "Battles": "9,128",
+    "": "1376"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Luchs",
+    "Battles": "18,408",
+    "": "1826"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Covenanter",
+    "Battles": "4,965",
+    "": "1532"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Roundabout",
+    "Battles": "2,704",
+    "": "2057"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-85B",
+    "Battles": "7,481",
+    "": "1875"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-76G FT",
+    "Battles": "3,788",
+    "": "2045"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T40",
+    "Battles": "10,040",
+    "": "1861"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. 38 nA",
+    "Battles": "927",
+    "": "1807"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lawgiver",
+    "Battles": "392",
+    "": "1514"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Alecto",
+    "Battles": "4,771",
+    "": "1686"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SAu 40",
+    "Battles": "3,322",
+    "": "1695"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M8A1",
+    "Battles": "15,904",
+    "": "1955"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Birch Gun",
+    "Battles": "6,604",
+    "": "1364"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Needle",
+    "Battles": "8,391",
+    "": "1933"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Marder 38T",
+    "Battles": "14,072",
+    "": "1905"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "D.W. 2",
+    "Battles": "23,444",
+    "": "1962"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VK 20.01 D",
+    "Battles": "14,519",
+    "": "2163"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 105 AM",
+    "Battles": "4,892",
+    "": "1344"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SARL 42",
+    "Battles": "1,836",
+    "": "1603"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz.Sfl. IVb",
+    "Battles": "11,000",
+    "": "1457"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-80",
+    "Battles": "176",
+    "": "1269"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. IV D",
+    "Battles": "9,716",
+    "": "1696"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "StuG III B",
+    "Battles": "11,930",
+    "": "1679"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T82 HMC",
+    "Battles": "490",
+    "": "1273"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Honor T-28E",
+    "Battles": "10,170",
+    "": "2070"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Vanquisher AC I",
+    "Battles": "3,470",
+    "": "1880"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "HMC M8",
+    "Battles": "35,150",
+    "": "2037"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. B2",
+    "Battles": "31,520",
+    "": "1678"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Valentine II",
+    "Battles": "2,220",
+    "": "1566"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sentinel",
+    "Battles": "4,497",
+    "": "1866"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "A-32",
+    "Battles": "2,439",
+    "": "1898"
+  },
+  {
+    "Tier": "IV",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-28E F-30",
+    "Battles": "7,756",
+    "": "2154"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M3 Stuart",
+    "Battles": "12,720",
+    "": "1021"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "D2",
+    "Battles": "59",
+    "": "877"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Thresher",
+    "Battles": "6,380",
+    "": "1689"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LT vz. 38",
+    "Battles": "1,637",
+    "": "1061"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv m/40L",
+    "Battles": "1,383",
+    "": "1147"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BT-7",
+    "Battles": "10,966",
+    "": "933"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M15/42",
+    "Battles": "2,147",
+    "": "1290"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Stuart I-IV",
+    "Battles": "95",
+    "": "888"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "10TP",
+    "Battles": "1,528",
+    "": "1136"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-Ha",
+    "Battles": "1,707",
+    "": "1292"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "FCM36Pak40",
+    "Battles": "4,577",
+    "": "1666"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Medium III",
+    "Battles": "2,444",
+    "": "1305"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ke-Ni",
+    "Battles": "1,062",
+    "": "1041"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Bison",
+    "Battles": "270",
+    "": "1263"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ikv 72",
+    "Battles": "2,770",
+    "": "1385"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-46",
+    "Battles": "4,627",
+    "": "1232"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. 38 (t)",
+    "Battles": "858",
+    "": "1293"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Lorr. 39L AM",
+    "Battles": "1,715",
+    "": "1259"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Sexton II",
+    "Battles": "4,850",
+    "": "1188"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M7 Priest",
+    "Battles": "10,364",
+    "": "1203"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-Ha",
+    "Battles": "1,885",
+    "": "1298"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Type 91",
+    "Battles": "4,402",
+    "": "1472"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. III E",
+    "Battles": "1,043",
+    "": "1332"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M2 Medium",
+    "Battles": "8,474",
+    "": "1445"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Wespe",
+    "Battles": "8,383",
+    "": "1256"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AMX 38",
+    "Battles": "1,293",
+    "": "1051"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-76M",
+    "Battles": "4,080",
+    "": "1387"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T56 GMC",
+    "Battles": "6,473",
+    "": "1417"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Marder II",
+    "Battles": "6,830",
+    "": "1353"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M3G FT",
+    "Battles": "2,260",
+    "": "1385"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cruiser II",
+    "Battles": "4,021",
+    "": "1386"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cruiser IV",
+    "Battles": "3,999",
+    "": "1337"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-26",
+    "Battles": "4,606",
+    "": "1100"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Valentine AT",
+    "Battles": "2,903",
+    "": "1359"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UE 57",
+    "Battles": "2,150",
+    "": "1444"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Caboose",
+    "Battles": "667",
+    "": "1240"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. I C",
+    "Battles": "24,283",
+    "": "1238"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. II G",
+    "Battles": "671",
+    "": "1393"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Somua S35",
+    "Battles": "3,123",
+    "": "1285"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-70",
+    "Battles": "173",
+    "": "1161"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. IV A",
+    "Battles": "7,064",
+    "": "1294"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T18 HMC",
+    "Battles": "393",
+    "": "1180"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "BT-5",
+    "Battles": "3,457",
+    "": "1159"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. II J PS",
+    "Battles": "625",
+    "": "1042"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Locust-PS",
+    "Battles": "302",
+    "": "1154"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Toldi III",
+    "Battles": "674",
+    "": "1242"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Raseiniai",
+    "Battles": "1,030",
+    "": "1206"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Blitzen",
+    "Battles": "27,592",
+    "": "1884"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Father Frost",
+    "Battles": "1,899",
+    "": "1152"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ironclad",
+    "Battles": "1,659",
+    "": "1351"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz.Kpfw. M 15",
+    "Battles": "2,659",
+    "": "1155"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Т-116",
+    "Battles": "1,174",
+    "": "1156"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-29",
+    "Battles": "2,140",
+    "": "1332"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Lago M38",
+    "Battles": "4,732",
+    "": "1319"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. II J",
+    "Battles": "1,421",
+    "": "1023"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ke-Ni Otsu",
+    "Battles": "2,146",
+    "": "1202"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. S35",
+    "Battles": "7,420",
+    "": "1599"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "MTLS-1G14",
+    "Battles": "15,660",
+    "": "1923"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "BT-SV",
+    "Battles": "1,471",
+    "": "1328"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M16/43 Carro Celere Sahariano",
+    "Battles": "6,326",
+    "": "1339"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "M3 Light",
+    "Battles": "433",
+    "": "1069"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Locust",
+    "Battles": "3,992",
+    "": "1294"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T-127",
+    "Battles": "7,302",
+    "": "1168"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sexton I",
+    "Battles": "13,232",
+    "": "1774"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "SU-76I",
+    "Battles": "9,751",
+    "": "1667"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Sexton I",
+    "Battles": "4,773",
+    "": "1391"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. T 15",
+    "Battles": "2,135",
+    "": "1217"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "LTP",
+    "Battles": "1,208",
+    "": "1183"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Gr.Tr.",
+    "Battles": "859",
+    "": "1395"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "BT-7 art.",
+    "Battles": "733",
+    "": "1272"
+  },
+  {
+    "Tier": "III",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Convert. Medium Tank T3",
+    "Battles": "5,229",
+    "": "1270"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Medium II",
+    "Battles": "155",
+    "": "873"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Chi-Ni",
+    "Battles": "37",
+    "": "773"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "LT vz. 35",
+    "Battles": "29",
+    "": "703"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv m/38",
+    "Battles": "76",
+    "": "846"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "TKS 20",
+    "Battles": "723",
+    "": "927"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "L6/40",
+    "Battles": "67",
+    "": "846"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M2",
+    "Battles": "70",
+    "": "862"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M14/41",
+    "Battles": "63",
+    "": "868"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. 35 (t)",
+    "Battles": "207",
+    "": "779"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FT BS",
+    "Battles": "5",
+    "": "382"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Ha-Go",
+    "Battles": "84",
+    "": "696"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "BT-2",
+    "Battles": "237",
+    "": "912"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "H35",
+    "Battles": "227",
+    "": "845"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "7TP",
+    "Battles": "126",
+    "": "797"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "D1",
+    "Battles": "52",
+    "": "835"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "M2 Light",
+    "Battles": "2,417",
+    "": "1104"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. II",
+    "Battles": "2,423",
+    "": "1226"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T1 HMC",
+    "Battles": "16",
+    "": "373"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "VAE Type B",
+    "Battles": "117",
+    "": "843"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pvlvv fm/42",
+    "Battles": "140",
+    "": "994"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz.Jäg. I",
+    "Battles": "1,242",
+    "": "1252"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "SU-18",
+    "Battles": "2",
+    "": "382"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-26",
+    "Battles": "268",
+    "": "956"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "AT-1",
+    "Battles": "394",
+    "": "935"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cruiser I",
+    "Battles": "119",
+    "": "990"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T2 Medium",
+    "Battles": "883",
+    "": "934"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "I-Go/Chi-Ro",
+    "Battles": "99",
+    "": "1136"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T3 HMC",
+    "Battles": "310",
+    "": "1052"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-26G FT",
+    "Battles": "64",
+    "": "996"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FT AC",
+    "Battles": "49",
+    "": "1037"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Cruiser III",
+    "Battles": "123",
+    "": "1055"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "UC 2-pdr",
+    "Battles": "358",
+    "": "1030"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Loyd GC",
+    "Battles": "3",
+    "": "237"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Pz. I",
+    "Battles": "153",
+    "": "713"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "G.Pz. Mk. VI",
+    "Battles": "15",
+    "": "486"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FCM 36",
+    "Battles": "75",
+    "": "770"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T-60",
+    "Battles": "126",
+    "": "601"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "R35",
+    "Battles": "83",
+    "": "845"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T1E6-PS",
+    "Battles": "4,900",
+    "": "1250"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tomte L-60",
+    "Battles": "1,810",
+    "": "776"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Python",
+    "Battles": "854",
+    "": "863"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Fox",
+    "Battles": "1,231",
+    "": "899"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Viper",
+    "Battles": "2,031",
+    "": "816"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Ashigaru Te-Ke",
+    "Battles": "575",
+    "": "1002"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Shark",
+    "Battles": "1,135",
+    "": "858"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Kraken",
+    "Battles": "12,044",
+    "": "777"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Hornet",
+    "Battles": "783",
+    "": "832"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T1E6-X1",
+    "Battles": "4,830",
+    "": "1335"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Steadfast",
+    "Battles": "12,100",
+    "": "1103"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Morozko",
+    "Battles": "1,326",
+    "": "1184"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T2 Light",
+    "Battles": "5,969",
+    "": "925"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. 38H",
+    "Battles": "16,732",
+    "": "1328"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T1E6-X",
+    "Battles": "1,098",
+    "": "1326"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Tetrarch",
+    "Battles": "536",
+    "": "1215"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "T7 Car",
+    "Battles": "382",
+    "": "730"
+  },
+  {
+    "Tier": "II",
+    "Type": "",
+    "Nation": "",
+    "premium": "1",
+    "Name": "Pz. II D",
+    "Battles": "1,407",
+    "": "1310"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Medium I",
+    "Battles": "343",
+    "": "752"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "K-housenka",
+    "Battles": "91",
+    "": "659"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Strv fm/21",
+    "Battles": "99",
+    "": "617"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "Fiat 3000",
+    "Battles": "243",
+    "": "725"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T1",
+    "Battles": "1,726",
+    "": "872"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "FT",
+    "Battles": "350",
+    "": "715"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "R. Otsu",
+    "Battles": "481",
+    "": "714"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "4TP",
+    "Battles": "208",
+    "": "718"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "NC-31",
+    "Battles": "592",
+    "": "812"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "L.Tr.",
+    "Battles": "2,356",
+    "": "788"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "MS-1",
+    "Battles": "1,009",
+    "": "709"
+  },
+  {
+    "Tier": "I",
+    "Type": "",
+    "Nation": "",
+    "premium": "",
+    "Name": "T22 Proto",
+    "Battles": "5,396",
+    "": "763"
   }
 ]
