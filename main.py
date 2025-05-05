@@ -41,21 +41,24 @@ def update_data():
 async def ping(ctx):
     await ctx.send("Pong!")
 
-# !moe príkaz s embed správou a čiastočným vyhľadávaním
+# !moe príkaz – embed + čiastočné vyhľadávanie + filtrovanie
 @bot.command()
 async def moe(ctx, *, tank_name: str):
     try:
         with open("data.json", "r", encoding="utf-8") as f:
             tanks = json.load(f)
 
-        # Čiastočné vyhľadávanie (case-insensitive)
+        # Vyfiltruj len platné záznamy (ktoré majú kľúč "Tank")
+        tanks = [t for t in tanks if "Tank" in t]
+
+        # Čiastočné vyhľadanie
         matches = [t for t in tanks if tank_name.lower() in t["Tank"].lower()]
 
         if not matches:
             await ctx.send(f"❌ Tank s názvom `{tank_name}` sa nenašiel.")
             return
 
-        for match in matches[:5]:  # max 5 embedov
+        for match in matches[:5]:
             embed = discord.Embed(
                 title=f"{match['Tank']}",
                 description=f"{match['Nation']} • Tier {match['Tier']} • {match['Class']}",
@@ -67,7 +70,7 @@ async def moe(ctx, *, tank_name: str):
             await ctx.send(embed=embed)
 
     except Exception as e:
-        await ctx.send(f"❌ Chyba pri načítaní údajov: {e}")
+        await ctx.send(f"❌ Chyba pri načítaní údajov:\n```{e}```")
 
 # Potvrdenie spustenia
 @bot.event
