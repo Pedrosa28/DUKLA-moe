@@ -12,7 +12,9 @@ load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # Inicializácia Discord bota
-intents = Intents.default()  # ← Tu je čisté priradenie
+
+intents = Intents.default()
+intents.message_content = True  # <- toto je kľúčové
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Flask server na udržanie aktivity (pre Render)
@@ -38,6 +40,12 @@ def update_data():
 @bot.command()
 async def ping(ctx):
     await ctx.send("Pong!")
+
+# Potvrdenie spustenia
+@bot.event
+async def on_ready():
+    print(f"✅ Bot je online ako: {bot.user}")
+
 
 # Spustenie Flask servera v samostatnom vlákne
 threading.Thread(target=keep_alive).start()
