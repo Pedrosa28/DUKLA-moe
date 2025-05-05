@@ -1,30 +1,30 @@
-import discord
-from discord.ext import commands
-from discord import app_commands
 
-class MoeSearch(commands.Cog):
+import json
+from discord.ext import commands
+import discord
+
+class Moe(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        with open("data.json", "r", encoding="utf-8") as file:
+            self.data = json.load(file)
 
-    @app_commands.command(name="moe", description="Vyhľadaj tank a zobraz MoE hodnoty")
-    @app_commands.describe(tank_name="Zadaj celý alebo časť názvu tanku")
-    async def moe(self, interaction: discord.Interaction, tank_name: str):
-        results = [t for t in self.bot.moe_data if tank_name.lower() in t["Tank"].lower()]
-        
-        if not results:
-            await interaction.response.send_message(f"❌ Nenašiel sa žiadny tank s názvom `{tank_name}`.", ephemeral=True)
+    @commands.command(name="moe")
+    async def get_moe(self, ctx, *, tank_name: str):
+        tank_name = tank_name.lower()
+        matches = [tank for tank in self.data if tank_name in tank["Name"].lower()]
+        if not matches:
+            await ctx.send(f"Nenašiel sa žiadny tank s názvom obsahujúcim: `{tank_name}`.")
             return
 
-        tank = results[0]  # vezmeme prvý najbližší
-        embed = discord.Embed(title=f"{tank['Tank']}", color=0x3498db)
-        embed.add_field(name="🇳🇪 Národ", value=tank["Nation"], inline=True)
-        embed.add_field(name="🛡️ Trieda", value=tank["Class"], inline=True)
-        embed.add_field(name="⭐ Tier", value=tank["Tier"], inline=True)
-        embed.add_field(name="🎯 3 MoE", value=tank["3 MoE"], inline=True)
-        embed.add_field(name="🎯 2 MoE", value=tank["2 MoE"], inline=True)
-        embed.add_field(name="🎯 1 MoE", value=tank["1 MoE"], inline=True)
-
-        await interaction.response.send_message(embed=embed)
+        tank = matches[0]
+        embed = discord.Embed(title=tank["Name"], color=discord.Color.green())
+        embed.add_field(name="Tier", value=tank.get("Tier", "N/A"))
+        embed.add_field(name="Battles", value=tank.get("Battles", "N/A"))
+        embed.add_field(name="1 MoE", value=tank.get("1 MoE", "N/A"))
+        embed.add_field(name="2 MoE", value=tank.get("2 MoE", "N/A"))
+        embed.add_field(name="3 MoE", value=tank.get("3 MoE", "N/A"))
+        await ctx.send(embed=embed)
 
 async def setup(bot):
-    await bot.add_cog(MoeSearch(bot))
+    await bot.add_cog(Moe(bot))
