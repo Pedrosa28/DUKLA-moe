@@ -1,92 +1,53 @@
-import discord
-from discord.ext import commands
-import json
-from apscheduler.schedulers.background import BackgroundScheduler
-from keep_alive import keep_alive
-import requests
-from bs4 import BeautifulSoup
 import os
+import json
+import threading
+from flask import Flask
+from apscheduler.schedulers.background import BackgroundScheduler
+from discord.ext import commands
+from dotenv import load_dotenv
 
-intents = discord.Intents.default()
-intents.message_content = True
+# Načítanie tokenu z .env
+load_dotenv()
+DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+
+# Inicializácia Discord bota
+intents = commands.Intents.default()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-DATA_FILE = "data.json"
+# Flask server na udržanie aktivity (pre Render)
+app = Flask(__name__)
 
-# Automatická aktualizácia údajov z webu (dočasne zakázaná)
+@app.route('/')
+def home():
+    return "MoE Discord bot is running!"
+
+def keep_alive():
+    app.run(host="0.0.0.0", port=8080)
+
+# Funkcia na načítanie údajov z data.json
 def update_data():
-    print("Aktualizujem údaje z wotconsole.info...")
-    url = "https://wotconsole.info/marks/"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table', {'id': 'tankTable'})
-
-    if not table:
-        print("❌ Tabuľka sa nenašla.")
-        return
-
-    rows = table.find_all('tr')
-    all_data = []
-
-    for row in rows[1:]:
-        cols = row.find_all('td')
-        if len(cols) >= 4:
-            name = cols[0].text.strip()
-            mark1 = cols[1].text.strip()
-            mark2 = cols[2].text.strip()
-            mark3 = cols[3].text.strip()
-            all_data.append({
-                "name": name,
-                "mark1": mark1,
-                "mark2": mark2,
-                "mark3": mark3
-            })
-
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_data, f, ensure_ascii=False, indent=2)
-    print("Údaje boli aktualizované.")
-
-@bot.event
-async def on_ready():
-    print(f'✅ Bot je online ako {bot.user}')
-    # update_data()  # dočasne vypnuté
-    print("Bot je online a pripravený.")
-
-@bot.command()
-async def moe(ctx, *, search: str):
     try:
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
-            tanks = json.load(f)
-
-        def normalize(text):
-            return text.lower().replace(" ", "").replace("-", "")
-
-        matches = [t for t in tanks if normalize(search) in normalize(t["name"])]
-
-        if not matches:
-            await ctx.send("❌ Nenašli sa žiadne tanky.")
-            return
-
-        for tank in matches[:5]:
-            embed = discord.Embed(
-                title=f"Marks of Excellence – {tank['name']}",
-                color=discord.Color.blue()
-            )
-            embed.add_field(name="1. mark", value=tank["mark1"], inline=False)
-            embed.add_field(name="2. mark", value=tank["mark2"], inline=False)
-            embed.add_field(name="3. mark", value=tank["mark3"], inline=False)
-            await ctx.send(embed=embed)
-
+        with open("data.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        print("Data successfully loaded from data.json.")
     except Exception as e:
-        await ctx.send(f"⚠️ Nastala chyba: {e}")
+        print(f"Failed to load data.json: {e}")
 
-# Spusti keep_alive server (potrebný pre hosting)
-keep_alive()
+# Jednoduchý príkaz na test
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
 
-# Automatické aktualizovanie raz denne (dočasne aktívne, ale nebude fungovať bez tabuľky)
+# Spustenie Flask servera v samostatnom vlákne
+threading.Thread(target=keep_alive).start()
+
+# Spustenie plánovača pre aktualizáciu údajov každých 24 hodín
 scheduler = BackgroundScheduler()
 scheduler.add_job(update_data, "interval", hours=24)
 scheduler.start()
 
-# Spustenie bota s tokenom
-bot.run(os.environ["DISCORD_BOT_TOKEN"])
+# Načítanie dát hneď pri štarte
+update_data()
+
+# Spustenie bota
+bot.run(DISCORD_TOKEN)
