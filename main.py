@@ -1,60 +1,40 @@
-import os
-import json
-import threading
-from flask import Flask
-from apscheduler.schedulers.background import BackgroundScheduler
 import discord
 from discord.ext import commands
-from discord import Intents
+import os
 from dotenv import load_dotenv
+from flask import Flask
+from threading import Thread
 
-# Načítanie tokenu
 load_dotenv()
-DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+TOKEN = os.getenv("DISCORD_TOKEN")
 
-intents = Intents.default()
-intents.message_content = True
+intents = discord.Intents.default()
 bot = commands.Bot(command_prefix="!", intents=intents)
-tree = bot.tree
-bot.moe_data = []
-
-# Flask keep-alive
-app = Flask(__name__)
-@app.route('/')
-def home():
-    return "MoE Discord bot is running!"
-
-def keep_alive():
-    app.run(host="0.0.0.0", port=8080)
-
-# Načítanie dát
-def update_data():
-    try:
-        with open("data.json", "r", encoding="utf-8") as f:
-            bot.moe_data = [t for t in json.load(f) if "Tank" in t]
-        print("✅ Data loaded successfully.")
-    except Exception as e:
-        print(f"❌ Failed to load data.json: {e}")
 
 @bot.event
 async def on_ready():
-    await bot.tree.sync()
-    print(f"✅ Bot je online ako: {bot.user}")
+    print(f"✅ {bot.user} je prihlásený.")
+    try:
+        synced = await bot.tree.sync()
+        print(f"✅ Slash príkazy synchronizované: {len(synced)}")
+    except Exception as e:
+        print(f"❌ Chyba pri synchronizácii slash príkazov: {e}")
 
+# Načítaj cog moe
 @bot.event
 async def setup_hook():
-    await bot.load_extension("cogs.admin")
-    await bot.load_extension("cogs.stats")
-    await bot.load_extension("cogs.moe")
-    await bot.load_extension("cogs.help")
+    await bot.load_extension("moe")
 
-# Spustenie Flask servera
-threading.Thread(target=keep_alive).start()
+# Flask keep-alive
+app = Flask("")
 
-# Spustenie plánovača
-scheduler = BackgroundScheduler()
-scheduler.add_job(update_data, "interval", hours=24)
-scheduler.start()
-update_data()
+@app.route("/")
+def home():
+    return "Bot beží."
 
-bot.run(DISCORD_TOKEN)
+def run():
+    app.run(host="0.0.0.0", port=8080)
+
+if __name__ == "__main__":
+    Thread(target=run).start()
+    bot.run(TOKEN)
