@@ -30,6 +30,9 @@ class MoECog(commands.Cog):
                 title=f"{tank['Name']} – MoE hodnoty",
                 description=(
                     f"**Tier:** {tank['Tier']}\n"
+                    f"**Nation:** {tank.get('Nation', 'Neznámy')}\n"
+                    f"**Type:** {tank.get('Type', 'Neznámy')}\n"
+                    f"**Premium:** {'Áno' if tank.get('premium') else 'Nie'}\n\n"
                     f"**1 MoE:** {tank['1 MoE']}\n"
                     f"**2 MoE:** {tank['2 MoE']}\n"
                     f"**3 MoE:** {tank['3 MoE']}"
@@ -44,6 +47,9 @@ class MoECog(commands.Cog):
                     title=f"{tank['Name']} – MoE hodnoty",
                     description=(
                         f"**Tier:** {tank['Tier']}\n"
+                        f"**Nation:** {tank.get('Nation', 'Neznámy')}\n"
+                        f"**Type:** {tank.get('Type', 'Neznámy')}\n"
+                        f"**Premium:** {'Áno' if tank.get('premium') else 'Nie'}\n\n"
                         f"**1 MoE:** {tank['1 MoE']}\n"
                         f"**2 MoE:** {tank['2 MoE']}\n"
                         f"**3 MoE:** {tank['3 MoE']}"
