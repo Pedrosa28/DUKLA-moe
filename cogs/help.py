@@ -6,7 +6,7 @@ class HelpCommand(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name="help", description="Zobrazí zoznam dostupných slash príkazov")
+    @app_commands.command(name="duklahelp", description="Zobrazí zoznam dostupných slash príkazov")
     async def help(self, interaction: discord.Interaction):
         embed = discord.Embed(title="📘 Dostupné Slash príkazy", color=0x00bcd4)
 
