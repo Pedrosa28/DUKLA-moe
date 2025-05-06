@@ -24,25 +24,9 @@ class MoECog(commands.Cog):
             await interaction.response.send_message("❌ Nenašiel sa žiadny tank s týmto názvom.")
             return
 
-           if len(matches) == 1:
-        # Ak je len jeden výsledok, zobraz embed ako doteraz
-        tank = matches[0]
-        embed = discord.Embed(
-            title=f"{tank['Name']} – MoE hodnoty",
-            description=(
-                f"**Tier:** {tank['Tier']}\n"
-                f"**1 MoE:** {tank['1 MoE']}\n"
-                f"**2 MoE:** {tank['2 MoE']}\n"
-                f"**3 MoE:** {tank['3 MoE']}\n"
-                f"**Počet bitiek:** {tank['Battles']}"
-            ),
-            color=discord.Color.dark_gold()
-        )
-        await interaction.response.send_message(embed=embed)
-    else:
-        # Ak je viacero výsledkov, zobraz viaceré embed správy po jednom
-        await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:")
-        for tank in matches:
+        if len(matches) == 1:
+            # Ak je len jeden výsledok, zobraz embed ako doteraz
+            tank = matches[0]
             embed = discord.Embed(
                 title=f"{tank['Name']} – MoE hodnoty",
                 description=(
@@ -54,8 +38,23 @@ class MoECog(commands.Cog):
                 ),
                 color=discord.Color.dark_gold()
             )
-            await interaction.followup.send(embed=embed, wait=True)
-
+            await interaction.response.send_message(embed=embed)
+        else:
+            # Ak je viacero výsledkov, zobraz viaceré embed správy po jednom
+            await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:")
+            for tank in matches:
+                embed = discord.Embed(
+                    title=f"{tank['Name']} – MoE hodnoty",
+                    description=(
+                        f"**Tier:** {tank['Tier']}\n"
+                        f"**1 MoE:** {tank['1 MoE']}\n"
+                        f"**2 MoE:** {tank['2 MoE']}\n"
+                        f"**3 MoE:** {tank['3 MoE']}\n"
+                        f"**Počet bitiek:** {tank['Battles']}"
+                    ),
+                    color=discord.Color.dark_gold()
+                )
+                await interaction.followup.send(embed=embed, wait=True)
 
 async def setup(bot):
-    await bot.add_cog(MoE(bot))
+    await bot.add_cog(MoECog(bot))
