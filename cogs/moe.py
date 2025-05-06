@@ -32,8 +32,7 @@ class MoECog(commands.Cog):
                     f"**Tier:** {tank['Tier']}\n"
                     f"**1 MoE:** {tank['1 MoE']}\n"
                     f"**2 MoE:** {tank['2 MoE']}\n"
-                    f"**3 MoE:** {tank['3 MoE']}\n"
-                    f"**Počet bitiek:** {tank['Battles']}"
+                    f"**3 MoE:** {tank['3 MoE']}"
                 ),
                 color=discord.Color.dark_gold()
             )
@@ -47,8 +46,7 @@ class MoECog(commands.Cog):
                         f"**Tier:** {tank['Tier']}\n"
                         f"**1 MoE:** {tank['1 MoE']}\n"
                         f"**2 MoE:** {tank['2 MoE']}\n"
-                        f"**3 MoE:** {tank['3 MoE']}\n"
-                        f"**Počet bitiek:** {tank['Battles']}"
+                        f"**3 MoE:** {tank['3 MoE']}"
                     ),
                     color=discord.Color.dark_gold()
                 )
