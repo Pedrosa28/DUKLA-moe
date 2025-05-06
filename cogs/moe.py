@@ -21,7 +21,7 @@ class MoECog(commands.Cog):
         ]
 
         if not matches:
-            await interaction.response.send_message("❌ Nenašiel sa žiadny tank s týmto názvom.")
+            await interaction.response.send_message("❌ Nenašiel sa žiadny tank s týmto názvom.", ephemeral=True)
             return
 
         if len(matches) == 1:
@@ -37,7 +37,7 @@ class MoECog(commands.Cog):
                 ),
                 color=discord.Color.dark_gold()
             )
-            await interaction.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed, ephemeral=True)
         else:
             await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:", ephemeral=True)
             for tank in matches[:10]:
@@ -52,7 +52,7 @@ class MoECog(commands.Cog):
                     ),
                     color=discord.Color.dark_gold()
                 )
-                await interaction.followup.send(embed=embed, wait=True)
+                await interaction.followup.send(embed=embed, ephemeral=True, wait=True)
 
             if len(matches) > 10:
                 await interaction.followup.send("⚠️ Zobrazených je iba prvých 10 výsledkov.", ephemeral=True)
