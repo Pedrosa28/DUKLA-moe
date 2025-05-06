@@ -13,11 +13,11 @@ class MoECog(commands.Cog):
     @app_commands.command(name="moe", description="Zobrazí MoE hodnoty pre zadaný tank")
     @app_commands.describe(nazov="Názov tanku (napr. is7, tiger, e100)")
     async def moe(self, interaction: discord.Interaction, nazov: str):
-        normalized_input = re.sub(r"[^a-zA-Z0-9]", "", nazov).lower()
+        normalized_input = re.sub(r"\s+", "", nazov).lower()
 
         matches = [
             tank for tank in self.tanks
-            if normalized_input in re.sub(r"[^a-zA-Z0-9]", "", tank["Name"]).lower()
+            if normalized_input in tank["Name"].replace(" ", "").lower()
         ]
 
         if not matches:
@@ -25,7 +25,6 @@ class MoECog(commands.Cog):
             return
 
         if len(matches) == 1:
-            # Ak je len jeden výsledok, zobraz embed ako doteraz
             tank = matches[0]
             embed = discord.Embed(
                 title=f"{tank['Name']} – MoE hodnoty",
@@ -40,9 +39,8 @@ class MoECog(commands.Cog):
             )
             await interaction.response.send_message(embed=embed)
         else:
-            # Ak je viacero výsledkov, zobraz viaceré embed správy po jednom
-            await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:")
-            for tank in matches:
+            await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:", ephemeral=True)
+            for tank in matches[:10]:
                 embed = discord.Embed(
                     title=f"{tank['Name']} – MoE hodnoty",
                     description=(
@@ -55,6 +53,10 @@ class MoECog(commands.Cog):
                     color=discord.Color.dark_gold()
                 )
                 await interaction.followup.send(embed=embed, wait=True)
+
+            # ➕ Zobraz upozornenie, ak bolo nájdených viac ako 10 výsledkov
+            if len(matches) > 10:
+                await interaction.followup.send("⚠️ Zobrazených je iba prvých 10 výsledkov.", ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(MoECog(bot))
