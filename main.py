@@ -1,11 +1,10 @@
 import os
-from dotenv import load_dotenv
+import asyncio
 import discord
 from discord.ext import commands
-from cogs.moe import MoECog
+from dotenv import load_dotenv
 from flask import Flask
 import threading
-import asyncio
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -25,11 +24,9 @@ def home():
 def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
-# Spustenie Flasku v samostatnom vlákne
 flask_thread = threading.Thread(target=run_flask)
 flask_thread.start()
 
-# Synchronizácia príkazov pri štarte bota
 @bot.event
 async def on_ready():
     try:
@@ -38,9 +35,17 @@ async def on_ready():
     except Exception as e:
         print(f"❌ Error syncing slash commands: {e}")
 
-# Spustenie bota asynchrónne
+async def load_cogs():
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py") and not filename.startswith("__"):
+            try:
+                await bot.load_extension(f"cogs.{filename[:-3]}")
+                print(f"✅ Loaded extension: {filename}")
+            except Exception as e:
+                print(f"❌ Failed to load {filename}: {e}")
+
 async def main():
-    await bot.add_cog(MoECog(bot))
+    await load_cogs()
     await bot.start(TOKEN)
 
 if __name__ == "__main__":
