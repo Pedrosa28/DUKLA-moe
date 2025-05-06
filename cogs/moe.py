@@ -11,7 +11,7 @@ class MoECog(commands.Cog):
             self.tanks = json.load(f)
 
     @app_commands.command(name="moe", description="Zobrazí MoE hodnoty pre zadaný tank")
-    @app_commands.describe(name="Názov tanku (napr. is7, tiger, e100)")
+    @app_commands.describe(nazov="Názov tanku (napr. is7, tiger, e100)")
     async def moe(self, interaction: discord.Interaction, name: str):
         normalized_input = re.sub(r"[^a-zA-Z0-9]", "", name).lower()
 
