@@ -7,7 +7,7 @@ import re
 class MoECog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        with open("data.json", "r", encoding="utf-8") as f:
+        with open("data_with_corrected_tiers.json", "r", encoding="utf-8") as f:
             self.tanks = json.load(f)
 
     @app_commands.command(name="moe", description="Zobrazí MoE hodnoty pre zadaný tank")
@@ -17,7 +17,7 @@ class MoECog(commands.Cog):
 
         matches = [
             tank for tank in self.tanks
-            if normalized_input in re.sub(r"[^a-zA-Z0-9]", "", tank["Name"]).lower()
+            if normalized_input in re.sub(r"[^a-zA-Z0-9]", "", tank["name"]).lower()
         ]
 
         if not matches:
@@ -26,12 +26,18 @@ class MoECog(commands.Cog):
 
         if len(matches) == 1:
             tank = matches[0]
+            premium_status = "Áno" if tank["premium"] else "Nie"
             embed = discord.Embed(
-                title=f"{tank['Name']} – MoE hodnoty",
+                title=f"{tank['name']} – MoE hodnoty",
                 description=(
-                    f"**1 MoE:** {tank['1 MoE']}\n"
-                    f"**2 MoE:** {tank['2 MoE']}\n"
-                    f"**3 MoE:** {tank['3 MoE']}"
+                    f"**Národ:** {tank['nation']}\n"
+                    f"**Typ:** {tank['type']}\n"
+                    f"**Tier:** {tank['tier']}\n"
+                    f"**Prémiový:** {premium_status}\n"
+                    f"**1 MoE:** {tank['moe']['1 MoE']}\n"
+                    f"**2 MoE:** {tank['moe']['2 MoE']}\n"
+                    f"**3 MoE:** {tank['moe']['3 MoE']}\n"
+                    f"**4 MoE:** {tank['moe']['4 MoE']}"
                 ),
                 color=discord.Color.dark_gold()
             )
@@ -39,12 +45,18 @@ class MoECog(commands.Cog):
         else:
             await interaction.response.send_message("🔎 Našiel som viac tankov, posielam výsledky:", ephemeral=True)
             for tank in matches[:10]:
+                premium_status = "Áno" if tank["premium"] else "Nie"
                 embed = discord.Embed(
-                    title=f"{tank['Name']} – MoE hodnoty",
+                    title=f"{tank['name']} – MoE hodnoty",
                     description=(
-                        f"**1 MoE:** {tank['1 MoE']}\n"
-                        f"**2 MoE:** {tank['2 MoE']}\n"
-                        f"**3 MoE:** {tank['3 MoE']}"
+                        f"**Národ:** {tank['nation']}\n"
+                        f"**Typ:** {tank['type']}\n"
+                        f"**Tier:** {tank['tier']}\n"
+                        f"**Prémiový:** {premium_status}\n"
+                        f"**1 MoE:** {tank['moe']['1 MoE']}\n"
+                        f"**2 MoE:** {tank['moe']['2 MoE']}\n"
+                        f"**3 MoE:** {tank['moe']['3 MoE']}\n"
+                        f"**4 MoE:** {tank['moe']['4 MoE']}"
                     ),
                     color=discord.Color.dark_gold()
                 )
