@@ -7,7 +7,7 @@ import re
 class MoECog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        with open("data_with_corrected_tiers.json", "r", encoding="utf-8") as f:
+        with open("data.json", "r", encoding="utf-8") as f:
             self.tanks = json.load(f)
 
     @app_commands.command(name="moe", description="Zobrazí MoE hodnoty pre zadaný tank")
