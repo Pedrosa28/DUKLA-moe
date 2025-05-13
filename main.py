@@ -1,51 +1,50 @@
 import os
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
 import asyncio
-from aiohttp import web
 
-# Inicializácia bota s potrebnými intentmi
+load_dotenv()
+
 intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix="!", intents=intents, application_id=os.getenv("DISCORD_APPLICATION_ID"))
+intents.typing = False
+intents.presences = False
+
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+COGS_DIR = "./cogs"
 
 @bot.event
 async def on_ready():
-    print(f"✅ Prihlásený ako {bot.user.name}")
-    try:
-        await bot.tree.sync()
-        print("✅ Slash príkazy synchronizované.")
-    except Exception as e:
-        print(f"❌ Chyba pri synchronizácii príkazov: {e}")
+    print(f"✅ Bot je pripravený ako {bot.user}.")
+    print("🔄 Načítavam cogs...\n")
+    for filename in os.listdir(COGS_DIR):
+        if filename.endswith(".py"):
+            cog_name = f"cogs.{filename[:-3]}"
+            try:
+                await bot.load_extension(cog_name)
+                print(f"✅ Načítaný cog: {filename}")
+            except Exception as e:
+                print(f"❌ Chyba pri načítaní cogu {filename}: {e}")
+    print("\n✅ Všetky cogs načítané. Bot je pripravený na použitie.")
 
-async def load_cogs():
-    cogs = ["admin", "moe", "stats", "update", "help"]
-    for cog in cogs:
-        try:
-            await bot.load_extension(f"cogs.{cog}")
-            print(f"✅ Načítaný cog: {cog}.py")
-        except Exception as e:
-            print(f"❌ Chyba pri načítaní cogu {cog}.py: {e}")
+@bot.event
+async def on_guild_join(guild):
+    print(f"🆕 Bot bol pridaný na server: {guild.name}")
 
-async def start_web_server():
-    app = web.Application()
-    async def handle(request):
-        return web.Response(text="Bot je online")
-    app.router.add_get("/", handle)
-    runner = web.AppRunner(app)
-    await runner.setup()
-    site = web.TCPSite(runner, "0.0.0.0", int(os.environ.get("PORT", 10000)))
-    await site.start()
-    print("✅ Web server je spustený.")
+@bot.event
+async def on_guild_remove(guild):
+    print(f"🗑️ Bot bol odstránený zo servera: {guild.name}")
 
 async def main():
-    await load_cogs()
-    await start_web_server()
     token = os.getenv("DISCORD_TOKEN")
-    if not token:
-        print("❌ Chyba: DISCORD_TOKEN nie je nastavený v environmentálnych premenných.")
+    if token is None:
+        print("❌ DISCORD_TOKEN nie je definovaný v environmentálnych premenných.")
         return
-    await bot.start(token)
+    try:
+        await bot.start(token)
+    except Exception as e:
+        print(f"❌ Chyba pri štarte bota: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())
