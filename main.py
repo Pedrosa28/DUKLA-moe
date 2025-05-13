@@ -12,7 +12,7 @@ load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.message_content = True  # Ensure message content intent is enabled
 
 bot = commands.Bot(command_prefix="/", intents=intents)
 
@@ -66,5 +66,4 @@ async def main():
     await load_cogs()
     await bot.start(TOKEN)
 
-if __name__ == "__main__":
-    asyncio.run(main())
+asyncio.run(main())
