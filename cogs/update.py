@@ -30,8 +30,12 @@ class UpdateCog(commands.Cog):
 
     @tasks.loop(weeks=2)
     async def auto_update(self):
-        print("🔄 Automaticky aktualizujem data.json...")
+        channel = self.bot.get_channel(1326498619779715107)
+        if channel:
+            await channel.send("📦 Automaticky aktualizujem data.json...")
         await self.update_data()
+        if channel:
+            await channel.send("✅ Automatická aktualizácia dokončená.")
 
     async def update_data(self, interaction=None):
         URL = "https://wotconsole.info/marks"
@@ -93,22 +97,13 @@ class UpdateCog(commands.Cog):
                     }
                 })
 
-            # Uloženie dát
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
 
-            end_time = datetime.now()
-            duration = end_time - start_time
-            update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
-
             if interaction:
-                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).
-🕒 Čas aktualizácie: {update_time}
-⏱️ Trvanie: {duration}")
+                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
             else:
-                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).
-🕒 Čas aktualizácie: {update_time}
-⏱️ Trvanie: {duration}")
+                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
 
         except requests.RequestException as e:
             if interaction:
