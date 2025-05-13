@@ -1,4 +1,3 @@
-
 import discord
 from discord.ext import tasks, commands
 from discord import app_commands
@@ -21,14 +20,14 @@ class UpdateCog(commands.Cog):
     @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
     async def start_auto_update_command(self, interaction: discord.Interaction):
         self.auto_update.start()
-        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
+        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každých 14 dní.")
 
     @app_commands.command(name="stopupdate", description="Zastaví automatickú aktualizáciu dát")
     async def stop_auto_update_command(self, interaction: discord.Interaction):
         self.auto_update.stop()
         await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
 
-    @tasks.loop(weeks=2)
+    @tasks.loop(days=14)
     async def auto_update(self):
         channel = self.bot.get_channel(1326498619779715107)
         if channel:
@@ -97,13 +96,18 @@ class UpdateCog(commands.Cog):
                     }
                 })
 
+            # Uloženie dát
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
 
+            end_time = datetime.now()
+            duration = end_time - start_time
+            update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
+
             if interaction:
-                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
+                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
             else:
-                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
+                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
 
         except requests.RequestException as e:
             if interaction:
