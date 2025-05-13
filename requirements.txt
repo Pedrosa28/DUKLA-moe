@@ -4,3 +4,4 @@ beautifulsoup4
 apscheduler
 flask
 python-dotenv
+moe.py
