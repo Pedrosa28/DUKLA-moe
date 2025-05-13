@@ -1,65 +1,51 @@
 import os
 import discord
 from discord.ext import commands
-from discord import app_commands
 import asyncio
-import logging
-from dotenv import load_dotenv
+from aiohttp import web
 
-load_dotenv()
-
+# Inicializácia bota s potrebnými intentmi
 intents = discord.Intents.default()
 intents.message_content = True
-
-bot = commands.Bot(command_prefix="!", intents=intents)
-logging.basicConfig(level=logging.INFO)
-
-token = os.getenv("DISCORD_TOKEN")
-
-data_update_event = asyncio.Event()
-
-async def reload_cogs():
-    for cog in list(bot.cogs):
-        try:
-            await bot.reload_extension(f"cogs.{cog}")
-            logging.info(f"Cog reloaded: {cog}")
-        except Exception as e:
-            logging.error(f"Failed to reload cog {cog}: {e}")
+bot = commands.Bot(command_prefix="!", intents=intents, application_id=os.getenv("DISCORD_APPLICATION_ID"))
 
 @bot.event
 async def on_ready():
+    print(f"✅ Prihlásený ako {bot.user.name}")
     try:
-        synced = await bot.tree.sync()
-        logging.info(f"Bot prihlásený ako {bot.user} s {len(synced)} synchronizovanými príkazmi")
-        await reload_cogs()
+        await bot.tree.sync()
+        print("✅ Slash príkazy synchronizované.")
     except Exception as e:
-        logging.error(f"Chyba pri synchronizácii príkazov: {e}")
+        print(f"❌ Chyba pri synchronizácii príkazov: {e}")
 
-@bot.tree.command(name="reload", description="Reload all cogs")
-async def reload(interaction: discord.Interaction):
-    try:
-        await reload_cogs()
-        await interaction.response.send_message("✅ Všetky cogy boli úspešne načítané.", ephemeral=True)
-    except Exception as e:
-        await interaction.response.send_message(f"❌ Chyba pri načítaní cogov: {e}", ephemeral=True)
+async def load_cogs():
+    cogs = ["admin", "moe", "stats", "update", "help"]
+    for cog in cogs:
+        try:
+            await bot.load_extension(f"cogs.{cog}")
+            print(f"✅ Načítaný cog: {cog}.py")
+        except Exception as e:
+            print(f"❌ Chyba pri načítaní cogu {cog}.py: {e}")
 
-@bot.tree.command(name="update", description="Manual update of data")
-async def update(interaction: discord.Interaction):
-    try:
-        data_update_event.set()
-        await interaction.response.send_message("🔄 Spustená manuálna aktualizácia dát.", ephemeral=True)
-    except Exception as e:
-        await interaction.response.send_message(f"❌ Chyba pri spustení aktualizácie: {e}", ephemeral=True)
+async def start_web_server():
+    app = web.Application()
+    async def handle(request):
+        return web.Response(text="Bot je online")
+    app.router.add_get("/", handle)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", int(os.environ.get("PORT", 10000)))
+    await site.start()
+    print("✅ Web server je spustený.")
 
 async def main():
-    async with bot:
-        for filename in os.listdir("./cogs"):
-            if filename.endswith(".py") and filename != "__init__.py":
-                try:
-                    await bot.load_extension(f"cogs.{filename[:-3]}")
-                    logging.info(f"Cog načítaný: {filename}")
-                except Exception as e:
-                    logging.error(f"Chyba pri načítaní cogu {filename}: {e}")
-        await bot.start(token)
+    await load_cogs()
+    await start_web_server()
+    token = os.getenv("DISCORD_TOKEN")
+    if not token:
+        print("❌ Chyba: DISCORD_TOKEN nie je nastavený v environmentálnych premenných.")
+        return
+    await bot.start(token)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
