@@ -64,6 +64,11 @@ async def reload_cogs(interaction: discord.Interaction):
 
 async def main():
     await load_cogs()
-    await bot.start(TOKEN)
+    
+await load_cogs()
+await bot.tree.sync()
+print(f"✅ Slash commands synchronized. Logged in as {bot.user}")
+await bot.start(TOKEN)
+
 
 asyncio.run(main())
