@@ -1,26 +1,11 @@
 import os
 import discord
 from discord.ext import commands
-from dotenv import load_dotenv
-from flask import Flask
-import threading
 import asyncio
 
-load_dotenv()
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Bot je online"
-
-def run_flask():
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
+# Inicializácia bota s potrebnými intentmi
 intents = discord.Intents.default()
 intents.message_content = True
-
 bot = commands.Bot(command_prefix="!", intents=intents, application_id=os.getenv("DISCORD_APPLICATION_ID"))
 
 @bot.event
@@ -33,19 +18,21 @@ async def on_ready():
         print(f"❌ Chyba pri synchronizácii príkazov: {e}")
 
 async def load_cogs():
-    for filename in os.listdir("./cogs"):
-        if filename.endswith(".py"):
-            try:
-                await bot.load_extension(f"cogs.{filename[:-3]}")
-                print(f"✅ Načítaný cog: {filename}")
-            except Exception as e:
-                print(f"❌ Chyba pri načítaní cogu {filename}: {e}")
-
-thread = threading.Thread(target=run_flask)
-thread.start()
+    cogs = ["admin", "moe", "stats", "update", "help"]
+    for cog in cogs:
+        try:
+            await bot.load_extension(f"cogs.{cog}")
+            print(f"✅ Načítaný cog: {cog}.py")
+        except Exception as e:
+            print(f"❌ Chyba pri načítaní cogu {cog}.py: {e}")
 
 async def main():
     await load_cogs()
-    await bot.start(os.getenv("DISCORD_TOKEN"))
+    token = os.getenv("DISCORD_TOKEN")
+    if not token:
+        print("❌ Chyba: DISCORD_TOKEN nie je nastavený v environmentálnych premenných.")
+        return
+    await bot.start(token)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
