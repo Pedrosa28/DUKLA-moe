@@ -76,15 +76,16 @@ class UpdateCog(commands.Cog):
             tank_entries = []
 
             for row in soup.select("#table1 tbody tr"):
-                tier = int(row.find('td', {'data-text': True}).get('data-text'))
-                type_key = row.find_all('td')[1].get('data-text')
-                nation_img = row.find_all('td')[2].find('img')['alt']
-                premium = bool(row.find_all('td')[3].text.strip())
-                name = row.find_all('td')[4].find('span').text.strip()
-                moe_values = [int(td.text.strip()) for td in row.find_all('td', class_='mark')]
+                cells = row.find_all('td')
+                tier = int(cells[0].get('data-text', '0'))
+                type_key = cells[1].get('data-text', 'unknown')
+                nation_img = cells[2].find('img')['alt']
+                premium = bool(cells[3].text.strip())
+                name = cells[4].find('span').text.strip()
+                moe_values = [int(td.text.strip()) for td in cells[5:9]]
 
                 tank_type = type_mapping.get(type_key, 'Unknown')
-                nation = nation_mapping.get(nation_img, 'Unknown')
+                nation = nation_mapping.get(nation_img.lower(), 'Unknown')
 
                 tank_entries.append({
                     "name": name,
@@ -109,9 +110,9 @@ class UpdateCog(commands.Cog):
             update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
             if interaction:
-                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
+                await interaction.followup.send(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
             else:
-                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
+                print(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
 
         except requests.RequestException as e:
             if interaction:
