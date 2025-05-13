@@ -1,24 +1,26 @@
-
 import discord
-from discord.ext import commands, tasks
+from discord.ext import tasks, commands
+from discord import app_commands
 import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
 
 class UpdateCog(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
+        self.bot.tree.add_command(self.start_auto_update)
+        self.bot.tree.add_command(self.stop_auto_update)
 
-    @commands.command(name="update", help="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
-    async def start_auto_update(self, ctx):
+    @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
+    async def start_auto_update(self, interaction: discord.Interaction):
         self.auto_update.start()
-        await ctx.send("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
+        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
 
-    @commands.command(name="stopupdate", help="Zastaví automatickú aktualizáciu dát")
-    async def stop_auto_update(self, ctx):
+    @app_commands.command(name="stopupdate", description="Zastaví automatickú aktualizáciu dát")
+    async def stop_auto_update(self, interaction: discord.Interaction):
         self.auto_update.stop()
-        await ctx.send("🛑 Automatická aktualizácia zastavená.")
+        await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
 
     @tasks.loop(weeks=2)
     async def auto_update(self):
@@ -29,9 +31,7 @@ class UpdateCog(commands.Cog):
         if channel:
             await channel.send("✅ Automatická aktualizácia dokončená.")
 
-    async def update(self, ctx):
-        await ctx.send("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
-
+    async def update_data(self):
         URL = "https://wotconsole.info/marks"
         DATA_FILE = "data.json"
 
@@ -91,17 +91,6 @@ class UpdateCog(commands.Cog):
                     }
                 })
 
-            # Kontrola poklesu počtu tankov
-            try:
-                with open(DATA_FILE, "r", encoding="utf-8") as f:
-                    old_data = json.load(f)
-                    old_tank_count = len(old_data)
-            except FileNotFoundError:
-                old_tank_count = 0
-
-            new_tank_count = len(tank_entries)
-            tank_difference = new_tank_count - old_tank_count
-
             # Uloženie dát
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
@@ -110,14 +99,11 @@ class UpdateCog(commands.Cog):
             duration = end_time - start_time
             update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
-            warning_message = ""
-            if tank_difference < 0:
-                warning_message = f"⚠️ UPOZORNENIE: Počet tankov sa znížil o {abs(tank_difference)}. Skontroluj, či nechýbajú niektoré tanky."
+            print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
 
-            await ctx.send(f"✅ Data úspešne aktualizované ({new_tank_count} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}\n{warning_message}")
-        
         except requests.RequestException as e:
-            await ctx.send(f"❌ Chyba pri sťahovaní dát: {e}")
+            print(f"❌ Chyba pri sťahovaní dát: {e}")
 
-async def setup(bot):
+async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
+    await bot.tree.sync()
