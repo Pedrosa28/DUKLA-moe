@@ -12,7 +12,7 @@ load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
-intents.message_content = True  # Ensure message content intent is enabled
+intents.message_content = True
 
 bot = commands.Bot(command_prefix="/", intents=intents)
 
@@ -64,11 +64,7 @@ async def reload_cogs(interaction: discord.Interaction):
 
 async def main():
     await load_cogs()
-    
-await load_cogs()
-await bot.tree.sync()
-print(f"✅ Slash commands synchronized. Logged in as {bot.user}")
-await bot.start(TOKEN)
+    await bot.start(TOKEN)
 
-
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
