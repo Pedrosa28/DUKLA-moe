@@ -11,7 +11,6 @@ class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         print("🔄 Načítavam modul update.py")
-        self.auto_update.start()
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
@@ -31,60 +30,87 @@ class UpdateCog(commands.Cog):
 
     @tasks.loop(weeks=2)
     async def auto_update(self):
-        channel = self.bot.get_channel(1326498619779715107)
-        if channel:
-            await channel.send("📦 Automaticky aktualizujem data.json...")
+        print("🔄 Automaticky aktualizujem data.json...")
         await self.update_data()
-        if channel:
-            await channel.send("✅ Automatická aktualizácia dokončená.")
 
     async def update_data(self, interaction=None):
         URL = "https://wotconsole.info/marks"
         DATA_FILE = "data.json"
 
+        type_mapping = {
+            "lightTank": "Light Tank",
+            "mediumTank": "Medium Tank",
+            "heavyTank": "Heavy Tank",
+            "AT-SPG": "Tank Destroyer",
+            "SPG": "Artillery"
+        }
+
+        nation_mapping = {
+            "china": "China",
+            "czech": "Czechoslovakia",
+            "france": "France",
+            "germany": "Germany",
+            "italy": "Italy",
+            "japan": "Japan",
+            "merc": "Mercenaries",
+            "poland": "Poland",
+            "sweden": "Sweden",
+            "uk": "UK",
+            "usa": "USA",
+            "ussr": "USSR",
+            "xn": "Independent"
+        }
+
         try:
+            start_time = datetime.now()
             response = requests.get(URL)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
+            tank_entries = []
 
-            # Parsing logic here
-            
-tank_entries = []
+            for row in soup.select("#table1 tbody tr"):
+                tier = int(row.find('td', {'data-text': True}).get('data-text'))
+                type_key = row.find_all('td')[1].get('data-text')
+                nation_img = row.find_all('td')[2].find('img')['alt']
+                premium = bool(row.find_all('td')[3].text.strip())
+                name = row.find_all('td')[4].find('span').text.strip()
+                moe_values = [int(td.text.strip()) for td in row.find_all('td', class_='mark')]
 
-for row in soup.select("#table1 tbody tr"):
-    cols = row.find_all("td")
-    if len(cols) < 5:
-        continue
-    name = cols[4].get_text(strip=True)
-    tier = int(cols[0].get_text(strip=True))
-    nation = cols[2].find("img")["alt"]
-    premium = cols[3].get_text(strip=True).lower() == "yes"
-    moe_values = [int(td.get_text(strip=True)) for td in cols[5:9]]
+                tank_type = type_mapping.get(type_key, 'Unknown')
+                nation = nation_mapping.get(nation_img, 'Unknown')
 
-    tank_entries.append({
-        "name": name,
-        "nation": nation,
-        "tier": tier,
-        "premium": premium,
-        "moe": {
-            "1 MoE": moe_values[0] if len(moe_values) > 0 else 0,
-            "2 MoE": moe_values[1] if len(moe_values) > 1 else 0,
-            "3 MoE": moe_values[2] if len(moe_values) > 2 else 0,
-            "4 MoE": moe_values[3] if len(moe_values) > 3 else 0
-        }
-    })
-  # Replace with actual parsing logic
+                tank_entries.append({
+                    "name": name,
+                    "nation": nation,
+                    "type": tank_type,
+                    "tier": min(tier, 13),
+                    "premium": premium,
+                    "moe": {
+                        "1 MoE": moe_values[0] if len(moe_values) > 0 else 0,
+                        "2 MoE": moe_values[1] if len(moe_values) > 1 else 0,
+                        "3 MoE": moe_values[2] if len(moe_values) > 2 else 0,
+                        "4 MoE": moe_values[3] if len(moe_values) > 3 else 0
+                    }
+                })
 
-            # Save data to file
+            # Uloženie dát
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
 
-            if interaction:
-                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
-            else:
-                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).")
+            end_time = datetime.now()
+            duration = end_time - start_time
+            update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
-        except Exception as e:
+            if interaction:
+                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).
+🕒 Čas aktualizácie: {update_time}
+⏱️ Trvanie: {duration}")
+            else:
+                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).
+🕒 Čas aktualizácie: {update_time}
+⏱️ Trvanie: {duration}")
+
+        except requests.RequestException as e:
             if interaction:
                 await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
             else:
