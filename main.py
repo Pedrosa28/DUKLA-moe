@@ -46,6 +46,6 @@ thread.start()
 
 async def main():
     await load_cogs()
-    await bot.start(os.getenv("DISCORD_BOT_TOKEN"))
+    await bot.start(os.getenv("DISCORD_TOKEN"))
 
 asyncio.run(main())
