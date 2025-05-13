@@ -9,10 +9,12 @@ from datetime import datetime
 class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
+        print("🔄 Načítavam modul update.py")
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
-        await interaction.response.send_message("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
+        await interaction.response.defer()
+        await interaction.followup.send("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
 
         URL = "https://wotconsole.info/marks"
         DATA_FILE = "data.json"
