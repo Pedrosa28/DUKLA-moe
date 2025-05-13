@@ -1,8 +1,8 @@
-
 import os
 import asyncio
 import discord
 from discord.ext import commands
+from discord import app_commands
 from dotenv import load_dotenv
 from flask import Flask
 import threading
@@ -15,7 +15,7 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="/", intents=intents)
 
-# Flask server for Render
+# Flask server pre Render
 app = Flask(__name__)
 
 @app.route('/')
@@ -37,17 +37,35 @@ async def on_ready():
         print(f"❌ Error syncing slash commands: {e}")
 
 async def load_cogs():
-    for filename in os.listdir("./cogs"):
+    cogs_directory = "./cogs"
+    files = os.listdir(cogs_directory)
+    print(f"🗂️ Soubory v {cogs_directory}: {files}")
+    
+    for filename in files:
         if filename.endswith(".py") and not filename.startswith("__"):
             try:
+                print(f"🔄 Pokúšam sa načítať: {filename}")
                 await bot.load_extension(f"cogs.{filename[:-3]}")
                 print(f"✅ Loaded extension: {filename}")
             except Exception as e:
                 print(f"❌ Failed to load {filename}: {e}")
 
+@bot.tree.command(name="reload", description="Načíta alebo reštartuje všetky Cogs moduly")
+async def reload_cogs(interaction: discord.Interaction):
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py") and not filename.startswith("__"):
+            try:
+                await bot.reload_extension(f"cogs.{filename[:-3]}")
+                print(f"🔄 Reloaded extension: {filename}")
+            except Exception as e:
+                print(f"❌ Failed to reload {filename}: {e}")
+    await interaction.response.send_message("🔄 Všetky Cogs moduly boli úspešne načítané alebo reštartované.")
+
 async def main():
     await load_cogs()
     await bot.start(TOKEN)
+    await bot.tree.sync()
+    print("✅ Slash commands synchronized.")
 
 if __name__ == "__main__":
     asyncio.run(main())
