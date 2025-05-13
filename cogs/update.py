@@ -48,7 +48,32 @@ class UpdateCog(commands.Cog):
             soup = BeautifulSoup(response.text, 'html.parser')
 
             # Parsing logic here
-            tank_entries = [{"name": "Example Tank"}]  # Replace with actual parsing logic
+            
+tank_entries = []
+
+for row in soup.select("#table1 tbody tr"):
+    cols = row.find_all("td")
+    if len(cols) < 5:
+        continue
+    name = cols[4].get_text(strip=True)
+    tier = int(cols[0].get_text(strip=True))
+    nation = cols[2].find("img")["alt"]
+    premium = cols[3].get_text(strip=True).lower() == "yes"
+    moe_values = [int(td.get_text(strip=True)) for td in cols[5:9]]
+
+    tank_entries.append({
+        "name": name,
+        "nation": nation,
+        "tier": tier,
+        "premium": premium,
+        "moe": {
+            "1 MoE": moe_values[0] if len(moe_values) > 0 else 0,
+            "2 MoE": moe_values[1] if len(moe_values) > 1 else 0,
+            "3 MoE": moe_values[2] if len(moe_values) > 2 else 0,
+            "4 MoE": moe_values[3] if len(moe_values) > 3 else 0
+        }
+    })
+  # Replace with actual parsing logic
 
             # Save data to file
             with open(DATA_FILE, "w", encoding="utf-8") as f:
