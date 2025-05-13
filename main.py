@@ -37,7 +37,11 @@ async def on_ready():
         print(f"❌ Error syncing slash commands: {e}")
 
 async def load_cogs():
-    for filename in os.listdir("./cogs"):
+    cogs_directory = "./cogs"
+    files = os.listdir(cogs_directory)
+    print(f"🗂️ Soubory v {cogs_directory}: {files}")
+    
+    for filename in files:
         if filename.endswith(".py") and not filename.startswith("__"):
             try:
                 print(f"🔄 Pokúšam sa načítať: {filename}")
