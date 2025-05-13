@@ -11,6 +11,11 @@ class UpdateCog(commands.Cog):
         self.bot = bot
         print("🔄 Načítavam modul update.py")
 
+        # Registrácia slash príkazov
+        self.bot.tree.add_command(self.update_command)
+        self.bot.tree.add_command(self.start_auto_update_command)
+        self.bot.tree.add_command(self.stop_auto_update_command)
+
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
         await interaction.response.defer()
