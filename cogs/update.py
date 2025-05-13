@@ -24,22 +24,25 @@ class UpdateCog(commands.Cog):
 
     @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
     async def start_auto_update_command(self, interaction: discord.Interaction):
-        self.auto_update.start()
-        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
+        if not self.auto_update.is_running():
+            self.auto_update.start()
+            await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 14 dní.")
+        else:
+            await interaction.response.send_message("🔄 Automatická aktualizácia už je zapnutá.")
 
-    @app_commands.command(name="stopupdate", description="Zastaví automatickú aktualizáciu dát")
+    @app_commands.command(name="stop_auto_update", description="Zastaví automatickú aktualizáciu dát")
     async def stop_auto_update_command(self, interaction: discord.Interaction):
-        self.auto_update.stop()
-        await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
+        if self.auto_update.is_running():
+            self.auto_update.stop()
+            await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
+        else:
+            await interaction.response.send_message("🛑 Automatická aktualizácia už je zastavená.")
 
-    @tasks.loop(weeks=2)
+    @tasks.loop(hours=24*14)
     async def auto_update(self):
-        channel = self.bot.get_channel(1326498619779715107)
-        if channel:
-            await channel.send("📦 Automaticky aktualizujem data.json...")
+        print("🔄 Automaticky aktualizujem data.json...")
         await self.update_data()
-        if channel:
-            await channel.send("✅ Automatická aktualizácia dokončená.")
+        print("✅ Automatická aktualizácia dokončená.")
 
     async def update_data(self, interaction=None):
         URL = "https://wotconsole.info/marks"
