@@ -2,5 +2,4 @@ discord.py
 requests
 beautifulsoup4
 apscheduler
-flask
 python-dotenv
