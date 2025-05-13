@@ -9,29 +9,11 @@ from datetime import datetime
 class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
-        self.bot.tree.add_command(self.start_auto_update)
-        self.bot.tree.add_command(self.stop_auto_update)
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
-    async def start_auto_update(self, interaction: discord.Interaction):
-        self.auto_update.start()
-        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
+    async def update_command(self, interaction: discord.Interaction):
+        await interaction.response.send_message("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
 
-    @app_commands.command(name="stopupdate", description="Zastaví automatickú aktualizáciu dát")
-    async def stop_auto_update(self, interaction: discord.Interaction):
-        self.auto_update.stop()
-        await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
-
-    @tasks.loop(weeks=2)
-    async def auto_update(self):
-        channel = self.bot.get_channel(1326498619779715107)
-        if channel:
-            await channel.send("📦 Automaticky aktualizujem data.json...")
-        await self.update_data()
-        if channel:
-            await channel.send("✅ Automatická aktualizácia dokončená.")
-
-    async def update_data(self):
         URL = "https://wotconsole.info/marks"
         DATA_FILE = "data.json"
 
@@ -99,10 +81,28 @@ class UpdateCog(commands.Cog):
             duration = end_time - start_time
             update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
-            print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
-
+            await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
         except requests.RequestException as e:
-            print(f"❌ Chyba pri sťahovaní dát: {e}")
+            await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
+
+    @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
+    async def start_auto_update_command(self, interaction: discord.Interaction):
+        self.auto_update.start()
+        await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 2 týždne.")
+
+    @app_commands.command(name="stopupdate", description="Zastaví automatickú aktualizáciu dát")
+    async def stop_auto_update_command(self, interaction: discord.Interaction):
+        self.auto_update.stop()
+        await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
+
+    @tasks.loop(weeks=2)
+    async def auto_update(self):
+        channel = self.bot.get_channel(1326498619779715107)
+        if channel:
+            await channel.send("📦 Automaticky aktualizujem data.json...")
+        await self.update_data()
+        if channel:
+            await channel.send("✅ Automatická aktualizácia dokončená.")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
