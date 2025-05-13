@@ -12,7 +12,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="/", intents=intents)
 
 # Flask server pre Render
 app = Flask(__name__)
@@ -36,6 +36,24 @@ async def on_ready():
         print(f"❌ Error syncing slash commands: {e}")
 
 async def load_cogs():
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py") and not filename.startswith("__"):
+            try:
+                await bot.load_extension(f"cogs.{filename[:-3]}")
+                print(f"✅ Loaded extension: {filename}")
+            except Exception as e:
+                print(f"❌ Failed to load {filename}: {e}")
+
+@bot.command(name="reload", help="Načíta alebo reštartuje všetky Cogs moduly")
+async def reload_cogs(ctx):
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py") and not filename.startswith("__"):
+            try:
+                await bot.reload_extension(f"cogs.{filename[:-3]}")
+                print(f"🔄 Reloaded extension: {filename}")
+            except Exception as e:
+                print(f"❌ Failed to reload {filename}: {e}")
+    await ctx.send("🔄 Všetky Cogs moduly boli úspešne načítané alebo reštartované.")
     for filename in os.listdir("./cogs"):
         if filename.endswith(".py") and not filename.startswith("__"):
             try:
