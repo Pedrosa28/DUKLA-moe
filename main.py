@@ -1,3 +1,4 @@
+
 import os
 import asyncio
 import discord
@@ -15,7 +16,7 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="/", intents=intents)
 
-# Flask server pre Render
+# Flask server for Render
 app = Flask(__name__)
 
 @app.route('/')
@@ -64,8 +65,6 @@ async def reload_cogs(interaction: discord.Interaction):
 async def main():
     await load_cogs()
     await bot.start(TOKEN)
-    await bot.tree.sync()
-    print("✅ Slash commands synchronized.")
 
 if __name__ == "__main__":
     asyncio.run(main())
