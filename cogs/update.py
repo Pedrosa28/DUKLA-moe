@@ -1,3 +1,4 @@
+
 import discord
 from discord.ext import tasks, commands
 from discord import app_commands
@@ -10,11 +11,6 @@ class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         print("🔄 Načítavam modul update.py")
-
-        # Registrácia slash príkazov
-        self.bot.tree.add_command(self.update_command)
-        self.bot.tree.add_command(self.start_auto_update_command)
-        self.bot.tree.add_command(self.stop_auto_update_command)
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
@@ -105,21 +101,8 @@ class UpdateCog(commands.Cog):
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
 
-            end_time = datetime.now()
-            duration = end_time - start_time
-            update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
-
-            if interaction:
-                await interaction.followup.send(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
-            else:
-                print(f"✅ Data úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
-
         except requests.RequestException as e:
-            if interaction:
-                await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
-            else:
-                print(f"❌ Chyba pri sťahovaní dát: {e}")
+            print(f"❌ Chyba pri sťahovaní dát: {e}")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
-    await bot.tree.sync()
