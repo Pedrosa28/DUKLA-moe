@@ -89,7 +89,15 @@ class UpdateCog(commands.Cog):
 
             for row in soup.select("#table1 tbody tr"):
                 cells = row.find_all('td')
-                tier = int(cells[0].get('data-text', '0'))
+
+                # Správne spracovanie tieru
+                tier_text = cells[0].get('data-text', '0').strip().replace(',', '')
+                try:
+                    tier = int(tier_text)
+                except ValueError:
+                    print(f"❌ Chybný formát tieru: '{tier_text}', nastavený na 1.")
+                    tier = 1
+
                 type_key = cells[1].get('data-text', 'unknown')
                 nation_img = cells[2].find('img')['alt']
                 premium = bool(cells[3].text.strip())
@@ -98,6 +106,10 @@ class UpdateCog(commands.Cog):
 
                 tank_type = type_mapping.get(type_key, 'Unknown')
                 nation = nation_mapping.get(nation_img.lower(), 'Unknown')
+
+                # Logovanie pre kontrolu tierov
+                if tier > 10:
+                    print(f"🔎 Tank: {name}, Tier: {tier}")
 
                 tank_entries.append({
                     "name": name,
