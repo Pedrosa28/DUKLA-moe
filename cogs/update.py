@@ -2,8 +2,7 @@
 import discord
 from discord.ext import tasks, commands
 from discord import app_commands
-import requests
-from bs4 import BeautifulSoup
+import aiohttp
 import json
 from datetime import datetime
 
@@ -13,18 +12,23 @@ class UpdateCog(commands.Cog):
         print("🔄 Načítavam modul update.py")
         if not self.auto_update.is_running():
             self.auto_update.start()
+            print("✅ Automatická aktualizácia spustená.")
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
-        await interaction.response.defer()
-        await interaction.followup.send("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
-        await self.update_data(interaction)
+        try:
+            await interaction.response.defer()
+            print("📦 Načítavam nové dáta...")
+            await self.update_data(interaction)
+        except Exception as e:
+            print(f"❌ Chyba pri spracovaní príkazu /update: {e}")
 
     @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
     async def start_auto_update_command(self, interaction: discord.Interaction):
         if not self.auto_update.is_running():
             self.auto_update.start()
             await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 14 dní.")
+            print("✅ Automatická aktualizácia zapnutá.")
         else:
             await interaction.response.send_message("🔄 Automatická aktualizácia už je zapnutá.")
 
@@ -33,6 +37,7 @@ class UpdateCog(commands.Cog):
         if self.auto_update.is_running():
             self.auto_update.stop()
             await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
+            print("🛑 Automatická aktualizácia zastavená.")
         else:
             await interaction.response.send_message("🛑 Automatická aktualizácia už je zastavená.")
 
@@ -72,9 +77,13 @@ class UpdateCog(commands.Cog):
 
         try:
             start_time = datetime.now()
-            response = requests.get(URL)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.text, 'html.parser')
+            async with aiohttp.ClientSession() as session:
+                async with session.get(URL) as response:
+                    response_text = await response.text()
+                    response.raise_for_status()
+                    print("✅ Dáta úspešne načítané zo stránky.")
+
+            soup = BeautifulSoup(response_text, 'html.parser')
             tank_entries = []
 
             for row in soup.select("#table1 tbody tr"):
@@ -111,16 +120,18 @@ class UpdateCog(commands.Cog):
             duration = end_time - start_time
             update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
-            if interaction:
-                await interaction.followup.send(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
-            else:
-                print(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
+            # Správa o úspechu
+            message = f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}"
+            print(message)
 
-        except requests.RequestException as e:
             if interaction:
-                await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
-            else:
-                print(f"❌ Chyba pri sťahovaní dát: {e}")
+                await interaction.followup.send(message)
+
+        except Exception as e:
+            error_message = f"❌ Chyba pri sťahovaní dát: {e}"
+            print(error_message)
+            if interaction:
+                await interaction.followup.send(error_message)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
