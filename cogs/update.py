@@ -94,7 +94,7 @@ class UpdateCog(commands.Cog):
                 nation_img = cells[2].find('img')['alt']
                 premium = bool(cells[3].text.strip())
                 name = cells[4].find('span').text.strip()
-                moe_values = [int(td.text.strip()) for td in cells[5:9]]
+                moe_values = [int(td.text.strip().replace(',', '')) for td in cells[5:9]]
 
                 tank_type = type_mapping.get(type_key, 'Unknown')
                 nation = nation_mapping.get(nation_img.lower(), 'Unknown')
