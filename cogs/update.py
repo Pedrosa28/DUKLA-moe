@@ -76,12 +76,6 @@ class UpdateCog(commands.Cog):
             "xn": "Independent"
         }
 
-        special_tiers = {
-            "11": 11,
-            "12": 12,
-            "13": 13
-        }
-
         try:
             start_time = datetime.now()
             async with aiohttp.ClientSession() as session:
@@ -95,30 +89,7 @@ class UpdateCog(commands.Cog):
 
             for row in soup.select("#table1 tbody tr"):
                 cells = row.find_all('td')
-
-                # Správne spracovanie tieru
-                tier_text = cells[0].get('data-text', '0').strip().replace(',', '')
-                try:
-                    # Ošetrenie pre 11, 12, 13
-                    if tier_text.isdigit():
-                        tier = int(tier_text)
-                    elif tier_text in special_tiers:
-                        tier = special_tiers[tier_text]
-                    else:
-                        # Manuálna kontrola pre špeciálne tiery
-                        if "11" in tier_text:
-                            tier = 11
-                        elif "12" in tier_text:
-                            tier = 12
-                        elif "13" in tier_text:
-                            tier = 13
-                        else:
-                            tier = 1  # Ak nič nesedí, predvolene tier 1
-                    
-                except ValueError:
-                    print(f"❌ Chybný formát tieru: '{tier_text}', nastavený na 1.")
-                    tier = 1
-
+                tier = int(cells[0].get('data-text', '0'))
                 type_key = cells[1].get('data-text', 'unknown')
                 nation_img = cells[2].find('img')['alt']
                 premium = bool(cells[3].text.strip())
@@ -127,10 +98,6 @@ class UpdateCog(commands.Cog):
 
                 tank_type = type_mapping.get(type_key, 'Unknown')
                 nation = nation_mapping.get(nation_img.lower(), 'Unknown')
-
-                # Logovanie pre kontrolu tierov
-                if tier > 10:
-                    print(f"🔎 Tank: {name}, Tier: {tier}")
 
                 tank_entries.append({
                     "name": name,
