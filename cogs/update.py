@@ -5,6 +5,7 @@ from discord import app_commands
 import aiohttp
 import json
 from datetime import datetime
+from bs4 import BeautifulSoup
 
 class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
