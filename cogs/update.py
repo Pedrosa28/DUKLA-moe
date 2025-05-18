@@ -1,3 +1,4 @@
+
 import discord
 from discord.ext import tasks, commands
 from discord import app_commands
@@ -10,7 +11,8 @@ class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         print("🔄 Načítavam modul update.py")
-        self.auto_update_task = self.auto_update
+        if not self.auto_update.is_running():
+            self.auto_update.start()
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
@@ -122,4 +124,3 @@ class UpdateCog(commands.Cog):
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
-    await bot.tree.sync()
