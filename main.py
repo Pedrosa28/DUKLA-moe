@@ -3,8 +3,8 @@ import os
 import discord
 from discord.ext import commands
 from discord import app_commands
+import keep_alive
 import asyncio
-import keep_alive  # Ensure the server stays alive on Render
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -23,7 +23,7 @@ async def on_ready():
     except Exception as e:
         print(f"❌ Chyba pri synchronizácii príkazov: {e}")
 
-async def load_cogs():
+async def setup_bot():
     for cog in COGS:
         try:
             await bot.load_extension(f"cogs.{cog}")
@@ -32,8 +32,8 @@ async def load_cogs():
             print(f"❌ Chyba pri načítaní rozšírenia {cog}: {e}")
 
 async def main():
-    keep_alive.keep_alive()  # Start the web server to keep the bot alive on Render
-    await load_cogs()
+    keep_alive.keep_alive()  # Udržiavanie bota nažive na Render
+    await setup_bot()
     await bot.start(TOKEN)
 
 asyncio.run(main())
