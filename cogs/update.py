@@ -100,10 +100,21 @@ class UpdateCog(commands.Cog):
                 tier_text = cells[0].get('data-text', '0').strip().replace(',', '')
                 try:
                     # Ošetrenie pre 11, 12, 13
-                    if tier_text in special_tiers:
+                    if tier_text.isdigit():
+                        tier = int(tier_text)
+                    elif tier_text in special_tiers:
                         tier = special_tiers[tier_text]
                     else:
-                        tier = int(tier_text)
+                        # Manuálna kontrola pre špeciálne tiery
+                        if "11" in tier_text:
+                            tier = 11
+                        elif "12" in tier_text:
+                            tier = 12
+                        elif "13" in tier_text:
+                            tier = 13
+                        else:
+                            tier = 1  # Ak nič nesedí, predvolene tier 1
+                    
                 except ValueError:
                     print(f"❌ Chybný formát tieru: '{tier_text}', nastavený na 1.")
                     tier = 1
