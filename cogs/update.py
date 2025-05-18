@@ -76,6 +76,12 @@ class UpdateCog(commands.Cog):
             "xn": "Independent"
         }
 
+        special_tiers = {
+            "11": 11,
+            "12": 12,
+            "13": 13
+        }
+
         try:
             start_time = datetime.now()
             async with aiohttp.ClientSession() as session:
@@ -94,8 +100,8 @@ class UpdateCog(commands.Cog):
                 tier_text = cells[0].get('data-text', '0').strip().replace(',', '')
                 try:
                     # Ošetrenie pre 11, 12, 13
-                    if "=" in tier_text:
-                        tier = int(tier_text.split('=')[0].strip())
+                    if tier_text in special_tiers:
+                        tier = special_tiers[tier_text]
                     else:
                         tier = int(tier_text)
                 except ValueError:
