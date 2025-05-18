@@ -17,7 +17,6 @@ class UpdateCog(commands.Cog):
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
         await interaction.response.defer()
-        await interaction.followup.send("📦 Načítavam nové dáta zo stránky wotconsole.info/marks...")
         await self.update_data(interaction)
 
     @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
@@ -111,16 +110,18 @@ class UpdateCog(commands.Cog):
             duration = end_time - start_time
             update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
 
+            # Správa o úspechu
+            message = f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}"
+            print(message)
+
             if interaction:
-                await interaction.followup.send(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
-            else:
-                print(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
+                await interaction.followup.send(message)
 
         except requests.RequestException as e:
+            error_message = f"❌ Chyba pri sťahovaní dát: {e}"
+            print(error_message)
             if interaction:
-                await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
-            else:
-                print(f"❌ Chyba pri sťahovaní dát: {e}")
+                await interaction.followup.send(error_message)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
