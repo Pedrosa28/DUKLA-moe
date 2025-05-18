@@ -93,7 +93,11 @@ class UpdateCog(commands.Cog):
                 # Správne spracovanie tieru
                 tier_text = cells[0].get('data-text', '0').strip().replace(',', '')
                 try:
-                    tier = int(tier_text)
+                    # Ošetrenie pre 11, 12, 13
+                    if "=" in tier_text:
+                        tier = int(tier_text.split('=')[0].strip())
+                    else:
+                        tier = int(tier_text)
                 except ValueError:
                     print(f"❌ Chybný formát tieru: '{tier_text}', nastavený na 1.")
                     tier = 1
