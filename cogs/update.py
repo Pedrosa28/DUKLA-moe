@@ -1,23 +1,16 @@
-
 import discord
 from discord.ext import tasks, commands
 from discord import app_commands
 import requests
 from bs4 import BeautifulSoup
 import json
-import os
 from datetime import datetime
-
-DATA_FILE = "data.json"
-UPDATE_INTERVAL_DAYS = 14
-MOE_URL = "https://wotconsole.info/marks"
 
 class UpdateCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         print("🔄 Načítavam modul update.py")
         self.auto_update_task = self.auto_update
-        self.auto_update_task.start()
 
     @app_commands.command(name="update", description="Aktualizuje data.json so všetkými tankami a MoE hodnotami")
     async def update_command(self, interaction: discord.Interaction):
@@ -27,56 +20,60 @@ class UpdateCog(commands.Cog):
 
     @app_commands.command(name="start_auto_update", description="Zapne automatickú aktualizáciu dát")
     async def start_auto_update_command(self, interaction: discord.Interaction):
-        if not self.auto_update_task.is_running():
-            self.auto_update_task.start()
+        if not self.auto_update.is_running():
+            self.auto_update.start()
             await interaction.response.send_message("🔄 Automatická aktualizácia zapnutá. Dáta budú aktualizované každé 14 dní.")
         else:
             await interaction.response.send_message("🔄 Automatická aktualizácia už je zapnutá.")
 
     @app_commands.command(name="stop_auto_update", description="Zastaví automatickú aktualizáciu dát")
     async def stop_auto_update_command(self, interaction: discord.Interaction):
-        if self.auto_update_task.is_running():
-            self.auto_update_task.stop()
+        if self.auto_update.is_running():
+            self.auto_update.stop()
             await interaction.response.send_message("🛑 Automatická aktualizácia zastavená.")
         else:
             await interaction.response.send_message("🛑 Automatická aktualizácia už je zastavená.")
 
-    @tasks.loop(days=UPDATE_INTERVAL_DAYS)
+    @tasks.loop(hours=24*14)
     async def auto_update(self):
         print("🔄 Automaticky aktualizujem data.json...")
         await self.update_data()
         print("✅ Automatická aktualizácia dokončená.")
 
     async def update_data(self, interaction=None):
+        URL = "https://wotconsole.info/marks"
+        DATA_FILE = "data.json"
+
+        type_mapping = {
+            "lightTank": "Light Tank",
+            "mediumTank": "Medium Tank",
+            "heavyTank": "Heavy Tank",
+            "AT-SPG": "Tank Destroyer",
+            "SPG": "Artillery"
+        }
+
+        nation_mapping = {
+            "china": "China",
+            "czech": "Czechoslovakia",
+            "france": "France",
+            "germany": "Germany",
+            "italy": "Italy",
+            "japan": "Japan",
+            "merc": "Mercenaries",
+            "poland": "Poland",
+            "sweden": "Sweden",
+            "uk": "UK",
+            "usa": "USA",
+            "ussr": "USSR",
+            "xn": "Independent"
+        }
+
         try:
-            response = requests.get(MOE_URL)
+            start_time = datetime.now()
+            response = requests.get(URL)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             tank_entries = []
-
-            type_mapping = {
-                "lightTank": "Light Tank",
-                "mediumTank": "Medium Tank",
-                "heavyTank": "Heavy Tank",
-                "AT-SPG": "Tank Destroyer",
-                "SPG": "Artillery"
-            }
-
-            nation_mapping = {
-                "china": "China",
-                "czech": "Czechoslovakia",
-                "france": "France",
-                "germany": "Germany",
-                "italy": "Italy",
-                "japan": "Japan",
-                "merc": "Mercenaries",
-                "poland": "Poland",
-                "sweden": "Sweden",
-                "uk": "UK",
-                "usa": "USA",
-                "ussr": "USSR",
-                "xn": "Independent"
-            }
 
             for row in soup.select("#table1 tbody tr"):
                 cells = row.find_all('td')
@@ -108,15 +105,21 @@ class UpdateCog(commands.Cog):
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(tank_entries, f, ensure_ascii=False, indent=4)
 
+            end_time = datetime.now()
+            duration = end_time - start_time
+            update_time = end_time.strftime('%Y-%m-%d %H:%M:%S')
+
             if interaction:
-                await interaction.followup.send(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).")
-            print(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).")
+                await interaction.followup.send(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
+            else:
+                print(f"✅ Dáta úspešne aktualizované ({len(tank_entries)} tankov).\n🕒 Čas aktualizácie: {update_time}\n⏱️ Trvanie: {duration}")
 
         except requests.RequestException as e:
-            error_message = f"❌ Chyba pri sťahovaní dát: {e}"
             if interaction:
-                await interaction.followup.send(error_message)
-            print(error_message)
+                await interaction.followup.send(f"❌ Chyba pri sťahovaní dát: {e}")
+            else:
+                print(f"❌ Chyba pri sťahovaní dát: {e}")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(UpdateCog(bot))
+    await bot.tree.sync()
