@@ -32,7 +32,7 @@ async def setup_bot():
             print(f"❌ Chyba pri načítaní rozšírenia {cog}: {e}")
 
 async def main():
-    keep_alive.keep_alive()  # Udržiavanie bota nažive na Render
+    keep_alive.keep_alive()  # Use original keep_alive without Flask
     await setup_bot()
     await bot.start(TOKEN)
 
