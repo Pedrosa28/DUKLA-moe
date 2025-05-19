@@ -31,6 +31,15 @@ class ClanCog(commands.Cog):
         self.bot = bot
         self.semaphore = asyncio.Semaphore(2)  # Limit simultaneous requests
         self.update_clan_members.start()
+        print("✅ Clan cog načítaný správne.")
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print("✅ Clan cog je pripravený.")
+
+    @commands.command(name="testclan")
+    async def test_clan(self, ctx):
+        await ctx.send("✅ Clan cog funguje správne.")
 
     def get_wn8_color(self, wn8):
         try:
@@ -115,7 +124,6 @@ class ClanCog(commands.Cog):
                     color=0xFFD700
                 )
 
-                # Paralelné načítavanie WN8 s rate limit ochranným spánkom
                 tasks = [self.get_player_wn8(session, member["name"]) for member in sorted_members]
                 wn8_values = await asyncio.gather(*tasks)
 
@@ -130,21 +138,6 @@ class ClanCog(commands.Cog):
 🎯 **WN8:** {wn8_value}",
                         inline=False
                     )
-
-                changes = ""
-                if joined:
-                    changes += "
-✅ **Noví členovia:**
-" + "
-".join([f"✅ {name}" for name in joined])
-                if left:
-                    changes += "
-❌ **Odídení členovia:**
-" + "
-".join([f"❌ {name}" for name in left])
-
-                if changes:
-                    embed.add_field(name="📝 Zmeny", value=changes, inline=False)
 
                 channel = self.bot.get_channel(CHANNEL_ID)
                 if channel:
