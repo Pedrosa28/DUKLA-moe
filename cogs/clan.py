@@ -6,11 +6,13 @@ import requests
 import json
 import os
 import asyncio
+import aiohttp
+import time
 
 CLAN_URL = "https://modernarmor.worldoftanks.com/en/clans/DUKL4/"
 PLAYER_STATS_URL = "https://wotstars.com/playerstats/{}/"
 DATA_FILE = "clan_members.json"
-CHANNEL_ID = 1374105106185719970
+CHANNEL_ID = 1374120704894828605
 
 ROLE_ORDER = {
     "Commander": 1,
@@ -18,6 +20,10 @@ ROLE_ORDER = {
     "Executive Officer": 3,
     "Recruitment Officer": 4,
     "Private Member": 5
+}
+
+HEADERS = {
+    "User-Agent": "DUKLA-Moe-Bot"
 }
 
 class ClanCog(commands.Cog):
@@ -43,16 +49,19 @@ class ClanCog(commands.Cog):
         except ValueError:
             return 0x888888  # Šedá, ak nie je platná hodnota
 
-    async def get_player_wn8(self, player_name):
+    async def get_player_wn8(self, session, player_name):
         try:
             player_url = PLAYER_STATS_URL.format(player_name.replace(" ", ""))
-            async with requests.Session() as session:
-                response = await asyncio.to_thread(session.get, player_url)
-                soup = BeautifulSoup(response.content, "html.parser")
-                wn8_element = soup.find("div", {"class": "wn8"})
-                if wn8_element:
-                    return wn8_element.text.strip()
+            async with session.get(player_url, headers=HEADERS) as response:
+                if response.status == 200:
+                    soup = BeautifulSoup(await response.text(), "html.parser")
+                    wn8_element = soup.find("div", {"class": "wn8"})
+                    if wn8_element:
+                        return wn8_element.text.strip()
+                    else:
+                        return "N/A"
                 else:
+                    print(f"⚠️ Chyba {response.status} pri načítavaní WN8 pre {player_name}")
                     return "N/A"
         except Exception as e:
             print(f"❌ Chyba pri načítavaní WN8 pre {player_name}: {e}")
@@ -71,7 +80,7 @@ class ClanCog(commands.Cog):
     @tasks.loop(hours=24)
     async def update_clan_members(self):
         try:
-            response = requests.get(CLAN_URL)
+            response = requests.get(CLAN_URL, headers=HEADERS)
             soup = BeautifulSoup(response.content, "html.parser")
             members_table = soup.find("div", {"id": "list-box_members"})
 
@@ -99,21 +108,23 @@ class ClanCog(commands.Cog):
                 color=0xFFD700
             )
 
-            # Paralelné načítavanie WN8 pre všetkých členov
-            tasks = [self.get_player_wn8(member["name"]) for member in sorted_members]
-            wn8_values = await asyncio.gather(*tasks)
+            # Paralelné načítavanie WN8 s rate limit ochranným spánkom
+            async with aiohttp.ClientSession() as session:
+                for member in sorted_members:
+                    name = member["name"]
+                    role = member["role"]
+                    wn8_value = await self.get_player_wn8(session, name)
+                    color = self.get_wn8_color(wn8_value)
 
-            for member, wn8_value in zip(sorted_members, wn8_values):
-                name = member["name"]
-                role = member["role"]
-                color = self.get_wn8_color(wn8_value)
-
-                embed.add_field(
-                    name=f"✅ {name}",
-                    value=f"🛡️ **Rola:** {role}
+                    embed.add_field(
+                        name=f"✅ {name}",
+                        value=f"🛡️ **Rola:** {role}
 🎯 **WN8:** {wn8_value}",
-                    inline=False
-                )
+                        inline=False
+                    )
+
+                    # Rate limit protection
+                    await asyncio.sleep(1.5)
 
             changes = ""
             if joined:
