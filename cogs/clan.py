@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import os
+import asyncio
 
 CLAN_URL = "https://modernarmor.worldoftanks.com/en/clans/DUKL4/"
 PLAYER_STATS_URL = "https://wotstars.com/playerstats/{}/"
@@ -42,16 +43,17 @@ class ClanCog(commands.Cog):
         except ValueError:
             return 0x888888  # Šedá, ak nie je platná hodnota
 
-    def get_player_wn8(self, player_name):
+    async def get_player_wn8(self, player_name):
         try:
             player_url = PLAYER_STATS_URL.format(player_name.replace(" ", ""))
-            response = requests.get(player_url)
-            soup = BeautifulSoup(response.content, "html.parser")
-            wn8_element = soup.find("div", {"class": "wn8"})
-            if wn8_element:
-                return wn8_element.text.strip()
-            else:
-                return "N/A"
+            async with requests.Session() as session:
+                response = await asyncio.to_thread(session.get, player_url)
+                soup = BeautifulSoup(response.content, "html.parser")
+                wn8_element = soup.find("div", {"class": "wn8"})
+                if wn8_element:
+                    return wn8_element.text.strip()
+                else:
+                    return "N/A"
         except Exception as e:
             print(f"❌ Chyba pri načítavaní WN8 pre {player_name}: {e}")
             return "N/A"
@@ -97,10 +99,13 @@ class ClanCog(commands.Cog):
                 color=0xFFD700
             )
 
-            for member in sorted_members:
+            # Paralelné načítavanie WN8 pre všetkých členov
+            tasks = [self.get_player_wn8(member["name"]) for member in sorted_members]
+            wn8_values = await asyncio.gather(*tasks)
+
+            for member, wn8_value in zip(sorted_members, wn8_values):
                 name = member["name"]
                 role = member["role"]
-                wn8_value = self.get_player_wn8(name)
                 color = self.get_wn8_color(wn8_value)
 
                 embed.add_field(
