@@ -151,4 +151,6 @@ class ClanCog(commands.Cog):
             print(f"❌ Chyba pri aktualizácii členov: {e}")
 
 async def setup(bot):
+    print("🔄 Iniciujem načítanie clan.py")
     await bot.add_cog(ClanCog(bot))
+    print("✅ Clan cog úspešne načítaný.")
