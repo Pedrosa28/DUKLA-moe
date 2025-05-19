@@ -10,7 +10,7 @@ import aiohttp
 CLAN_URL = "https://modernarmor.worldoftanks.com/en/clans/DUKL4/"
 PLAYER_STATS_URL = "https://wotstars.com/playerstats/{}/"
 DATA_FILE = "clan_members.json"
-CHANNEL_ID = 1374120704894828605
+CHANNEL_ID = 1374105106185719970
 
 ROLE_ORDER = {
     "Commander": 1,
