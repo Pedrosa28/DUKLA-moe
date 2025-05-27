@@ -30,13 +30,14 @@ class HistoryCog(commands.Cog):
         if joined:
             joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
             embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
+        else:
+            embed.add_field(name="Noví členovia", value="Žiadni", inline=False)
 
         if left:
             left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
             embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
-
-        if not joined and not left:
-            embed.description = "Žiadne zmeny v členstve zatiaľ neboli zaznamenané."
+        else:
+            embed.add_field(name="Odišli z klanu", value="Žiadni", inline=False)
 
         await interaction.response.send_message(embed=embed, ephemeral=False)
 
