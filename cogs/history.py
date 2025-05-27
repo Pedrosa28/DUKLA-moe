@@ -1,0 +1,44 @@
+
+import discord
+from discord import app_commands
+from discord.ext import commands
+import json
+import os
+
+class HistoryCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self.history_file = "zmeny.json"
+
+    @app_commands.command(name="zmeny", description="Zobrazí prehľad všetkých zmien v členstve klanu")
+    async def zmeny(self, interaction: discord.Interaction):
+        if not os.path.exists(self.history_file):
+            await interaction.response.send_message("❌ Súbor `zmeny.json` neexistuje.", ephemeral=True)
+            return
+
+        with open(self.history_file, "r", encoding="utf-8") as f:
+            history = json.load(f)
+
+        joined = history.get("joined", [])
+        left = history.get("left", [])
+
+        embed = discord.Embed(
+            title="📜 História zmien v členstve klanu",
+            color=discord.Color.blue()
+        )
+
+        if joined:
+            joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
+            embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
+
+        if left:
+            left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
+            embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
+
+        if not joined and not left:
+            embed.description = "Žiadne zmeny v členstve zatiaľ neboli zaznamenané."
+
+        await interaction.response.send_message(embed=embed, ephemeral=False)
+
+async def setup(bot):
+    await bot.add_cog(HistoryCog(bot))

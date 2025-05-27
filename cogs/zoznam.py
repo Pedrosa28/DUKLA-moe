@@ -4,6 +4,7 @@ from discord import app_commands
 from discord.ext import commands
 import json
 import os
+from datetime import date
 
 ROLES_PRIORITY = {
     "Commander": 1,
@@ -17,6 +18,7 @@ class ZoznamCog(commands.Cog):
         self.bot = bot
         self.data_file = "clan_members.json"
         self.message_id_file = "message_id.json"
+        self.history_file = "zmeny.json"
 
     def load_members(self):
         with open(self.data_file, "r", encoding="utf-8") as f:
@@ -65,6 +67,22 @@ class ZoznamCog(commands.Cog):
             chunks.append(current)
         return chunks
 
+    def update_history(self, joined, left):
+        today = str(date.today())
+        if not os.path.exists(self.history_file):
+            history = {"joined": [], "left": []}
+        else:
+            with open(self.history_file, "r", encoding="utf-8") as f:
+                history = json.load(f)
+
+        for name in joined:
+            history["joined"].append({"name": name, "date": today})
+        for name in left:
+            history["left"].append({"name": name, "date": today})
+
+        with open(self.history_file, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=4)
+
     @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov a prepíše správu v kanáli")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
         try:
@@ -90,10 +108,8 @@ class ZoznamCog(commands.Cog):
         )
 
         chunks = self.chunk_text(lines)
-        print(f"Počet chunkov: {len(chunks)}")
         for i, chunk in enumerate(chunks):
             name = "Zoznam členov" if i == 0 else f"Pokračovanie {i}"
-            print(f"[Field {i}] {name} – {len(chunk)} znakov")
             embed.add_field(name=name, value=chunk.strip(), inline=False)
 
         joined, left = self.compare_members(old_members, new_members)
@@ -103,11 +119,8 @@ class ZoznamCog(commands.Cog):
                 changes.extend([f"✅ Nový člen: {name}" for name in joined])
             if left:
                 changes.extend([f"❌ Odišiel: {name}" for name in left])
-            field_text = "\n".join(changes)
-            print(f"[Zmeny] {len(field_text)} znakov")
-            embed.add_field(name="📝 Zmeny", value=field_text, inline=False)
-
-        print(f"Celkový počet embed fieldu: {len(embed.fields)}")
+            embed.add_field(name="📝 Zmeny", value="\n".join(changes), inline=False)
+            self.update_history(joined, left)
 
         try:
             channel = self.bot.get_channel(1374105106185719970)
@@ -122,15 +135,14 @@ class ZoznamCog(commands.Cog):
                     await message.edit(embed=embed)
                     await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
                     return
-                except Exception as e:
-                    print("Úprava embed správy zlyhala:", e)
+                except Exception:
+                    pass
 
             new_message = await channel.send(embed=embed)
             self.save_message_id(new_message.id)
             await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
 
         except Exception as e:
-            print("Chyba pri odosielaní embed správy:", e)
             await interaction.response.send_message("❌ Vyskytla sa chyba pri odosielaní embed správy.", ephemeral=True)
 
 async def setup(bot):
