@@ -90,8 +90,10 @@ class ZoznamCog(commands.Cog):
         )
 
         chunks = self.chunk_text(lines)
+        print(f"Počet chunkov: {len(chunks)}")
         for i, chunk in enumerate(chunks):
             name = "Zoznam členov" if i == 0 else f"Pokračovanie {i}"
+            print(f"[Field {i}] {name} – {len(chunk)} znakov")
             embed.add_field(name=name, value=chunk.strip(), inline=False)
 
         joined, left = self.compare_members(old_members, new_members)
@@ -101,7 +103,11 @@ class ZoznamCog(commands.Cog):
                 changes.extend([f"✅ Nový člen: {name}" for name in joined])
             if left:
                 changes.extend([f"❌ Odišiel: {name}" for name in left])
-            embed.add_field(name="📝 Zmeny", value="\n".join(changes), inline=False)
+            field_text = "\n".join(changes)
+            print(f"[Zmeny] {len(field_text)} znakov")
+            embed.add_field(name="📝 Zmeny", value=field_text, inline=False)
+
+        print(f"Celkový počet embed fieldu: {len(embed.fields)}")
 
         try:
             channel = self.bot.get_channel(1374105106185719970)
@@ -119,7 +125,6 @@ class ZoznamCog(commands.Cog):
                 except Exception as e:
                     print("Úprava embed správy zlyhala:", e)
 
-            # Ak správa ešte neexistuje alebo sa nedá upraviť
             new_message = await channel.send(embed=embed)
             self.save_message_id(new_message.id)
             await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
