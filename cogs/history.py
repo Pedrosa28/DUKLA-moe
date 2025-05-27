@@ -13,7 +13,10 @@ class HistoryCog(commands.Cog):
     @app_commands.command(name="zmeny", description="Zobrazí prehľad všetkých zmien v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
         try:
-            await interaction.response.defer()
+            try:
+                await interaction.response.defer()
+            except discord.InteractionResponded:
+                pass
 
             if not os.path.exists(self.history_file):
                 await interaction.followup.send("❌ Súbor `zmeny.json` neexistuje.")
