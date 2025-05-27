@@ -19,7 +19,7 @@ async def on_ready():
         print(f"❌ Chyba pri synchronizácii príkazov: {e}")
 
 async def load_cogs():
-    cogs = ["admin", "moe", "stats", "update", "help", "zoznam"]
+    cogs = ["admin", "moe", "stats", "update", "help", "zoznam", "history"]
     for cog in cogs:
         try:
             await bot.load_extension(f"cogs.{cog}")
