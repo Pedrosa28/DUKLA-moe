@@ -12,34 +12,40 @@ class HistoryCog(commands.Cog):
 
     @app_commands.command(name="zmeny", description="Zobrazí prehľad všetkých zmien v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
-        if not os.path.exists(self.history_file):
-            await interaction.response.send_message("❌ Súbor `zmeny.json` neexistuje.", ephemeral=True)
-            return
+        try:
+            await interaction.response.defer()
 
-        with open(self.history_file, "r", encoding="utf-8") as f:
-            history = json.load(f)
+            if not os.path.exists(self.history_file):
+                await interaction.followup.send("❌ Súbor `zmeny.json` neexistuje.")
+                return
 
-        joined = history.get("joined", [])
-        left = history.get("left", [])
+            with open(self.history_file, "r", encoding="utf-8") as f:
+                history = json.load(f)
 
-        embed = discord.Embed(
-            title="📜 História zmien v členstve klanu",
-            color=discord.Color.blue()
-        )
+            joined = history.get("joined", [])
+            left = history.get("left", [])
 
-        if joined:
-            joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
-            embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
-        else:
-            embed.add_field(name="Noví členovia", value="Žiadni", inline=False)
+            embed = discord.Embed(
+                title="📜 História zmien v členstve klanu",
+                color=discord.Color.blue()
+            )
 
-        if left:
-            left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
-            embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
-        else:
-            embed.add_field(name="Odišli z klanu", value="Žiadni", inline=False)
+            if joined:
+                joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
+                embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
+            else:
+                embed.add_field(name="Noví členovia", value="Žiadni", inline=False)
 
-        await interaction.response.send_message(embed=embed, ephemeral=False)
+            if left:
+                left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
+                embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
+            else:
+                embed.add_field(name="Odišli z klanu", value="Žiadni", inline=False)
+
+            await interaction.followup.send(embed=embed)
+
+        except Exception as e:
+            await interaction.followup.send(f"❌ Nastala chyba: `{str(e)}`")
 
 async def setup(bot):
     await bot.add_cog(HistoryCog(bot))
