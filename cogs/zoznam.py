@@ -44,7 +44,7 @@ class ZoznamCog(commands.Cog):
         lines = []
         for member in members:
             lines.append(f"✅ {member['name']} – {member['role']}")
-        return "\n".join(lines)
+        return lines
 
     def compare_members(self, old, new):
         old_names = {m['name'] for m in old}
@@ -53,17 +53,17 @@ class ZoznamCog(commands.Cog):
         left = old_names - new_names
         return list(joined), list(left)
 
-    @app_commands.command(name="zoznam", description="Zobrazí embed so zoznamom členov klanu DUKL4")
-    async def zoznam(self, interaction: discord.Interaction):
-        members = self.load_members()
-        sorted_members = self.sort_members(members)
-        description = self.format_member_list(sorted_members)
-        embed = discord.Embed(
-            title="🛡️ DUKLA Československo [DUKL4] – Členovia",
-            description=f"Počet členov: {len(members)}\n\n{description}",
-            color=discord.Color.dark_gold()
-        )
-        await interaction.response.send_message(embed=embed, ephemeral=False)
+    def chunk_text(self, lines, limit=1024):
+        chunks = []
+        current = ""
+        for line in lines:
+            if len(current) + len(line) + 1 > limit:
+                chunks.append(current)
+                current = ""
+            current += line + "\n"
+        if current:
+            chunks.append(current)
+        return chunks
 
     @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov a prepíše správu v kanáli")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
@@ -74,16 +74,25 @@ class ZoznamCog(commands.Cog):
             await interaction.response.send_message("❌ Súbor `new_clan_members.json` nebol nájdený.", ephemeral=True)
             return
 
-        old_members = self.load_members()
+        try:
+            old_members = self.load_members()
+        except Exception:
+            old_members = []
+
         self.save_members(new_members)
         sorted_members = self.sort_members(new_members)
-        description = self.format_member_list(sorted_members)
+        lines = self.format_member_list(sorted_members)
 
         embed = discord.Embed(
             title="🛡️ DUKLA Československo [DUKL4] – Členovia",
-            description=f"Počet členov: {len(new_members)}\n\n{description}",
+            description=f"Počet členov: {len(new_members)}",
             color=discord.Color.dark_gold()
         )
+
+        chunks = self.chunk_text(lines)
+        for i, chunk in enumerate(chunks):
+            name = "Zoznam členov" if i == 0 else f"Pokračovanie {i}"
+            embed.add_field(name=name, value=chunk.strip(), inline=False)
 
         joined, left = self.compare_members(old_members, new_members)
         if joined or left:
@@ -94,21 +103,30 @@ class ZoznamCog(commands.Cog):
                 changes.extend([f"❌ Odišiel: {name}" for name in left])
             embed.add_field(name="📝 Zmeny", value="\n".join(changes), inline=False)
 
-        channel = self.bot.get_channel(1374105106185719970)
-        message_id = self.load_message_id()
-        if message_id:
-            try:
-                message = await channel.fetch_message(message_id)
-                await message.edit(embed=embed)
-                await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
+        try:
+            channel = self.bot.get_channel(1374105106185719970)
+            if not channel:
+                await interaction.response.send_message("❌ Kanál nebol nájdený.", ephemeral=True)
                 return
-            except:
-                pass
 
-        # Ak správa ešte neexistuje alebo sa nedá upraviť
-        new_message = await channel.send(embed=embed)
-        self.save_message_id(new_message.id)
-        await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
+            message_id = self.load_message_id()
+            if message_id:
+                try:
+                    message = await channel.fetch_message(message_id)
+                    await message.edit(embed=embed)
+                    await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
+                    return
+                except Exception as e:
+                    print("Úprava embed správy zlyhala:", e)
+
+            # Ak správa ešte neexistuje alebo sa nedá upraviť
+            new_message = await channel.send(embed=embed)
+            self.save_message_id(new_message.id)
+            await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
+
+        except Exception as e:
+            print("Chyba pri odosielaní embed správy:", e)
+            await interaction.response.send_message("❌ Vyskytla sa chyba pri odosielaní embed správy.", ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(ZoznamCog(bot))
