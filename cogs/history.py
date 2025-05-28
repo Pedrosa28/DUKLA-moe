@@ -1,4 +1,3 @@
-
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -26,36 +25,28 @@ class HistoryCog(commands.Cog):
             color=discord.Color.blue()
         )
 
-        def split_into_chunks(title, members):
+        def format_members(members):
             chunks = []
-            chunk = ""
+            current = ""
             counter = 1
-
-            for name in members:
-                line = f"• {name}\n"
-                if len(chunk + line) > 1024:
-                    chunks.append((f"{title} {counter}", chunk))
-                    chunk = ""
+            for m in members:
+                line = f"• {m['name']} ({m['date']})
+"
+                if len(current + line) > 1024:
+                    chunks.append(current)
+                    current = ""
                     counter += 1
-                chunk += line
-
-            if chunk:
-                chunks.append((f"{title} {counter}", chunk))
+                current += line
+            if current:
+                chunks.append(current)
             return chunks
 
-        if new_members:
-            for name, content in split_into_chunks("🆕 Noví členovia", new_members):
-                embed.add_field(name=name, value=content, inline=False)
-        else:
-            embed.add_field(name="🆕 Noví členovia", value="Žiadni", inline=False)
+        joined_chunks = format_members(new_members)
+        left_chunks = format_members(left_members)
 
-        if left_members:
-            for name, content in split_into_chunks("❌ Odišli z klanu", left_members):
-                embed.add_field(name=name, value=content, inline=False)
-        else:
-            embed.add_field(name="❌ Odišli z klanu", value="Žiadni", inline=False)
+        for i, chunk in enumerate(joined_chunks):
+            embed.add_field(name=f"🆕 Noví členovia {i+1}" if len(joined_chunks) > 1 else "🆕 Noví členovia", value=chunk, inline=False)
+        for i, chunk in enumerate(left_chunks):
+            embed.add_field(name=f"❌ Odišli z klanu {i+1}" if len(left_chunks) > 1 else "❌ Odišli z klanu", value=chunk, inline=False)
 
         await interaction.response.send_message(embed=embed)
-
-async def setup(bot):
-    await bot.add_cog(HistoryCog(bot))
