@@ -1,3 +1,4 @@
+
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -10,6 +11,10 @@ class HistoryCog(commands.Cog):
 
     @app_commands.command(name="zmeny", description="Zobrazí históriu zmien v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
+        if not os.path.exists("zmeny.json"):
+            await interaction.response.send_message("❌ Súbor zmeny.json neexistuje.", ephemeral=True)
+            return
+
         with open("zmeny.json", "r", encoding="utf-8") as f:
             data = json.load(f)
 
@@ -21,7 +26,7 @@ class HistoryCog(commands.Cog):
             color=discord.Color.blue()
         )
 
-        def split_into_chunks(title, emoji, members):
+        def split_into_chunks(title, members):
             chunks = []
             chunk = ""
             counter = 1
@@ -39,13 +44,13 @@ class HistoryCog(commands.Cog):
             return chunks
 
         if new_members:
-            for name, content in split_into_chunks("🆕 Noví členovia", "🆕", new_members):
+            for name, content in split_into_chunks("🆕 Noví členovia", new_members):
                 embed.add_field(name=name, value=content, inline=False)
         else:
             embed.add_field(name="🆕 Noví členovia", value="Žiadni", inline=False)
 
         if left_members:
-            for name, content in split_into_chunks("❌ Odišli z klanu", "❌", left_members):
+            for name, content in split_into_chunks("❌ Odišli z klanu", left_members):
                 embed.add_field(name=name, value=content, inline=False)
         else:
             embed.add_field(name="❌ Odišli z klanu", value="Žiadni", inline=False)
