@@ -1,3 +1,4 @@
+
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -9,7 +10,7 @@ class History(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name="zmeny", description="Zobrazí zmeny v členstve klanu")
+    @app_commands.command(name="zmeny", description="Zobrazí trvalé zmeny v členstve klanu (noví/odišli)")
     async def zmeny(self, interaction: discord.Interaction):
         current_path = "new_clan_members.json"
         history_path = "zmeny.json"
@@ -18,45 +19,48 @@ class History(commands.Cog):
             await interaction.response.send_message("❌ Súbor new_clan_members.json neexistuje.", ephemeral=True)
             return
 
-        # Načítanie aktuálnych členov
+        # Načítaj aktuálnych členov
         with open(current_path, "r", encoding="utf-8") as f:
             current_members = json.load(f)
 
         current_names = {member["name"] for member in current_members}
 
-        # Načítanie histórie zmien
+        # Načítaj históriu alebo priprav novú
         if os.path.exists(history_path):
             with open(history_path, "r", encoding="utf-8") as f:
-                history_data = json.load(f)
+                history = json.load(f)
         else:
-            history_data = {"joined": [], "left": []}
+            history = {"joined": [], "left": [], "last_known": list(current_names)}
 
-        # Vytvorenie súboru pre porovnanie (last state)
-        previous_names = {entry["name"] for entry in history_data["joined"]}
-        for entry in history_data["left"]:
-            previous_names.discard(entry["name"])
+        last_known_set = set(history.get("last_known", []))
 
-        # Porovnanie
-        new_joined = sorted(list(current_names - previous_names))
-        new_left = sorted(list(previous_names - current_names))
+        # Urči nové zmeny
+        newly_joined = list(current_names - last_known_set)
+        newly_left = list(last_known_set - current_names)
 
-        now = datetime.utcnow().strftime("%Y-%m-%d")
+        # Ulož nové záznamy, ak existujú
+        if newly_joined:
+            history["joined"].extend([{"name": name, "date": datetime.now().strftime("%Y-%m-%d")} for name in newly_joined])
+        if newly_left:
+            history["left"].extend([{"name": name, "date": datetime.now().strftime("%Y-%m-%d")} for name in newly_left])
 
-        for name in new_joined:
-            history_data["joined"].append({"name": name, "date": now})
-        for name in new_left:
-            history_data["left"].append({"name": name, "date": now})
+        # Aktualizuj stav
+        history["last_known"] = list(current_names)
 
-        # Uloženie
         with open(history_path, "w", encoding="utf-8") as f:
-            json.dump(history_data, f, indent=4, ensure_ascii=False)
+            json.dump(history, f, ensure_ascii=False, indent=2)
 
-        # Výstup
-        embed = discord.Embed(title="🧵 História zmien v členstve klanu", color=discord.Color.blue())
-        joined_str = "\n".join([f"{item['name']} – `{item['date']}`" for item in history_data["joined"]]) or "Žiadni"
-        left_str = "\n".join([f"{item['name']} – `{item['date']}`" for item in history_data["left"]]) or "Žiadni"
+        # Vytvor embed
+        embed = discord.Embed(title="📋 Zmeny v členstve klanu", color=discord.Color.orange())
+        if newly_joined:
+            embed.add_field(name="🟢 Noví členovia", value="\n".join(f"{i+1}. {name}" for i, name in enumerate(newly_joined)), inline=False)
+        if newly_left:
+            embed.add_field(name="🔴 Odišli", value="\n".join(f"{i+1}. {name}" for i, name in enumerate(newly_left)), inline=False)
 
-        embed.add_field(name="🆕 Noví členovia", value=joined_str, inline=False)
-        embed.add_field(name="❌ Odišli z klanu", value=left_str, inline=False)
+        if not newly_joined and not newly_left:
+            embed.description = "Žiadne nové zmeny v členstve."
 
         await interaction.response.send_message(embed=embed)
+
+async def setup(bot):
+    await bot.add_cog(History(bot))
