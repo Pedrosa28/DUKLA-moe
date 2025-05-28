@@ -1,4 +1,3 @@
-
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -8,50 +7,50 @@ import os
 class HistoryCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.history_file = "zmeny.json"
 
-    @app_commands.command(name="zmeny", description="Zobrazí prehľad všetkých zmien v členstve klanu")
+    @app_commands.command(name="zmeny", description="Zobrazí históriu zmien v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
-        # Bezpečný defer
-        if not interaction.response.is_done():
-            await interaction.response.defer()
+        with open("zmeny.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-        content = None
-        try:
-            if not os.path.exists(self.history_file):
-                content = "❌ Súbor `zmeny.json` neexistuje."
-            else:
-                with open(self.history_file, "r", encoding="utf-8") as f:
-                    history = json.load(f)
+        new_members = data.get("joined", [])
+        left_members = data.get("left", [])
 
-                joined = history.get("joined", [])
-                left = history.get("left", [])
+        embed = discord.Embed(
+            title="🧵 História zmien v členstve klanu",
+            color=discord.Color.blue()
+        )
 
-                embed = discord.Embed(
-                    title="📜 História zmien v členstve klanu",
-                    color=discord.Color.blue()
-                )
+        def split_into_chunks(title, emoji, members):
+            chunks = []
+            chunk = ""
+            counter = 1
 
-                if joined:
-                    joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
-                    embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
-                else:
-                    embed.add_field(name="Noví členovia", value="Žiadni", inline=False)
+            for name in members:
+                line = f"• {name}\n"
+                if len(chunk + line) > 1024:
+                    chunks.append((f"{title} {counter}", chunk))
+                    chunk = ""
+                    counter += 1
+                chunk += line
 
-                if left:
-                    left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
-                    embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
-                else:
-                    embed.add_field(name="Odišli z klanu", value="Žiadni", inline=False)
+            if chunk:
+                chunks.append((f"{title} {counter}", chunk))
+            return chunks
 
-                await interaction.followup.send(embed=embed)
-                return
-        except Exception as e:
-            content = f"❌ Chyba pri spracovaní: `{str(e)}`"
+        if new_members:
+            for name, content in split_into_chunks("🆕 Noví členovia", "🆕", new_members):
+                embed.add_field(name=name, value=content, inline=False)
+        else:
+            embed.add_field(name="🆕 Noví členovia", value="Žiadni", inline=False)
 
-        # Poslať textovú správu len ak nebol embed
-        if content:
-            await interaction.followup.send(content)
+        if left_members:
+            for name, content in split_into_chunks("❌ Odišli z klanu", "❌", left_members):
+                embed.add_field(name=name, value=content, inline=False)
+        else:
+            embed.add_field(name="❌ Odišli z klanu", value="Žiadni", inline=False)
+
+        await interaction.response.send_message(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(HistoryCog(bot))
