@@ -11,56 +11,52 @@ class History(commands.Cog):
 
     @app_commands.command(name="zmeny", description="Zobrazí zmeny v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
-        # Cesty k súborom
-        zmeny_path = "zmeny.json"
-        members_path = "members.json"
+        current_path = "new_clan_members.json"
+        history_path = "zmeny.json"
 
-        # Načítanie starých zmien
-        if os.path.exists(zmeny_path):
-            with open(zmeny_path, "r", encoding="utf-8") as f:
+        if not os.path.exists(current_path):
+            await interaction.response.send_message("❌ Súbor new_clan_members.json neexistuje.", ephemeral=True)
+            return
+
+        # Načítanie aktuálnych členov
+        with open(current_path, "r", encoding="utf-8") as f:
+            current_members = json.load(f)
+
+        current_names = {member["name"] for member in current_members}
+
+        # Načítanie histórie zmien
+        if os.path.exists(history_path):
+            with open(history_path, "r", encoding="utf-8") as f:
                 history_data = json.load(f)
         else:
             history_data = {"joined": [], "left": []}
 
-        # Načítanie aktuálnych členov
-        if os.path.exists(members_path):
-            with open(members_path, "r", encoding="utf-8") as f:
-                current_members = json.load(f)
-        else:
-            await interaction.response.send_message("❌ Súbor members.json neexistuje.", ephemeral=True)
-            return
+        # Vytvorenie súboru pre porovnanie (last state)
+        previous_names = {entry["name"] for entry in history_data["joined"]}
+        for entry in history_data["left"]:
+            previous_names.discard(entry["name"])
 
-        current_names = [m["name"] for m in current_members]
-        previous_names = [entry["name"] for entry in history_data["joined"] if entry["name"] not in [l["name"] for l in history_data["left"]]]
+        # Porovnanie
+        new_joined = sorted(list(current_names - previous_names))
+        new_left = sorted(list(previous_names - current_names))
 
-        today = datetime.today().strftime('%Y-%m-%d')
-
-        # Zistenie nových a odídených členov
-        new_joined = [name for name in current_names if name not in previous_names]
-        new_left = [name for name in previous_names if name not in current_names]
+        now = datetime.utcnow().strftime("%Y-%m-%d")
 
         for name in new_joined:
-            if not any(entry["name"] == name for entry in history_data["joined"]):
-                history_data["joined"].append({"name": name, "date": today})
-
+            history_data["joined"].append({"name": name, "date": now})
         for name in new_left:
-            if not any(entry["name"] == name for entry in history_data["left"]):
-                history_data["left"].append({"name": name, "date": today})
+            history_data["left"].append({"name": name, "date": now})
 
-        # Uloženie zmien
-        with open(zmeny_path, "w", encoding="utf-8") as f:
+        # Uloženie
+        with open(history_path, "w", encoding="utf-8") as f:
             json.dump(history_data, f, indent=4, ensure_ascii=False)
 
-        # Príprava výpisu
-        embed = discord.Embed(title="🧵 História zmien v členstve klanu", color=discord.Color.blurple())
+        # Výstup
+        embed = discord.Embed(title="🧵 História zmien v členstve klanu", color=discord.Color.blue())
+        joined_str = "\n".join([f"{item['name']} – `{item['date']}`" for item in history_data["joined"]]) or "Žiadni"
+        left_str = "\n".join([f"{item['name']} – `{item['date']}`" for item in history_data["left"]]) or "Žiadni"
 
-        def format_entries(entries):
-            return "\n".join([f"• {e['name']} ({e['date']})" for e in entries]) if entries else "Žiadni"
-
-        embed.add_field(name="🆕 Noví členovia", value=format_entries(history_data["joined"]), inline=False)
-        embed.add_field(name="❌ Odišli z klanu", value=format_entries(history_data["left"]), inline=False)
+        embed.add_field(name="🆕 Noví členovia", value=joined_str, inline=False)
+        embed.add_field(name="❌ Odišli z klanu", value=left_str, inline=False)
 
         await interaction.response.send_message(embed=embed)
-
-async def setup(bot):
-    await bot.add_cog(History(bot))
