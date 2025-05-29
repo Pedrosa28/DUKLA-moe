@@ -34,6 +34,11 @@ class ZoznamCog(commands.Cog):
             name = row["data-name"].strip()
             role = row["data-role-name"].strip()
             members.append({"name": name, "role": role})
+
+        print("📥 Načítaní členovia z webu:")
+        for m in members:
+            print(f"  - {m['name']} ({m['role']})")
+
         return members
 
     def load_members(self):
@@ -64,23 +69,21 @@ class ZoznamCog(commands.Cog):
         return [f"✅ {member['name']} – {member['role']}" for member in members]
 
     def compare_members(self, old, new):
-        def normalize(name):
+        def norm(name):
             return name.strip().lower()
 
-        old_map = {normalize(m['name']): m for m in old}
-        new_map = {normalize(m['name']): m for m in new}
+        old_map = {norm(m['name']): m['name'] for m in old}
+        new_map = {norm(m['name']): m['name'] for m in new}
 
-        old_keys = set(old_map.keys())
-        new_keys = set(new_map.keys())
+        joined_keys = set(new_map.keys()) - set(old_map.keys())
+        left_keys = set(old_map.keys()) - set(new_map.keys())
 
-        joined = [new_map[k]['name'] for k in new_keys - old_keys]
-        left = [old_map[k]['name'] for k in old_keys - new_keys]
+        joined = [new_map[k] for k in joined_keys]
+        left = [old_map[k] for k in left_keys]
 
-        print("==== DEBUG POROVNANIE ====")
-        print("Starí členovia:", old_keys)
-        print("Noví členovia:", new_keys)
-        print("Pribudli:", joined)
-        print("Odišli:", left)
+        print("🔄 Zmeny:")
+        print("✅ Pribudli:", joined)
+        print("❌ Odišli:", left)
 
         return joined, left
 
@@ -96,11 +99,8 @@ class ZoznamCog(commands.Cog):
             chunks.append(current)
 
         if len(chunks) > max_fields:
-            print("⚠️ Embed má viac ako 5 polí. Zvyšné mená sa nezobrazia!")
-            for i, chunk in enumerate(chunks[max_fields:]):
-                print(f"⚠️ Nezobrazený chunk {i+1}:", chunk)
-            return chunks[:max_fields]
-        return chunks
+            print("⚠️ Embed má viac ako 5 polí. Zvyšné sa nezobrazia!")
+        return chunks[:max_fields]
 
     def update_history(self, joined, left):
         today = str(date.today())
@@ -118,7 +118,7 @@ class ZoznamCog(commands.Cog):
         with open(self.history_file, "w", encoding="utf-8") as f:
             json.dump(history, f, ensure_ascii=False, indent=4)
 
-    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov z webu a prepíše správu v kanáli")
+    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov z webu a prepíše embed")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
         try:
             new_members = self.fetch_clan_members_from_web()
@@ -159,18 +159,21 @@ class ZoznamCog(commands.Cog):
                 return
 
             message_id = self.load_message_id()
+            message = None
+
             if message_id:
                 try:
                     message = await channel.fetch_message(message_id)
-                    await message.edit(embed=embed)
-                    await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
-                    return
                 except Exception:
-                    pass
+                    print("⚠️ Nepodarilo sa získať pôvodnú správu. Vytváram novú.")
 
-            new_message = await channel.send(embed=embed)
-            self.save_message_id(new_message.id)
-            await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
+            if message:
+                await message.edit(embed=embed)
+                await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
+            else:
+                new_message = await channel.send(embed=embed)
+                self.save_message_id(new_message.id)
+                await interaction.response.send_message("✅ Nová embed správa bola vytvorená.", ephemeral=True)
 
         except Exception as e:
             await interaction.response.send_message(f"❌ Chyba pri aktualizácii správy: {e}", ephemeral=True)
