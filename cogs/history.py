@@ -4,63 +4,54 @@ from discord import app_commands
 from discord.ext import commands
 import json
 import os
-from datetime import datetime
 
-class History(commands.Cog):
+class HistoryCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.history_file = "zmeny.json"
 
-    @app_commands.command(name="zmeny", description="Zobrazí trvalé zmeny v členstve klanu (noví/odišli)")
+    @app_commands.command(name="zmeny", description="Zobrazí prehľad všetkých zmien v členstve klanu")
     async def zmeny(self, interaction: discord.Interaction):
-        current_path = "new_clan_members.json"
-        history_path = "zmeny.json"
+        # Bezpečný defer
+        if not interaction.response.is_done():
+            await interaction.response.defer()
 
-        if not os.path.exists(current_path):
-            await interaction.response.send_message("❌ Súbor new_clan_members.json neexistuje.", ephemeral=True)
-            return
+        content = None
+        try:
+            if not os.path.exists(self.history_file):
+                content = "❌ Súbor `zmeny.json` neexistuje."
+            else:
+                with open(self.history_file, "r", encoding="utf-8") as f:
+                    history = json.load(f)
 
-        # Načítaj aktuálnych členov
-        with open(current_path, "r", encoding="utf-8") as f:
-            current_members = json.load(f)
+                joined = history.get("joined", [])
+                left = history.get("left", [])
 
-        current_names = {member["name"] for member in current_members}
+                embed = discord.Embed(
+                    title="📜 História zmien v členstve klanu",
+                    color=discord.Color.blue()
+                )
 
-        # Načítaj históriu alebo priprav novú
-        if os.path.exists(history_path):
-            with open(history_path, "r", encoding="utf-8") as f:
-                history = json.load(f)
-        else:
-            history = {"joined": [], "left": [], "last_known": list(current_names)}
+                if joined:
+                    joined_lines = [f"✅ {entry['name']} ({entry['date']})" for entry in joined]
+                    embed.add_field(name="Noví členovia", value="\n".join(joined_lines), inline=False)
+                else:
+                    embed.add_field(name="Noví členovia", value="Žiadni", inline=False)
 
-        last_known_set = set(history.get("last_known", []))
+                if left:
+                    left_lines = [f"❌ {entry['name']} ({entry['date']})" for entry in left]
+                    embed.add_field(name="Odišli z klanu", value="\n".join(left_lines), inline=False)
+                else:
+                    embed.add_field(name="Odišli z klanu", value="Žiadni", inline=False)
 
-        # Urči nové zmeny
-        newly_joined = list(current_names - last_known_set)
-        newly_left = list(last_known_set - current_names)
+                await interaction.followup.send(embed=embed)
+                return
+        except Exception as e:
+            content = f"❌ Chyba pri spracovaní: `{str(e)}`"
 
-        # Ulož nové záznamy, ak existujú
-        if newly_joined:
-            history["joined"].extend([{"name": name, "date": datetime.now().strftime("%Y-%m-%d")} for name in newly_joined])
-        if newly_left:
-            history["left"].extend([{"name": name, "date": datetime.now().strftime("%Y-%m-%d")} for name in newly_left])
-
-        # Aktualizuj stav
-        history["last_known"] = list(current_names)
-
-        with open(history_path, "w", encoding="utf-8") as f:
-            json.dump(history, f, ensure_ascii=False, indent=2)
-
-        # Vytvor embed
-        embed = discord.Embed(title="📋 Zmeny v členstve klanu", color=discord.Color.orange())
-        if newly_joined:
-            embed.add_field(name="🟢 Noví členovia", value="\n".join(f"{i+1}. {name}" for i, name in enumerate(newly_joined)), inline=False)
-        if newly_left:
-            embed.add_field(name="🔴 Odišli", value="\n".join(f"{i+1}. {name}" for i, name in enumerate(newly_left)), inline=False)
-
-        if not newly_joined and not newly_left:
-            embed.description = "Žiadne nové zmeny v členstve."
-
-        await interaction.response.send_message(embed=embed)
+        # Poslať textovú správu len ak nebol embed
+        if content:
+            await interaction.followup.send(content)
 
 async def setup(bot):
-    await bot.add_cog(History(bot))
+    await bot.add_cog(HistoryCog(bot))
