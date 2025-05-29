@@ -64,11 +64,19 @@ class ZoznamCog(commands.Cog):
         return [f"✅ {member['name']} – {member['role']}" for member in members]
 
     def compare_members(self, old, new):
-        old_names = {m['name'] for m in old}
-        new_names = {m['name'] for m in new}
-        joined = new_names - old_names
-        left = old_names - new_names
-        return list(joined), list(left)
+        def normalize(name):
+            return name.strip().lower()
+
+        old_map = {normalize(m['name']): m['name'] for m in old}
+        new_map = {normalize(m['name']): m['name'] for m in new}
+
+        old_keys = set(old_map.keys())
+        new_keys = set(new_map.keys())
+
+        joined = [new_map[k] for k in new_keys - old_keys]
+        left = [old_map[k] for k in old_keys - new_keys]
+
+        return joined, left
 
     def chunk_text(self, lines, limit=1024):
         chunks = []
