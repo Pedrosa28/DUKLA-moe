@@ -5,6 +5,8 @@ from discord.ext import commands
 import json
 import os
 from datetime import date
+import requests
+from bs4 import BeautifulSoup
 
 ROLES_PRIORITY = {
     "Commander": 1,
@@ -20,7 +22,23 @@ class ZoznamCog(commands.Cog):
         self.message_id_file = "message_id.json"
         self.history_file = "zmeny.json"
 
+    def fetch_clan_members_from_web(self):
+        url = "https://modernarmor.worldoftanks.com/en/clans/DUKL4/"
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.text, "html.parser")
+        rows = soup.select("table tr[data-name][data-role-name]")
+
+        members = []
+        for row in rows:
+            name = row["data-name"].strip()
+            role = row["data-role-name"].strip()
+            members.append({"name": name, "role": role})
+        return members
+
     def load_members(self):
+        if not os.path.exists(self.data_file):
+            return []
         with open(self.data_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
@@ -43,10 +61,7 @@ class ZoznamCog(commands.Cog):
         return sorted(members, key=lambda x: (ROLES_PRIORITY.get(x['role'], 99), x['name'].lower()))
 
     def format_member_list(self, members):
-        lines = []
-        for member in members:
-            lines.append(f"✅ {member['name']} – {member['role']}")
-        return lines
+        return [f"✅ {member['name']} – {member['role']}" for member in members]
 
     def compare_members(self, old, new):
         old_names = {m['name'] for m in old}
@@ -83,21 +98,17 @@ class ZoznamCog(commands.Cog):
         with open(self.history_file, "w", encoding="utf-8") as f:
             json.dump(history, f, ensure_ascii=False, indent=4)
 
-    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov a prepíše správu v kanáli")
+    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov z webu a prepíše správu v kanáli")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
         try:
-            with open("new_clan_members.json", "r", encoding="utf-8") as f:
-                new_members = json.load(f)
-        except FileNotFoundError:
-            await interaction.response.send_message("❌ Súbor `new_clan_members.json` nebol nájdený.", ephemeral=True)
+            new_members = self.fetch_clan_members_from_web()
+        except Exception as e:
+            await interaction.response.send_message(f"❌ Chyba pri načítaní členov z webu: {e}", ephemeral=True)
             return
 
-        try:
-            old_members = self.load_members()
-        except Exception:
-            old_members = []
-
+        old_members = self.load_members()
         self.save_members(new_members)
+
         sorted_members = self.sort_members(new_members)
         lines = self.format_member_list(sorted_members)
 
@@ -107,8 +118,7 @@ class ZoznamCog(commands.Cog):
             color=discord.Color.dark_gold()
         )
 
-        chunks = self.chunk_text(lines)
-        for i, chunk in enumerate(chunks):
+        for i, chunk in enumerate(self.chunk_text(lines)):
             name = "Zoznam členov" if i == 0 else f"Pokračovanie {i}"
             embed.add_field(name=name, value=chunk.strip(), inline=False)
 
@@ -116,9 +126,9 @@ class ZoznamCog(commands.Cog):
         if joined or left:
             changes = []
             if joined:
-                changes.extend([f"✅ Nový člen: {name}" for name in joined])
+                changes += [f"✅ Nový člen: {name}" for name in joined]
             if left:
-                changes.extend([f"❌ Odišiel: {name}" for name in left])
+                changes += [f"❌ Odišiel: {name}" for name in left]
             embed.add_field(name="📝 Zmeny", value="\n".join(changes), inline=False)
             self.update_history(joined, left)
 
@@ -143,7 +153,7 @@ class ZoznamCog(commands.Cog):
             await interaction.response.send_message("✅ Nová embed správa bola odoslaná a ID uložené.", ephemeral=True)
 
         except Exception as e:
-            await interaction.response.send_message("❌ Vyskytla sa chyba pri odosielaní embed správy.", ephemeral=True)
+            await interaction.response.send_message(f"❌ Chyba pri aktualizácii správy: {e}", ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(ZoznamCog(bot))
