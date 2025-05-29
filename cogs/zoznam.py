@@ -5,8 +5,6 @@ from discord.ext import commands
 import json
 import os
 from datetime import date
-import requests
-from bs4 import BeautifulSoup
 
 ROLES_PRIORITY = {
     "Commander": 1,
@@ -19,31 +17,9 @@ class ZoznamCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.data_file = "clan_members.json"
-        self.message_id_file = "message_id.json"
         self.history_file = "zmeny.json"
 
-    def fetch_clan_members_from_web(self):
-        url = "https://modernarmor.worldoftanks.com/en/clans/DUKL4/"
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(url, headers=headers)
-        soup = BeautifulSoup(response.text, "html.parser")
-        rows = soup.select("table tr[data-name][data-role-name]")
-
-        members = []
-        for row in rows:
-            name = row["data-name"].strip()
-            role = row["data-role-name"].strip()
-            members.append({"name": name, "role": role})
-
-        print("📥 Načítaní členovia z webu:")
-        for m in members:
-            print(f"  - {m['name']} ({m['role']})")
-
-        return members
-
     def load_members(self):
-        if not os.path.exists(self.data_file):
-            return []
         with open(self.data_file, "r", encoding="utf-8") as f:
             return json.load(f)
 
@@ -51,43 +27,27 @@ class ZoznamCog(commands.Cog):
         with open(self.data_file, "w", encoding="utf-8") as f:
             json.dump(members, f, ensure_ascii=False, indent=4)
 
-    def load_message_id(self):
-        if not os.path.exists(self.message_id_file):
-            return None
-        with open(self.message_id_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data.get("message_id")
-
-    def save_message_id(self, message_id):
-        with open(self.message_id_file, "w", encoding="utf-8") as f:
-            json.dump({"channel_id": 1374105106185719970, "message_id": message_id}, f, indent=4)
-
     def sort_members(self, members):
         return sorted(members, key=lambda x: (ROLES_PRIORITY.get(x['role'], 99), x['name'].lower()))
 
     def format_member_list(self, members):
-        return [f"✅ {member['name']} – {member['role']}" for member in members]
+        lines = []
+        for member in members:
+            lines.append(f"✅ {member['name']} – {member['role']}")
+        return lines
 
     def compare_members(self, old, new):
-        def norm(name):
-            return name.strip().lower()
+        def normalize(name):
+            return name.replace(" ", "").lower()
+        old_names = {normalize(m['name']) for m in old}
+        new_names = {normalize(m['name']) for m in new}
+        joined = new_names - old_names
+        left = old_names - new_names
+        joined_list = [m['name'] for m in new if normalize(m['name']) in joined]
+        left_list = [m['name'] for m in old if normalize(m['name']) in left]
+        return joined_list, left_list
 
-        old_map = {norm(m['name']): m['name'] for m in old}
-        new_map = {norm(m['name']): m['name'] for m in new}
-
-        joined_keys = set(new_map.keys()) - set(old_map.keys())
-        left_keys = set(old_map.keys()) - set(new_map.keys())
-
-        joined = [new_map[k] for k in joined_keys]
-        left = [old_map[k] for k in left_keys]
-
-        print("🔄 Zmeny:")
-        print("✅ Pribudli:", joined)
-        print("❌ Odišli:", left)
-
-        return joined, left
-
-    def chunk_text(self, lines, limit=1024, max_fields=5):
+    def chunk_text(self, lines, limit=1024):
         chunks = []
         current = ""
         for line in lines:
@@ -97,10 +57,7 @@ class ZoznamCog(commands.Cog):
             current += line + "\n"
         if current:
             chunks.append(current)
-
-        if len(chunks) > max_fields:
-            print("⚠️ Embed má viac ako 5 polí. Zvyšné sa nezobrazia!")
-        return chunks[:max_fields]
+        return chunks
 
     def update_history(self, joined, left):
         today = str(date.today())
@@ -118,17 +75,21 @@ class ZoznamCog(commands.Cog):
         with open(self.history_file, "w", encoding="utf-8") as f:
             json.dump(history, f, ensure_ascii=False, indent=4)
 
-    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov z webu a prepíše embed")
+    @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov a prepíše správu v kanáli")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
         try:
-            new_members = self.fetch_clan_members_from_web()
-        except Exception as e:
-            await interaction.response.send_message(f"❌ Chyba pri načítaní členov z webu: {e}", ephemeral=True)
+            with open("new_clan_members.json", "r", encoding="utf-8") as f:
+                new_members = json.load(f)
+        except FileNotFoundError:
+            await interaction.response.send_message("❌ Súbor `new_clan_members.json` nebol nájdený.", ephemeral=True)
             return
 
-        old_members = self.load_members()
-        self.save_members(new_members)
+        try:
+            old_members = self.load_members()
+        except Exception:
+            old_members = []
 
+        self.save_members(new_members)
         sorted_members = self.sort_members(new_members)
         lines = self.format_member_list(sorted_members)
 
@@ -138,7 +99,8 @@ class ZoznamCog(commands.Cog):
             color=discord.Color.dark_gold()
         )
 
-        for i, chunk in enumerate(self.chunk_text(lines)):
+        chunks = self.chunk_text(lines)
+        for i, chunk in enumerate(chunks):
             name = "Zoznam členov" if i == 0 else f"Pokračovanie {i}"
             embed.add_field(name=name, value=chunk.strip(), inline=False)
 
@@ -146,9 +108,9 @@ class ZoznamCog(commands.Cog):
         if joined or left:
             changes = []
             if joined:
-                changes += [f"✅ Nový člen: {name}" for name in joined]
+                changes.extend([f"✅ Nový člen: {name}" for name in joined])
             if left:
-                changes += [f"❌ Odišiel: {name}" for name in left]
+                changes.extend([f"❌ Odišiel: {name}" for name in left])
             embed.add_field(name="📝 Zmeny", value="\n".join(changes), inline=False)
             self.update_history(joined, left)
 
@@ -158,25 +120,17 @@ class ZoznamCog(commands.Cog):
                 await interaction.response.send_message("❌ Kanál nebol nájdený.", ephemeral=True)
                 return
 
-            message_id = self.load_message_id()
-            message = None
-
-            if message_id:
-                try:
-                    message = await channel.fetch_message(message_id)
-                except Exception:
-                    print("⚠️ Nepodarilo sa získať pôvodnú správu. Vytváram novú.")
-
-            if message:
+            message_id = 1377522108254654585  # staticky nastavené ID embed správy
+            try:
+                message = await channel.fetch_message(message_id)
                 await message.edit(embed=embed)
                 await interaction.response.send_message("✅ Embed správa bola aktualizovaná.", ephemeral=True)
-            else:
+            except Exception:
                 new_message = await channel.send(embed=embed)
-                self.save_message_id(new_message.id)
-                await interaction.response.send_message("✅ Nová embed správa bola vytvorená.", ephemeral=True)
+                await interaction.response.send_message("✅ Nová embed správa bola odoslaná.", ephemeral=True)
 
-        except Exception as e:
-            await interaction.response.send_message(f"❌ Chyba pri aktualizácii správy: {e}", ephemeral=True)
+        except Exception:
+            await interaction.response.send_message("❌ Vyskytla sa chyba pri odosielaní embed správy.", ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(ZoznamCog(bot))
