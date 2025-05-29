@@ -76,9 +76,15 @@ class ZoznamCog(commands.Cog):
         joined = [new_map[k] for k in new_keys - old_keys]
         left = [old_map[k] for k in old_keys - new_keys]
 
+        print("==== DEBUG COMPARE MEMBERS ====")
+        print("OLD:", old_keys)
+        print("NEW:", new_keys)
+        print("JOINED:", joined)
+        print("LEFT:", left)
+
         return joined, left
 
-    def chunk_text(self, lines, limit=1024):
+    def chunk_text(self, lines, limit=1024, max_fields=5):
         chunks = []
         current = ""
         for line in lines:
@@ -88,6 +94,13 @@ class ZoznamCog(commands.Cog):
             current += line + "\n"
         if current:
             chunks.append(current)
+
+        if len(chunks) > max_fields:
+            print("⚠️ POZOR: Embed prekročil počet polí. Niektoré mená sa nezobrazia!")
+            for i, chunk in enumerate(chunks[max_fields:]):
+                print(f"❗ Nezobrazené pole {i+1}:")
+                print(chunk)
+            return chunks[:max_fields]
         return chunks
 
     def update_history(self, joined, left):
@@ -119,6 +132,10 @@ class ZoznamCog(commands.Cog):
 
         sorted_members = self.sort_members(new_members)
         lines = self.format_member_list(sorted_members)
+
+        print("==== DEBUG FULL MEMBER LIST ====")
+        for line in lines:
+            print(line)
 
         embed = discord.Embed(
             title="🛡️ DUKLA Československo [DUKL4] – Členovia",
