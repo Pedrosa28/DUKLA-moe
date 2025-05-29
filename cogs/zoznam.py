@@ -1,11 +1,13 @@
 
 import discord
-from discord.ext import commands
 from discord import app_commands
+from discord.ext import commands
 import json
+import os
+import re
+from datetime import date
 import requests
 from bs4 import BeautifulSoup
-import os
 
 CHANNEL_ID = 1374105106185719970
 HISTORY_FILE = "clan_members.json"
@@ -54,6 +56,14 @@ class ClanCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    def chunk_members(self, members, per_chunk=25):
+        chunks = []
+        for i in range(0, len(members), per_chunk):
+            chunk = members[i:i + per_chunk]
+            text = "\n".join([f"✅ {m['name']} – {m['role']}" for m in chunk])
+            chunks.append(text)
+        return chunks
+
     @app_commands.command(name="aktualizuj_zoznam", description="Aktualizuje zoznam členov klanu a vypíše ho do kanála.")
     async def aktualizuj_zoznam(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -70,18 +80,33 @@ class ClanCog(commands.Cog):
         save_members(new_members)
         save_changes(joined, left)
 
-        # Priprav správu
-        embed = discord.Embed(title="📋 Zoznam členov klanu DUKL4", color=0x00ff00)
-        for member in new_members:
-            embed.add_field(name=member["name"], value=member["role"], inline=False)
+        embed = discord.Embed(
+            title="📋 Zoznam členov klanu DUKL4",
+            description=f"Počet členov: {len(new_members)}",
+            color=discord.Color.green()
+        )
 
-        # Prepíš existujúcu správu v kanáli (ak existuje)
+        # Rozdelenie na polia, každé max 25 mien
+        chunks = self.chunk_members(new_members)
+        for i, chunk in enumerate(chunks):
+            embed.add_field(name=f"Zoznam členov {i+1}" if len(chunks) > 1 else "Zoznam členov", value=chunk, inline=False)
+
+        if joined or left:
+            zmeny = []
+            if joined:
+                zmeny += [f"✅ Nový člen: {name}" for name in joined]
+            if left:
+                zmeny += [f"❌ Odišiel: {name}" for name in left]
+            embed.add_field(name="📝 Zmeny", value="\n".join(zmeny), inline=False)
+
         channel = self.bot.get_channel(CHANNEL_ID)
+        found = False
         async for msg in channel.history(limit=20):
-            if msg.author == self.bot.user and msg.embeds and msg.embeds[0].title == "📋 Zoznam členov klanu DUKL4":
+            if msg.author == self.bot.user and msg.embeds and msg.embeds[0].title.startswith("📋 Zoznam členov"):
                 await msg.edit(embed=embed)
+                found = True
                 break
-        else:
+        if not found:
             await channel.send(embed=embed)
 
         await interaction.followup.send("✅ Zoznam bol úspešne aktualizovaný a zmeny zaznamenané.", ephemeral=True)
