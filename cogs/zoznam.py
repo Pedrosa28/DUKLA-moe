@@ -67,20 +67,20 @@ class ZoznamCog(commands.Cog):
         def normalize(name):
             return name.strip().lower()
 
-        old_map = {normalize(m['name']): m['name'] for m in old}
-        new_map = {normalize(m['name']): m['name'] for m in new}
+        old_map = {normalize(m['name']): m for m in old}
+        new_map = {normalize(m['name']): m for m in new}
 
         old_keys = set(old_map.keys())
         new_keys = set(new_map.keys())
 
-        joined = [new_map[k] for k in new_keys - old_keys]
-        left = [old_map[k] for k in old_keys - new_keys]
+        joined = [new_map[k]['name'] for k in new_keys - old_keys]
+        left = [old_map[k]['name'] for k in old_keys - new_keys]
 
-        print("==== DEBUG COMPARE MEMBERS ====")
-        print("OLD:", old_keys)
-        print("NEW:", new_keys)
-        print("JOINED:", joined)
-        print("LEFT:", left)
+        print("==== DEBUG POROVNANIE ====")
+        print("Starí členovia:", old_keys)
+        print("Noví členovia:", new_keys)
+        print("Pribudli:", joined)
+        print("Odišli:", left)
 
         return joined, left
 
@@ -96,10 +96,9 @@ class ZoznamCog(commands.Cog):
             chunks.append(current)
 
         if len(chunks) > max_fields:
-            print("⚠️ POZOR: Embed prekročil počet polí. Niektoré mená sa nezobrazia!")
+            print("⚠️ Embed má viac ako 5 polí. Zvyšné mená sa nezobrazia!")
             for i, chunk in enumerate(chunks[max_fields:]):
-                print(f"❗ Nezobrazené pole {i+1}:")
-                print(chunk)
+                print(f"⚠️ Nezobrazený chunk {i+1}:", chunk)
             return chunks[:max_fields]
         return chunks
 
@@ -132,10 +131,6 @@ class ZoznamCog(commands.Cog):
 
         sorted_members = self.sort_members(new_members)
         lines = self.format_member_list(sorted_members)
-
-        print("==== DEBUG FULL MEMBER LIST ====")
-        for line in lines:
-            print(line)
 
         embed = discord.Embed(
             title="🛡️ DUKLA Československo [DUKL4] – Členovia",
