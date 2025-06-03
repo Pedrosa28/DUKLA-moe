@@ -27,10 +27,7 @@ def save_members(data):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-def today = date.today().isoformat()
-        joined_data = [{"name": name, "date": today} for name in joined]
-        left_data = [{"name": name, "date": today} for name in left]
-        save_changes(joined_data, left_data):
+def save_changes(joined, left):
     if not os.path.exists(CHANGES_FILE):
         history = {"joined": [], "left": []}
     else:
@@ -42,18 +39,22 @@ def today = date.today().isoformat()
         json.dump(history, f, indent=4, ensure_ascii=False)
 
 def fetch_clan_members():
-    response = requests.get(CLAN_URL)
-    soup = BeautifulSoup(response.text, "html.parser")
-    members = []
-    rows = soup.select(".styles__StyledTr-sc-1h0c8og-2")
-    for row in rows:
+    try:
+        response = requests.get(CLAN_URL)
+        soup = BeautifulSoup(response.text, "html.parser")
+        members = []
+        rows = soup.select(".styles__StyledTr-sc-1h0c8og-2")
+        for row in rows:
         name_elem = row.select_one("a[href^='/profile']")
         role_elem = row.select_one("td:nth-of-type(3)")
         if name_elem and role_elem:
             name = name_elem.text.strip()
             role = role_elem.text.strip()
             members.append({"name": name, "role": role})
-    return members
+        return members
+    except Exception as e:
+        print(f"❌ Chyba v fetch_clan_members: {e}")
+        return []
 
 class ClanCog(commands.Cog):
     def __init__(self, bot):
@@ -81,10 +82,7 @@ class ClanCog(commands.Cog):
         left = [old_dict[k] for k in old_dict if k not in new_dict]
 
         save_members(new_members)
-        today = date.today().isoformat()
-        joined_data = [{"name": name, "date": today} for name in joined]
-        left_data = [{"name": name, "date": today} for name in left]
-        save_changes(joined_data, left_data)
+        save_changes(joined, left)
 
         embed = discord.Embed(
             title="📋 Zoznam členov klanu DUKL4",
