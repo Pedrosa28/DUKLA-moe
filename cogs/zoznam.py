@@ -27,7 +27,10 @@ def save_members(data):
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-def save_changes(joined, left):
+def today = date.today().isoformat()
+        joined_data = [{"name": name, "date": today} for name in joined]
+        left_data = [{"name": name, "date": today} for name in left]
+        save_changes(joined_data, left_data):
     if not os.path.exists(CHANGES_FILE):
         history = {"joined": [], "left": []}
     else:
@@ -78,7 +81,10 @@ class ClanCog(commands.Cog):
         left = [old_dict[k] for k in old_dict if k not in new_dict]
 
         save_members(new_members)
-        save_changes(joined, left)
+        today = date.today().isoformat()
+        joined_data = [{"name": name, "date": today} for name in joined]
+        left_data = [{"name": name, "date": today} for name in left]
+        save_changes(joined_data, left_data)
 
         embed = discord.Embed(
             title="📋 Zoznam členov klanu DUKL4",
