@@ -6,6 +6,7 @@ import json
 import aiohttp
 from bs4 import BeautifulSoup
 import os
+import asyncio
 
 class Zoznam(commands.Cog):
     def __init__(self, bot):
